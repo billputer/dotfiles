@@ -1,0 +1,82 @@
+# Personal servers
+
+host billwiens.com
+	User wwiens
+	HostName billwiens.com
+	Port 36365
+	IdentityFile ~/.ssh/bill_rsa
+
+host billdev
+  User bwiens
+  HostName billdev
+  ForwardAgent yes
+  IdentityFile ~/.ssh/bill_rsa
+
+# svn config for version control on moog
+host moog
+	user wwiens
+	hostname billwiens.com
+	port 36365
+	IdentityFile ~/.ssh/bill_rsa
+
+host svn
+	hostname billwiens.com
+	Port 36365
+	ForwardAgent no
+
+# Freelock servers
+
+host lassen
+	user bill
+	HostName lassen.freelock.com
+	port 22
+	IdentityFile ~/.ssh/free_rsa
+
+host adams
+	user bill
+	HostName adams.freelock.com
+	port 22
+	IdentityFile ~/.ssh/free_rsa
+
+host foraker
+	user bill
+	HostName foraker.freelock.com
+	port 22
+	IdentityFile ~/.ssh/free_rsa
+
+host glacier
+	user bill
+	HostName glacier.freelock.com
+	port 22
+	IdentityFile ~/.ssh/free_rsa
+
+host tiger
+	user bill
+	HostName tiger.freelock.com
+	port 36358
+	IdentityFile ~/.ssh/free_rsa
+  ForwardAgent yes
+
+host hood
+	user bill
+	HostName hood.freelock.lan
+	port 22
+	IdentityFile ~/.ssh/free_rsa
+
+host helens
+	user root
+	HostName helens.freelock.com
+	port 36358
+	IdentityFile ~/.ssh/free_rsa
+
+host blackburn
+	user bill
+	HostName blackburn.freelock.com
+	port 36358
+	IdentityFile ~/.ssh/free_rsa
+  ForwardAgent yes
+
+Host gra
+  hostname consultgra.com
+  user freelock
+  ForwardAgent yes

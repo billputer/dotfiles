@@ -1,0 +1,26 @@
+[user]
+	name = Bill Wiens
+	email = billwiens@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[merge]
+	summary = true
+[github]
+	user = billputer
+	token = 3e68338ce700ebf093911abf6f31b18b
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  staged = diff --cached
+  unstaged = diff
+  both = diff HEAD
+  oneline = log --pretty=oneline
+  amend = commit --amend
+  out = log origin..HEAD  
+  
+[core]
+	excludesfile = /Users/bwiens/.gitignore
