@@ -12,6 +12,34 @@ host billdev
   ForwardAgent yes
   IdentityFile ~/.ssh/bill_rsa
 
+
+# Smashing Ideas aliases
+
+host spti-dev
+  user bill
+  hostname spti-dev.com
+  forwardagent yes
+  identityfile ~/.ssh/si_bill_id_dsa
+
+host spti-stage
+  user bill
+  hostname spti-stage.com
+  forwardagent yes
+  identityfile ~/.ssh/si_bill_id_dsa
+
+host spti-db
+  user gateway
+  hostname spti-stage.com
+  forwardagent yes
+  identityfile ~/.ssh/si_bill_id_dsa
+
+
+host dev
+  user bill
+  hostname billdev
+  forwardagent yes
+  identityfile ~/.ssh/si_bill_id_dsa
+
 # svn config for version control on moog
 host moog
 	user wwiens
