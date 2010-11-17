@@ -70,13 +70,14 @@ alias grep='grep --color=auto'
 alias tu='top -o cpu'
 alias tm='top -o vsize'
 
+# convert newlines to LF
+alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
+
 # SVN
 alias sco='svn co'
 alias sup='svn up'
 alias sci='svn ci -m'
 alias saa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
-
-alias diff='colordiff'
 
 
 # Red STDERR
