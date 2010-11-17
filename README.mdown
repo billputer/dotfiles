@@ -1,3 +1,7 @@
+Run `rake` to install:
+
+    $ rake
+
 Run before using home/.gitignore:
 
     $ git config --global core.excludesfile ~/.gitignore
