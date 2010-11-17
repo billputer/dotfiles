@@ -78,6 +78,7 @@ alias sco='svn co'
 alias sup='svn up'
 alias sci='svn ci -m'
 alias saa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
+alias svnclean="svn status --no-ignore | grep '^\?' | sed 's/^\?      //'  | xargs rm -rf"
 
 
 # Red STDERR
