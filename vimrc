@@ -27,8 +27,8 @@ set formatoptions=qrn1
 
 let mapleader = ","
 
-"nnoremap / /\v
-"vnoremap / /\v
+nnoremap / /\v
+vnoremap / /\v
 
 " map ,<space> to clear command line
 nnoremap <leader><space> :noh<cr>
@@ -175,3 +175,31 @@ if has("autocmd")
         autocmd BufRead,BufNewFile *.install set filetype=php
     augroup END
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom commands
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" W strips trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" U converts file to unix style endings and saves
+nnoremap <leader>U :set ff=unix<cr>:wq<cr>
+
+" S sorts CSS properties alphabetically
+nnoremap <leader>S ?{<CR>jV/^\v\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+" V relects text that was just pasted in
+nnoremap <leader>v V`]
+
+" jj exits insert mode
+inoremap jj <ESC>
+
+" w opens a new vertical window and switches to it
+nnoremap <leader>w <C-w>v<C-w>l
+
+" mappings for moving between tabs easily
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
