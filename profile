@@ -65,7 +65,7 @@ alias sls='screen -list'
 # Server control
 alias df='df -kH'
 
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -I --exclude="*\.svn*"'
 
 alias tu='top -o cpu'
 alias tm='top -o vsize'
