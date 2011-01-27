@@ -17,6 +17,7 @@
 *.exe
 *.o
 *.so
+*.pyc
 
 # Packages #
 ############
@@ -39,7 +40,7 @@
 
 # OS generated files #
 ######################
-.DS_Store?
-ehthumbs.db
-Icon?
+.DS_Store
+thumbs.db
 Thumbs.db
+Icon?
