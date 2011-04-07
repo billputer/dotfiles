@@ -78,8 +78,8 @@ alias sco='svn co'
 alias sup='svn up'
 alias sci='svn ci -m'
 alias saa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
-alias slog="svn log --limit=7"
 alias scleann="svn status --no-ignore | grep '^\?' | sed 's/^\?      //'  | xargs rm -rf"
+alias slog="python ~/.files/bin/svnlog.py"
 
 
 # Red STDERR
