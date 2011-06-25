@@ -35,8 +35,6 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 if [[ $SYSTEM =~ $SYSTEM_OSX ]]; then
   # MacPorts
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-  # Python 2.7
-  export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 fi
 export PATH="/usr/local/bin:$PATH"
 
