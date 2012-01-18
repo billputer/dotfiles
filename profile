@@ -78,6 +78,8 @@ alias sci='svn ci -m'
 alias saa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
 alias scleann="svn status --no-ignore | grep '^\?' | sed 's/^\?      //'  | xargs rm -rf"
 alias slog="python ~/.files/bin/svnlog.py"
+alias smm='svn merge ^/www/branches/maint -c'
+alias sdif='svn diff'
 
 
 # Red STDERR
