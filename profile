@@ -16,8 +16,8 @@ export PAGER='less'
 
 # Set text editor
 if [[ $SYSTEM =~ $SYSTEM_OSX ]]; then
-  export EDITOR='mate'
-  export VISUAL='mate'
+  export EDITOR='subl --new-window &'
+  export VISUAL='subl --new-window'
 elif [[ $SYSTEM =~ $SYSTEM_NIX ]]; then
   export EDITOR='vim'
   export VISUAL='vim'
