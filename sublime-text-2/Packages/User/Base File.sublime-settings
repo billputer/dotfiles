@@ -2,4 +2,7 @@
 // are overridden in turn by file type specific settings. Place your settings
 // here, to ensure they're preserved when upgrading.
 {
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"highlight_modified_tabs": true
 }
+

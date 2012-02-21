@@ -1,6 +1,10 @@
+# ssh ignores
 ssh/*rsa
 ssh/*dsa
 ssh/*pub
 ssh/known_hosts
 ssh/authorized_keys
 ssh/authorized_keys2
+
+# sublime text ignores
+Session.sublime_session
