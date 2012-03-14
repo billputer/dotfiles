@@ -1,0 +1,9 @@
+{
+	//"color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
+	"draw_white_space": "all",
+	"highlight_modified_tabs": true,
+	"indent_subsequent_lines": true,
+	"tab_size": 2,
+	"theme": "Default.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
