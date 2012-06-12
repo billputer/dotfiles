@@ -40,7 +40,7 @@ export PATH="/usr/local/bin:$PATH"
 
 # RubyGems
 export PATH=~/.gem/ruby/1.8/bin:$PATH
-export RUBYOPT=rubygems 
+export RUBYOPT=rubygems
 
 
 
@@ -79,8 +79,11 @@ alias saa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
 alias scleann="svn status --no-ignore | grep '^\?' | sed 's/^\?      //'  | xargs rm -rf"
 alias slog="python ~/.files/bin/svnlog.py"
 alias smm='svn merge ^/www/branches/maint -c'
+alias smf='svn merge ^/www/branches/factory -c'
 alias sdif='svn diff'
 
+# horse ebooks
+alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; done;"
 
 # Red STDERR
 # rse <command string>
