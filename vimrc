@@ -20,7 +20,7 @@ set showmatch
 
 " wrapping options
 set wrap
-set formatoptions=qrn1
+set formatoptions=qn1
 " todo: enclose this in in a guard
 " set colorcolumn=85
 
