@@ -50,3 +50,8 @@ task :setup do
     FileUtils.symlink(from, to)
   end
 end
+
+
+# todo: add teh following commands
+# ln -s ~/.files/sublime-text-2/ ~/Library/Application Support/Sublime\ Text\ 2
+# git config --global core.excludesfile ~/.gitignore
