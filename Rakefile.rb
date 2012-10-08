@@ -6,7 +6,7 @@ desc 'Installs dotfiles from this distribution for the first time'
 task :setup do
     
   files = Dir['*'] # Get all the files
-  files = files.reject {|f| f =~ /^(Rakefile|README)/i}
+  files = files.reject {|f| f =~ /^(Rakefile|README|profile.local)/i}
   files = files.map { |file| File.join( File.dirname(File.expand_path(__FILE__)), file ) } # Finally, create an absolute path from our working directory
   
   puts "Linking in $HOME/"
