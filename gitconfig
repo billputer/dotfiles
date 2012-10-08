@@ -23,4 +23,5 @@
   out = log origin..HEAD  
   
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
+  autocrlf = input
