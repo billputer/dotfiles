@@ -33,10 +33,10 @@ if [[ $SYSTEM =~ $SYSTEM_OSX ]]; then
 fi
 export PATH="/usr/local/bin:$PATH"
 
-# RubyGems
-export PATH=~/.gem/ruby/1.8/bin:$PATH
-export RUBYOPT=rubygems
-
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 
 
