@@ -28,8 +28,8 @@ alias e='edit'
 
 # Mac specific PATH
 if [[ $SYSTEM =~ $SYSTEM_OSX ]]; then
-  # MacPorts
-  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  # HomeBrew
+  export PATH=/usr/local/sbin:$PATH
 fi
 export PATH="/usr/local/bin:$PATH"
 
