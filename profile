@@ -38,6 +38,8 @@ PATH=$PATH:$HOME/.rvm/bin
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# add npm binaries to path
+export PATH="/usr/local/share/npm/bin:$PATH"
 
 
 # Aliases
