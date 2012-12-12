@@ -41,6 +41,8 @@ PATH=$PATH:$HOME/.rvm/bin
 # add npm binaries to path
 export PATH="/usr/local/share/npm/bin:$PATH"
 
+# add Heroku Toolbelt to path
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # Aliases
 alias ll='ls -l'
