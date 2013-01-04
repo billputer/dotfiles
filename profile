@@ -18,7 +18,7 @@ export PAGER='less'
 if [[ $SYSTEM =~ $SYSTEM_OSX ]]; then
   export EDITOR='subl --new-window'
   export VISUAL='subl --new-window'
-elif [[ $SYSTEM =~ $SYSTEM_NIX ]]; then
+else
   export EDITOR='vim'
   export VISUAL='vim'
 fi
