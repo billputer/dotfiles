@@ -1,6 +1,8 @@
 #
 # slate configuration
 #
+# https://github.com/jigish/slate
+#
 
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
