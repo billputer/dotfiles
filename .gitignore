@@ -7,4 +7,5 @@ ssh/authorized_keys
 ssh/authorized_keys2
 
 # sublime text ignores
-Session.sublime_session
+sublime-text-2/Backup
+sublime-text-2/Settings
