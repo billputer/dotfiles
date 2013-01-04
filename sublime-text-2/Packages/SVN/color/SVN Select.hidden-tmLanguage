@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>SVN Edit</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>comment.svn</string>
+			<key>begin</key>
+			<string>(?=UNREGISTERED: )|Working copy: </string>
+			<key>end</key>
+			<string>^================================================================================$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>comment.block.documentation.svn keyword.other.svn</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^Remote status: (updates available)$</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>comment.block.documentation.svn keyword.other.svn</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(UNREGISTERED: Please visit http://sublime.wbond.net/svn)$</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>commit.status.svn</string>
+			<key>begin</key>
+			<string>(?&lt;=================================================================================)$</string>
+			<key>end</key>
+			<string>(?=xxxxxxxx)12345678</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.svn</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>string.svn</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>^        ([ ACDIMRX\?!~][ CM][ L][ +][ SX][ K][ C])(.*)$</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>text.svn</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.function.svn</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>text.svn</string>
+								</dict>
+								<key>4</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.control.svn</string>
+								</dict>
+								<key>5</key>
+								<dict>
+									<key>name</key>
+									<string>string.svn</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>^(\[)([x ])(\]     )([ ACDIMRX\?!~][ CM][ L][ +][ SX][ K][ C])(.*)$</string>
+							<key>name</key>
+							<string>selectable.status.svn</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		
+	</array>
+	<key>scopeName</key>
+	<string>commit.svn</string>
+	<key>uuid</key>
+	<string>AEF0B9C9-7DD0-4FA9-A10D-D1088B05E577</string>
+</dict>
+</plist>

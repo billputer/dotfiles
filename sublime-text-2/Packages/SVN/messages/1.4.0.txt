@@ -1,0 +1,36 @@
+Sublime SVN 1.4.0 Changelog:
+
+New Features
+ - Added support for UNC/samba paths on Windows
+
+ - Added code to unfocus and refocus on the current buffer after a
+   Revert command is executed so that the built-in Sublime Text file refresh
+   dialog is presented to the user
+
+ - Added the "Unlock Interactive" command
+
+ - If the 'Commit" command is executed, but no files have been modified and one
+   or more files is locked, the new "Unlock Interative" command is executed
+   instead
+
+Bug Fixes
+ - Added code to handle broken output of SVN on windows when showing logs and
+   file listings for non-ASCII file paths on machines with non-English locales
+
+ - Added error checking for the "svn_binary_path" setting
+
+ - Fixed encoding errors when a password prompted is dismissed without any input
+
+ - Fixed multiple authentication hangs on Windows that could cause "svn.exe"
+   processes to be spawned, but never terminated
+
+ - Fixed "svn://" protocol repository URLs on Windows when the username and
+   password are embedded in the URL
+
+ - Fixed a bug where failed lock attempts would be reported as successful
+
+ - Fixed a bug where the user would not be notified if another user already had
+   a lock on a file
+
+ - Fixed the "Commit" dialog to not show a checkbox next to paths that have no
+   modifications, but are locked

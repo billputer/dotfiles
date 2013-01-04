@@ -1,0 +1,21 @@
+Sublime SVN 1.3.0 Changelog:
+
+** Note **
+ - The "Update" command no longer by default updates externals. To update
+   externals as well, please run "Update, Including Externals" from the "Other"
+   submenu
+
+New Features
+ - Added support for svn+ssh:// repositories on Linux and OS X
+ - Added the "hide_unversioned_in_commit" setting
+ - Added the "Diff, Remote" commands under the "Other" submenu
+
+Bug Fixes
+ - Fixed handling of non-ASCII file paths and UTF-8 content in diff output on
+   Windows machines
+
+ - Added the MacPorts and WANdisco default install paths to the standard search
+   path for OS X users to help prevent errors complaining about using 
+   the v1.6 binary against a v1.7 working copy
+
+ - Added a check to ensure Linux users have the en_US.UTF-8 locale installed

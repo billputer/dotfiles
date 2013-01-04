@@ -1,0 +1,27 @@
+Thanks for installing Sublime SVN! Below are some quick notes to get you
+started with the plugin. Please see http://wbond.net/sublime_packages/svn for
+the full documentation.
+
+
+There are two interfaces to use:
+1. The Command Palette
+
+   All commands are available here. To see the commands that are applicable
+   to the current file, folder or working copy, look for the "Show Applicable"
+   commands.
+
+   The command palette is opened by Ctrl+Shift+P on Windows/Linux and
+   Cmd+Shift+P on OS X.
+
+2. Menus
+
+   The side bar and editor context menus include basic commands.
+
+
+Support
+----
+
+To learn more about the features and settings, please visit
+http://wbond.net/sublime_packages/svn.
+
+If you are having trouble, please contact me at support@wbond.net.

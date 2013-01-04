@@ -1,0 +1,21 @@
+[
+	{ "caption": "-" },
+	{
+		"caption": "SVN",
+		"children":
+		[
+			{ "caption": "Checkout…", "command": "svn_menu_checkout" },
+			{ "caption": "Update (Folder)", "command": "svn_folder_update" },
+			{ "caption": "Status (Folder)", "command": "svn_folder_status" },
+			{ "caption": "Diff (Folder)", "command": "svn_folder_diff" },
+			{ "caption": "Commit (Folder)…", "command": "svn_folder_commit" },
+			{ "caption": "Applicable Folder Commands…", "command": "svn_command_filter", "args": {"force_folder": true} },
+			{ "caption": "-" },
+			{ "caption": "Update (File)", "command": "svn_update" },
+			{ "caption": "Status (File)", "command": "svn_status" },
+			{ "caption": "Diff (File)", "command": "svn_diff" },
+			{ "caption": "Commit (File)…", "command": "svn_commit" },
+			{ "caption": "Applicable File Commands…", "command": "svn_command_filter" }
+		]
+	}
+]

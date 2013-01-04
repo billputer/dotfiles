@@ -1,0 +1,25 @@
+[
+	{ "caption": "-" },
+	{
+		"caption": "SVN",
+		"children":
+		[
+			{ "caption": "Look for SVN Working Copy - Try Again in a Second", "command": "svn_finding_working_copy", "args": {"paths": []} },
+			{ "caption": "Upgrade to v1.7 Working Copy Format", "command": "svn_upgrade", "args": {"paths": []} },
+			{ "caption": "Checkout…", "command": "svn_menu_checkout", "args": {"paths": []} },
+			{ "caption": "Update", "command": "svn_folder_update", "args": {"dirs": []} },
+			{ "caption": "Update", "command": "svn_update", "args": {"files": []} },
+			{ "caption": "-" },
+			{ "caption": "Status", "command": "svn_folder_status", "args": {"dirs": []} },
+			{ "caption": "Diff", "command": "svn_folder_diff", "args": {"dirs": []} },
+			{ "caption": "Commit…", "command": "svn_folder_commit", "args": {"dirs": []} },
+			{ "caption": "Status", "command": "svn_status", "args": {"files": []} },
+			{ "caption": "Diff", "command": "svn_diff", "args": {"files": []} },
+			{ "caption": "Commit…", "command": "svn_commit", "args": {"files": []} },
+			{ "caption": "-" },
+			{ "caption": "Applicable Commands…", "command": "svn_command_filter", "args": {"files": []}},
+			{ "caption": "Applicable Commands…", "command": "svn_command_filter", "args": {"dirs": []}}
+		]
+	},
+	{ "caption": "-" }
+]

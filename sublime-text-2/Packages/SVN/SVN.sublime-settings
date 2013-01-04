@@ -1,0 +1,50 @@
+{
+	// How many log entries to show by default. When looking at the SVN
+	// buffer viewing a log, you can use the command palette to
+	// "SVN: Edit Last Command" and change the number of log entries.
+	"log_entries": 20,
+
+	// If debug output should be printed to the console
+	"debug": false,
+	//"debug_log_file": "C:\\Users\\Username\\Desktop\\sublime_svn_debug.txt",
+	//"debug_log_file": "/Users/username/Desktop/sublime_svn_debug.txt",
+	//"debug_log_file": "/home/username/Desktop/sublime_svn_debug.txt",
+
+	// How frequently (in minutes) Sublime SVN should check for new revisions
+	// to working copies that have been detected during the current editing
+	// session. When updates are detected, an output panel will be shown with
+	// the list of working copies.
+	// A value of 0 disables this functionality.
+	"auto_update_check_frequency": 2,
+
+	// This allows hiding commands from the command palette that may never be
+	// used. Options include: "properties", "locking", "changelists"
+	"hide_commands": ["locking", "changelists"],
+
+	// If unversioned files should be hidden in the commit view
+	"hide_unversioned_in_commit": false,
+
+	// The default URL to use when performing an SVN checkout.
+	// Setting this to false will cause the plugin to remember the
+	// last value you entered.
+	"default_checkout_url": false,
+
+	// The default local path to check out a repository to. If this is set to
+	// false then the last checkout folder is remembered. If no checkouts have
+	// been performed yet, then the OS-specific Desktop folder is used.
+	"default_checkout_folder": false
+	//,"default_checkout_folder": "/home/user/Desktop"
+	//,"default_checkout_folder": "C:\\Users\\User\\Desktop"
+	//,"default_checkout_folder": "/Users/User/Desktop"
+
+	// The command line binary for an external diff tool. This command will
+	// be passed to the svn binary via the --diff-cmd flag
+	//,"diff_command": "/usr/bin/meld"
+	//,"diff_command": "C:\\Program Files (x86)\\WinMerge\\WinMergeU.exe"
+	//,"diff_command": "/usr/bin/opendiff"
+
+	// The path to the version of SVN to use
+	// This setting has no effect on Windows since custom-compiled
+	// versions of SVN 1.6 and 1.7 are bundled to handle specific bugs
+	//,"svn_binary_path": "/usr/bin/svn"
+}

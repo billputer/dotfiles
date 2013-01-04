@@ -1,0 +1,92 @@
+[
+	{ "keys": ["<character>"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "comment.svn" }
+		]
+	},
+	{ "keys": ["backspace"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "comment.svn" }
+		]
+	},
+	{ "keys": ["delete"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "comment.svn" }
+		]
+	},
+	{ "keys": ["enter"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "comment.svn" }
+		]
+	},
+	{ "keys": ["enter"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "comment.svn" }
+		]
+	},
+	{ "keys": ["<character>"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "status.svn" }
+		]
+	},
+	{ "keys": ["backspace"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "status.svn" }
+		]
+	},
+	{ "keys": ["enter"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "status.svn" }
+		]
+	},
+	{ "keys": ["delete"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "status.svn" }
+		]
+	},
+	{ "keys": ["tab"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": ["<character>"], "command": "noop", "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": [" "], "command": "svn_file_pick", "args": {"toggle": true}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": ["enter"], "command": "svn_file_pick", "args": {"toggle": true}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": ["y"], "command": "svn_file_pick", "args": {"state": "on"}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": ["x"], "command": "svn_file_pick", "args": {"state": "on"}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": ["n"], "command": "svn_file_pick", "args": {"state": "off"}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": ["backspace"], "command": "svn_file_pick", "args": {"state": "off"}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	},
+	{ "keys": ["delete"], "command": "svn_file_pick", "args": {"state": "off"}, "context":
+		[
+			{ "key": "selector", "operator": "equal", "operand": "commit.status.svn" }
+		]
+	}
+]

@@ -1,0 +1,316 @@
+[
+    {
+        "caption": "SVN: Checkout…",
+        "command": "svn_checkout"
+    },
+
+    {
+        "caption": "SVN: Show Applicable Working Copy Commands",
+        "command": "svn_applicable_wc_commands"
+    },
+    {
+        "caption": "SVN: Show Applicable Folder Commands",
+        "command": "svn_applicable_folder_commands"
+    },
+    {
+        "caption": "SVN: Show Applicable File Commands",
+        "command": "svn_applicable_file_commands"
+    },
+
+    {
+        "caption": "SVN: Add, Interactive…",
+        "command": "svn_add_interactive"
+    },
+    {
+        "caption": "SVN: Branch…",
+        "command": "svn_branch"
+    },
+    {
+        "caption": "SVN: Cleanup",
+        "command": "svn_cleanup"
+    },
+    {
+        "caption": "SVN: Commit…",
+        "command": "svn_wc_commit"
+    },
+    {
+        "caption": "SVN: Custom Command…",
+        "command": "svn_custom"
+    },
+    {
+        "caption": "SVN: Delete, Interactive…",
+        "command": "svn_delete_interactive"
+    },
+    {
+        "caption": "SVN: Diff",
+        "command": "svn_wc_diff"
+    },
+    {
+        "caption": "SVN: Diff, Custom Revisions…",
+        "command": "svn_wc_custom_diff"
+    },
+    {
+        "caption": "SVN: Diff, Remote",
+        "command": "svn_wc_remote_diff"
+    },
+    {
+        "caption": "SVN: Edit Last Command…",
+        "command": "svn_rerun"
+    },
+    {
+        "caption": "SVN: Info",
+        "command": "svn_wc_info"
+    },
+    {
+        "caption": "SVN: Log",
+        "command": "svn_wc_log"
+    },
+    {
+        "caption": "SVN: Merge…",
+        "command": "svn_merge"
+    },
+    {
+        "caption": "SVN: Relocate…",
+        "command": "svn_relocate"
+    },
+    {
+        "caption": "SVN: Resolve Tree Conflict, Interactive…",
+        "command": "svn_wc_resolve_tree_conflict"
+    },
+    {
+        "caption": "SVN: Revert, Interactive…",
+        "command": "svn_revert_interactive"
+    },
+    {
+        "caption": "SVN: Status",
+        "command": "svn_wc_status"
+    },
+    {
+        "caption": "SVN: Switch…",
+        "command": "svn_switch"
+    },
+    {
+        "caption": "SVN: Unlock, Interactive…",
+        "command": "svn_unlock_interactive"
+    },
+    {
+        "caption": "SVN: Update",
+        "command": "svn_wc_update"
+    },
+    {
+        "caption": "SVN: Update, Including Externals",
+        "command": "svn_wc_update_including_externals"
+    },
+    {
+        "caption": "SVN: Upgrade to v1.7 Working Copy Format",
+        "command": "svn_upgrade"
+    },
+
+
+    {
+        "caption": "SVN: (Folder) Add",
+        "command": "svn_folder_add"
+    },
+    {
+        "caption": "SVN: (Folder) Copy",
+        "command": "svn_folder_copy"
+    },
+    {
+        "caption": "SVN: (Folder) Commit",
+        "command": "svn_folder_commit"
+    },
+    {
+        "caption": "SVN: (Folder) Delete",
+        "command": "svn_folder_delete"
+    },
+    {
+        "caption": "SVN: (Folder) Diff",
+        "command": "svn_folder_diff"
+    },
+    {
+        "caption": "SVN: (Folder) Diff, Custom Revisions…",
+        "command": "svn_folder_custom_diff"
+    },
+    {
+        "caption": "SVN: (Folder) Diff, Remote",
+        "command": "svn_folder_remote_diff"
+    },
+    {
+        "caption": "SVN: (Folder) Ignore",
+        "command": "svn_folder_ignore"
+    },
+    {
+        "caption": "SVN: (Folder) Info",
+        "command": "svn_folder_info"
+    },
+    {
+        "caption": "SVN: (Folder) Log",
+        "command": "svn_folder_log"
+    },
+    {
+        "caption": "SVN: (Folder) Move…",
+        "command": "svn_folder_move"
+    },
+    {
+        "caption": "SVN: (Folder) Properties…",
+        "command": "svn_folder_properties"
+    },
+    {
+        "caption": "SVN: (Folder) Resolve Property Conflict, Interactive…",
+        "command": "svn_folder_resolve_property_conflict"
+    },
+    {
+        "caption": "SVN: (Folder) Resolve Tree Conflict, Interactive…",
+        "command": "svn_folder_resolve_tree_conflict"
+    },
+    {
+        "caption": "SVN: (Folder) Revert",
+        "command": "svn_folder_revert"
+    },
+    {
+        "caption": "SVN: (Folder) Status",
+        "command": "svn_folder_status"
+    },
+    {
+        "caption": "SVN: (Folder) Unignore",
+        "command": "svn_folder_unignore"
+    },
+    {
+        "caption": "SVN: (Folder) Update",
+        "command": "svn_folder_update"
+    },
+    {
+        "caption": "SVN: (Folder) Update, Including Externals…",
+        "command": "svn_folder_update_including_externals"
+    },
+
+
+    {
+        "caption": "SVN: (File) Add",
+        "command": "svn_add"
+    },
+    {
+        "caption": "SVN: (File) Add to Changelist…",
+        "command": "svn_changelist_add"
+    },
+    {
+        "caption": "SVN: (File) Blame",
+        "command": "svn_blame"
+    },
+    {
+        "caption": "SVN: (File) Commit",
+        "command": "svn_commit"
+    },
+    {
+        "caption": "SVN: (File) Copy",
+        "command": "svn_copy"
+    },
+    {
+        "caption": "SVN: (File) Diff",
+        "command": "svn_diff"
+    },
+    {
+        "caption": "SVN: (File) Diff, Custom Revisions…",
+        "command": "svn_custom_diff"
+    },
+    {
+        "caption": "SVN: (File) Diff, Remote",
+        "command": "svn_remote_diff"
+    },
+    {
+        "caption": "SVN: (File) Delete",
+        "command": "svn_delete"
+    },
+    {
+        "caption": "SVN: (File) Ignore",
+        "command": "svn_ignore"
+    },
+    {
+        "caption": "SVN: (File) Info",
+        "command": "svn_info"
+    },
+    {
+        "caption": "SVN: (File) Lock",
+        "command": "svn_lock"
+    },
+    {
+        "caption": "SVN: (File) Log",
+        "command": "svn_log"
+    },
+    {
+        "caption": "SVN: (File) Move…",
+        "command": "svn_move"
+    },
+    {
+        "caption": "SVN: (File) Properties",
+        "command": "svn_file_properties"
+    },
+    {
+        "caption": "SVN: (File) Remove from Changelist",
+        "command": "svn_changelist_remove"
+    },
+    {
+        "caption": "SVN: (File) Resolve, Interactive…",
+        "command": "svn_resolve"
+    },
+    {
+        "caption": "SVN: (File) Resolve Property Conflict, Interactive…",
+        "command": "svn_resolve_property_conflict"
+    },
+    {
+        "caption": "SVN: (File) Resolve Tree Conflict, Interactive…",
+        "command": "svn_resolve_tree_conflict"
+    },
+    {
+        "caption": "SVN: (File) Revert",
+        "command": "svn_revert"
+    },
+    {
+        "caption": "SVN: (File) Status",
+        "command": "svn_status"
+    },
+    {
+        "caption": "SVN: (File) Unignore",
+        "command": "svn_unignore"
+    },
+    {
+        "caption": "SVN: (File) Unlock",
+        "command": "svn_unlock"
+    },
+    {
+        "caption": "SVN: (File) Update",
+        "command": "svn_update"
+    },
+
+
+    {
+        "caption": "Preferences: SVN Settings",
+        "command": "open_file", "args":
+        {
+            "file": "${packages}/SVN/SVN.sublime-settings"}
+        },
+    {
+        "caption": "Preferences: SVN Key Bindings",
+        "command": "open_file", "args":
+        {
+            "file": "${packages}/SVN/Default (Windows).sublime-keymap",
+            "platform": "Windows"
+        }
+    },
+    {
+        "caption": "Preferences: SVN Key Bindings",
+        "command": "open_file", "args":
+        {
+            "file": "${packages}/SVN/Default (OSX).sublime-keymap",
+            "platform": "OSX"
+        }
+    },
+    {
+        "caption": "Preferences: SVN Key Bindings",
+        "command": "open_file", "args":
+        {
+            "file": "${packages}/SVN/Default (Linux).sublime-keymap",
+            "platform": "Linux"
+        }
+    }
+]

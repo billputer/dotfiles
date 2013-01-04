@@ -1,9 +1,40 @@
 {
-	//"color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
+	"default_line_ending": "unix",
 	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"fallback_encoding": "UTF-8",
+	"font_size": 15.0,
 	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Groovy",
+		"LaTeX",
+		"ASP",
+		"Java",
+		"D",
+		"Clojure",
+		"Scala",
+		"C#",
+		"Vintage",
+		"YAML",
+		"Haskell",
+		"Lisp",
+		"OCaml",
+		"Graphviz",
+		"Lua",
+		"Objective-C",
+		"R",
+		"Matlab",
+		"SVN",
+		"Go",
+		"Erlang"
+	],
 	"indent_subsequent_lines": true,
+	"shift_tab_unindent": true,
 	"tab_size": 2,
 	"theme": "Default.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": false,
+	"use_tab_stops": true
 }

@@ -1,0 +1,2 @@
+sublimesvn/dpapi.pyc is from jaraco.windows and is written by Jason R. Coombs.
+It is licensed under an MIT-style permissive license <http://www.opensource.org/licenses/mit-license.php>.

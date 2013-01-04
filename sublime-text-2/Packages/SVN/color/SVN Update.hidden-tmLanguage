@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>SVN Update</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>comment.svn</string>
+			<key>begin</key>
+			<string>(?=UNREGISTERED: )|Working copy: </string>
+			<key>end</key>
+			<string>^================================================================================$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>comment.block.documentation.svn keyword.other.svn</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(UNREGISTERED: Please visit http://sublime.wbond.net/svn)$</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.svn</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.svn</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^([ ADUCGER][ ADUCGER][ B][ C]) (.*)$</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.svn</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.svn</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.svn</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^(Updating |Fetching external item into )('.*?')(:?)\s*$</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.svn</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^(?:Updated to|At|External at) revision (\d+)\.$</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>update.svn</string>
+	<key>uuid</key>
+	<string>AE06CDB6-8BD1-4B5D-BD60-FAE82EFBD917</string>
+</dict>
+</plist>

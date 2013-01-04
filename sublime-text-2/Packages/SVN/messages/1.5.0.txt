@@ -1,0 +1,60 @@
+Sublime SVN 1.5.0 Changelog:
+
+** Backwards Compatibility Breaks **
+ - Some of the commands were renamed, which may require you to update your
+   key bindings. The following is a mapping of the old to new names:
+     svn_commit      -> svn_folder_commit
+     svn_file_commit -> svn_commit
+     svn_diff        -> svn_folder_diff
+     svn_file_diff   -> svn_diff
+     svn_status      -> svn_folder_status
+     svn_file_status -> svn_status
+
+ - The menu structure and command palette changed, so various aspects of the
+   interface will look a little different
+
+New Features
+ - Added "log_entries" setting to control the default number of log entries
+   to display when running the "Log" command
+   
+ - SVN 1.6 and 1.7 are now both supported and bundled for Windows. This means
+   1.6 working copies will no longer be automatically upgraded to 1.7!
+
+ - Restructured the command palette so all commands are available without using
+   "SVN: Other...". However, all commands are always shown when the current
+   file is inside of an SVN working copy.
+
+   The new "SVN: Show Applicable" commands will filter the list to show only
+   the commands that are applicable in the current state. This was necessary
+   due to performance issues.
+
+ - Added enhanced error handling for Subversion being missing (such as on
+   OS X 10.8 Mountain Lion)
+
+ - Added enhanced error handling for situations where Sublime SVN detects the
+   SVN 1.6 on your machine and you are editing an SVN 1.7 working copy
+
+ - By default the package now remembers your last checkout URL and destination
+   if you have not set the "default_checkout_url" and "default_checkout_folder"
+   settings.
+
+ - If the checkout destination parent folder does not exist, the user will be
+   prompted to create it instead of displaying an error.
+
+Bug Fixes
+ - Compiled and bundled custom versions of SVN 1.6 and 1.7 to finally fix
+   the locale issues for non-English users on Windows
+
+ - Fixed locale issues that would cause problems for some Linux users
+
+ - Removed folder monitoring (due to performance issues), which resolves the
+   inotify issues some Linux users were having, and other performance issues
+   especially for users with large working copies
+
+ - Fixed handling of property conflict on folders
+
+ - Fixed handling of merge conflicts and related files
+
+ - Enhanced the plugin to prompt for a login and password if the user is trying
+   to perform operations that require write access to the repository, but
+   the current credentials only provide read access

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>SVN Log</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>comment.svn</string>
+			<key>begin</key>
+			<string>(?=UNREGISTERED: )|Working copy: </string>
+			<key>end</key>
+			<string>^================================================================================$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>comment.block.documentation.svn keyword.other.svn</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^Remote status: (updates available)$</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>comment.block.documentation.svn keyword.other.svn</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^(UNREGISTERED: Please visit http://sublime.wbond.net/svn)$</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>log.svn</string>
+			<key>begin</key>
+			<string>(?&lt;================================================================================)\n</string>
+			<key>end</key>
+			<string>(?=xxxxxxxx)12345678</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>constant.numeric.svn</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>comment.svn</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.svn</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>comment.svn</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>comment.svn</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>comment.svn</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>comment.svn</string>
+						</dict>
+						<key>8</key>
+						<dict>
+							<key>name</key>
+							<string>comment.svn</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*(r\d+) (\|) (.*?) (\|) (\d{4}-\d{2}-\d{2}.*?) (\|) (\d+) (lines?)</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>comment.svn</string>
+					<key>match</key>
+					<string>^----------+$</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>support.constant.svn</string>
+					<key>match</key>
+					<string>^Changed paths:$</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.svn</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>string.svn</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>comment.svn</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s+([AMDR])\s+(/.*?)(\(from /.*:\d+\))?$</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>svn</string>
+	<key>uuid</key>
+	<string>ACE45EA8-22E4-4341-9180-9C2DA20021D0</string>
+</dict>
+</plist>

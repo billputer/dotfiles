@@ -1,0 +1,38 @@
+Sublime SVN 1.1.0 Changelog:
+
+** Note **
+ - On Windows, all SVN working copies will be automatically upgraded to the
+   new format for Subversion 1.7. This may require you to upgrade other
+   SVN clients, such as TortoiseSVN.
+
+New Features
+ - Added Branch/Merge support for repositories using a structure where multiple
+   projects are contained within a repository and each has a trunk and branches:
+    /project1/trunk
+    /project1/branches
+    /project2/trunk
+    /project2/branches
+
+Bug Fixes
+ - Fixed a bug with Commit buffers not getting syntax highlighting, and
+   consequently making it impossible to commit
+
+ - Fixed a warning about the plugin running too slow
+
+ - Added support for nested SVN repositories that do not use svn:externals
+
+ - Fixed handling of situation where the user's credentials can not list
+   the files and folders in the repository root
+
+ - Status and Commit commands alway work on the current folder or the whole
+   working copy, and never on an individual file
+
+ - Fixed Status and Commit commands to properly work on sub-folders
+
+ - It is now possible to switch a repository that contains an external
+
+ - Fixed bugs with filesystem monitoring so that there should no longer be
+   notices about no files to commit when there really are
+
+ - Added a work-around for an issue that could cause the plugin to not load
+   when it is first installed
