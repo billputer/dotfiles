@@ -31,15 +31,15 @@ do
 
   # backup existing files
   if [[ -e $TO && ! -h $TO ]]; then
-    echo "\t$TO exists, moved to $BACKUP_DIR/."
+    echo -e "\t$TO exists, moved to $BACKUP_DIR/."
     mkdir -p $BACKUP_DIR
     mv $TO $BACKUP_DIR/
   fi;
 
   if [[ -h $TO ]]; then
-    echo "\t$TO exists, as a symlink, no action."
+    echo -e "\t$TO exists, as a symlink, no action."
   else
-    echo "\tLink added - $FROM -> $TO"
+    echo -e "\tLink added - $FROM -> $TO"
     ln -s $FROM $TO
   fi;
 
@@ -53,8 +53,8 @@ FROM=$CURRENT_DIRECTORY/profile.local
 TO=$HOME/.profile.local
 
 if [[ -e $TO ]]; then
-  echo "\t$TO already exists, no action."
+  echo -e "\t$TO already exists, no action."
 else
-  echo "\tCopying - $FROM $TO"
+  echo -e "\tCopying - $FROM $TO"
   cp $FROM $TO
 fi
