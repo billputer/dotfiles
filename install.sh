@@ -6,6 +6,7 @@
 
 CURRENT_DIRECTORY="$( cd "$( dirname "$0" )" && pwd )"
 FILES="
+  bin
   bash_profile
   gitconfig
   gitignore
@@ -14,10 +15,12 @@ FILES="
   hushlogin
   profile
   slate
+  vim
   vimrc
+  zsh
   zshrc
 "
-BACKUP_DIR=dotfiles_backup-$(date +"%Y%m%d_%H%M%S")
+BACKUP_DIR=backup-$(date +"%Y%m%d_%H%M%S")
 
 echo "Linking dotfiles in $HOME/"
 for file in $FILES
