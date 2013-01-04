@@ -1,7 +1,11 @@
-Run `rake` to install:
+Run `install.sh` to install:
 
-    $ rake
+    $ ./install.sh
 
 Run before using home/.gitignore:
 
     $ git config --global core.excludesfile ~/.gitignore
+
+Run `ns-defaults.sh` to set Mac OS X defaults:
+
+    $ ./ns-defaults.sh
