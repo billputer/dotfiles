@@ -13,6 +13,7 @@ FILES="
   gvimrc
   hgrc
   hushlogin
+  oh-my-zsh
   profile
   slate
   vim
