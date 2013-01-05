@@ -1,16 +1,19 @@
 [user]
-	name = Bill Wiens
-	email = billwiens@gmail.com
+  name = Bill Wiens
+  email = billwiens@gmail.com
+
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+
 [merge]
-	summary = true
+  summary = true
+
 [github]
-	user = billputer
-	token = 3e68338ce700ebf093911abf6f31b18b
+  user = billputer
+
 [alias]
   st = status
   ci = commit
