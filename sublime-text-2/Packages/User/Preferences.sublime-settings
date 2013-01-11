@@ -25,9 +25,9 @@
 		"Objective-C",
 		"R",
 		"Matlab",
-		"SVN",
 		"Go",
-		"Erlang"
+		"Erlang",
+		"SVN"
 	],
 	"indent_subsequent_lines": true,
 	"shift_tab_unindent": true,
