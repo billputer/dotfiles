@@ -43,19 +43,22 @@ layout 1monitor 'Google Chrome' ${full}
 layout 1monitor 'HipChat' ${full}
 layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} | ${center}
 layout 1monitor 'Microsoft Outlook'  ${full}
-layout 1monitor 'Sublime Text 2' ${lefthalf} ${mon-dell}
+layout 1monitor 'Sublime Text 2':REPEAT ${lefthalf}
+layout 1monitors 'Tweetbot' ${lefthalf}
 
 
-layout 2monitors 'Terminal':REPEAT,SORT_TITLE ${righthalf}
+layout 2monitors 'Terminal':REPEAT,SORT_TITLE ${righthalf} ${mon-dell}
 layout 2monitors 'Google Chrome' ${lefthalf}
 layout 2monitors 'HipChat' ${full} ${mon-laptop}
 layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} {mon-laptop} | ${center} ${mon-laptop}
 layout 2monitors 'Microsoft Outlook' ${full} ${mon-dell}
 layout 2monitors 'Sublime Text 2':REPEAT ${lefthalf} ${mon-dell}
+layout 2monitors 'Tweetbot' ${lefthalf} ${mon-dell}
 
 
-default 1monitor count:1
-default 2monitors count:2
+default 1monitor resolutions:${mon-laptop}
+default 2monitors resolutions:${mon-laptop};${mon-dell}
 
 # layout binding
 bind l:ctrl;alt;cmd  layout 2monitors
+bind l:shift;ctrl;alt;cmd  layout 1monitor
