@@ -36,3 +36,10 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correctall
 
 source $HOME/.profile
+
+
+# Fix issue where git autocompletion takes forever and eats cpu.
+# See http://superuser.com/questions/458906/zsh-tab-completion-of-git-commands-is-very-slow-how-can-i-turn-it-off
+__git_files () {
+  _wanted files expl 'local files' _files
+}
