@@ -39,6 +39,7 @@ bind e:cmd hint
 
 # Layouts
 layout 1monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf}
+layout 1monitor 'iTerm':REPEAT,SORT_TITLE ${righthalf}
 layout 1monitor 'Google Chrome' ${full}
 layout 1monitor 'HipChat' ${full}
 layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} | ${center}
@@ -48,6 +49,7 @@ layout 1monitors 'Tweetbot' ${lefthalf}
 
 
 layout 2monitors 'Terminal':REPEAT,SORT_TITLE ${righthalf} ${mon-dell}
+layout 2monitors 'iTerm':REPEAT,SORT_TITLE ${righthalf} ${mon-dell}
 layout 2monitors 'Google Chrome' ${lefthalf}
 layout 2monitors 'HipChat' ${full} ${mon-laptop}
 layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} {mon-laptop} | ${center} ${mon-laptop}
