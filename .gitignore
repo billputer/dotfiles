@@ -9,3 +9,4 @@ ssh/authorized_keys2
 # sublime text ignores
 sublime-text-2/Backup
 sublime-text-2/Settings
+.cache
