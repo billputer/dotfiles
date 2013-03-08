@@ -31,6 +31,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(cap git git-flow knife osx pip python svn vagrant)
 
+
 source $ZSH/oh-my-zsh.sh
 
 unsetopt correctall
@@ -43,3 +44,6 @@ source $HOME/.profile
 __git_files () {
   _wanted files expl 'local files' _files
 }
+
+# disables auto-completion of LDAP usernames
+unsetopt cdablevars
