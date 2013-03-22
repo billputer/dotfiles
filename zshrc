@@ -45,3 +45,9 @@ __git_files () {
 
 # disables auto-completion of LDAP usernames
 unsetopt cdablevars
+
+# history settings
+HISTFILE=~/.zsh_history
+HISTSIZE=9999
+SAVEHIST=9999
+setopt extendedhistory
