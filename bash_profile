@@ -12,6 +12,9 @@ export HISTFILESIZE=$HISTSIZE
 export HISTTIMEFORMAT="%Y-%m-%d %T "
 export INPUTRC='~/.inputrc'
 
+# append to the history file, don't overwrite it
+shopt -s histappend
+
 shopt -s cdspell
 
 # Tab complete for sudo
