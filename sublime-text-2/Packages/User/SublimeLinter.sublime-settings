@@ -159,7 +159,7 @@
         "rules-count": "warning",
         "shorthand": "warning",
         "star-property-hack": "warning",
-        "text-indent": "warning",
+        "text-indent": false,
         "underscore-property-hack": "warning",
         "unique-headings": "warning",
         "universal-selector": "warning",
