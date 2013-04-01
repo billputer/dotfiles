@@ -55,5 +55,6 @@
   autocrlf = input
   editor = subl -n -w
 
-[push]
-  default = simple
+# uncomment for git >= 1.8
+#[push]
+#  default = simple
