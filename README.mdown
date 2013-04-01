@@ -1,10 +1,31 @@
+General instructions
+==============================
+
+Clone repo (with submodules)
+
+    $ git clone git@github.com:billputer/dotfiles.git ~/.files --recurse-submodules
+
 Run `install.sh` to install:
 
     $ bash install.sh
 
-Run before using home/.gitignore:
+ZSH
+---
 
-    $ git config --global core.excludesfile ~/.gitignore
+Install ZSH:
+
+    $ sudo apt-get install zsh
+
+Switch shell to ZSH:
+
+    $ chsh -s /bin/zsh
+
+Alternatively:
+
+    $ sudo chsh -s /bin/zsh $USER
+
+OS X
+-----
 
 Run `ns-defaults.sh` to set Mac OS X defaults:
 
