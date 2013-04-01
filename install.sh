@@ -10,7 +10,6 @@ FILES="
   bash_profile
   gitconfig
   gitignore
-  gvimrc
   hgrc
   hushlogin
   oh-my-zsh
