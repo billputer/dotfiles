@@ -15,7 +15,7 @@ source $HOME/.profile.local
 export PAGER='less'
 
 # Set text editor
-if [[ $SYSTEM =~ $SYSTEM_OSX ]]; then
+if [[ $SYSTEM = $SYSTEM_OSX ]]; then
   export EDITOR='subl --new-window'
   export VISUAL='subl --new-window'
 else
@@ -27,7 +27,7 @@ alias edit=$EDITOR
 alias e='edit'
 
 # Mac specific PATH
-if [[ $SYSTEM =~ $SYSTEM_OSX ]]; then
+if [[ $SYSTEM = $SYSTEM_OSX ]]; then
   # HomeBrew
   export PATH=/usr/local/sbin:$PATH
 fi
