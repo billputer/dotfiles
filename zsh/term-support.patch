@@ -1,0 +1,17 @@
+diff --git a/lib/termsupport.zsh b/lib/termsupport.zsh
+index c056989..d4976aa 100644
+--- a/lib/termsupport.zsh
++++ b/lib/termsupport.zsh
+@@ -30,6 +30,8 @@ function omz_termsupport_preexec {
+   title "$CMD" "%100>...>${2:gs/%/%%}%<<"
+ }
+
+-autoload -U add-zsh-hook
+-add-zsh-hook precmd  omz_termsupport_precmd
+-add-zsh-hook preexec omz_termsupport_preexec
++if [ -f "/usr/share/zsh/functions/Zle/add-zsh-hook" ] ; then
++  autoload -U add-zsh-hook
++  add-zsh-hook precmd omz_termsupport_precmd
++  add-zsh-hook preexec omz_termsupport_preexec
++fi
++
