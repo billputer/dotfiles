@@ -3,7 +3,7 @@ General instructions
 
 Clone repo (with submodules)
 
-    $ git clone git@github.com:billputer/dotfiles.git ~/.files --recurse-submodules
+    $ git clone git@github.com:billputer/dotfiles.git ~/.files --recursive
 
 Run `install.sh` to install:
 
