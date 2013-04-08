@@ -146,21 +146,12 @@
                 {
                     "captures": {
                         "1": {
-                            "name": "entity.name.tag.unnumbered.textile"
+                            "name": "entity.name.tag.list.textile"
                         }
                     }, 
-                    "match": "^(\\*+)(\\([^)]*\\)|{[^}]*})*(\\s+|$)", 
+                    "match": "^([#\\*]+?)(\\([^)]*\\)|{[^}]*})*(\\s+|$)", 
                     "name": "markup.list.unnumbered.textile"
-                }, 
-                {
-                    "captures": {
-                        "1": {
-                            "name": "entity.name.tag.numbered.textile"
-                        }
-                    }, 
-                    "match": "^(#+)(\\([^)]*\\)|{[^}]*})*\\s+", 
-                    "name": "markup.list.numbered.textile"
-                }, 
+                },
                 {
                     "captures": {
                         "1": {
