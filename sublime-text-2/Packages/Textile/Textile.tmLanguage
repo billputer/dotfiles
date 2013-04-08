@@ -232,11 +232,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.textile</string>
+							<string>entity.name.tag.unnumbered.textile</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\*+(\([^)]*\)|{[^}]*})*(\s+|$)</string>
+					<string>^(\*+)(\([^)]*\)|{[^}]*})*(\s+|$)</string>
 					<key>name</key>
 					<string>markup.list.unnumbered.textile</string>
 				</dict>
@@ -246,11 +246,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.type.textile</string>
+							<string>entity.name.tag.numbered.textile</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^#+(\([^)]*\)|{[^}]*})*\s+</string>
+					<string>^(#+)(\([^)]*\)|{[^}]*})*\s+</string>
 					<key>name</key>
 					<string>markup.list.numbered.textile</string>
 				</dict>
