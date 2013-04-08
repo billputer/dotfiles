@@ -16,6 +16,9 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 echo "Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
+echo "Set Dock auto-hide delay"
+defaults write com.apple.dock autohide-delay 0
+
 echo "Make Dock icons of hidden applications translucent"
 defaults write com.apple.dock showhidden -bool true
 
