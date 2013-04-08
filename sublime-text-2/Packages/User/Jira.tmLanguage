@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>textile</string>
+	</array>
+	<key>name</key>
+	<string>Jira</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.list.textile</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Unnumbered lists</string>
+			<key>match</key>
+			<string>^([\*#])+(\([^)]*\)|{[^}]*})*(\s+|$)</string>
+			<key>name</key>
+			<string>markup.list.textile</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(^h[1-6]([&amp;lt;&amp;gt;=()]+)?)(\([^)]*\)|{[^}]*})*(\.)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.heading.textile</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.type.textile</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.heading.textile</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>^$</string>
+			<key>name</key>
+			<string>markup.heading.textile</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#inline</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>text.html.basic</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.textile</string>
+	<key>uuid</key>
+	<string>4a7e2c53-a452-47e9-9faf-e8e0e8a26605</string>
+</dict>
+</plist>
