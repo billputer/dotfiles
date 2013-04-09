@@ -7,7 +7,7 @@
     "name": "Textile", 
     "patterns": [
         {
-            "begin": "(^h[1-6]([<>=()]+)?)(\\([^)]*\\)|{[^}]*})*(\\.)", 
+            "begin": "(^h[1-6]([<>=()]+)?)(\\([^)]*\\)|{[^}]*})*(\\.)(.*)",
             "captures": {
                 "1": {
                     "name": "entity.name.tag.heading.textile"
@@ -17,8 +17,11 @@
                 }, 
                 "4": {
                     "name": "entity.name.tag.heading.textile"
+                },
+                "5": {
+                    "name": "string"
                 }
-            }, 
+            },
             "end": "^$", 
             "name": "markup.heading.textile", 
             "patterns": [
