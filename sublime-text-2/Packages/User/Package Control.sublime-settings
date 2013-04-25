@@ -8,6 +8,7 @@
 		"CoffeeScript",
 		"CSSLint",
 		"FileDiffs",
+		"INI",
 		"LineEndings",
 		"Package Control",
 		"Puppet",
