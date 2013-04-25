@@ -4,6 +4,7 @@
 	[
 		"AAAPackageDev",
 		"Alignment",
+		"ApacheConf.tmLanguage",
 		"CoffeeScript",
 		"CSSLint",
 		"FileDiffs",
