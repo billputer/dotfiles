@@ -24,6 +24,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# automatically correct mispelled directories when using cd
 shopt -s cdspell
 
 # Tab complete for sudo
@@ -31,9 +32,6 @@ complete -cf sudo
 
 #prevent overwriting files with cat
 set -o noclobber
-
-#stops ctrl+d from logging me out
-set -o ignoreeof
 
 #Treat undefined variables as errors
 set -o nounset
