@@ -8,11 +8,14 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
-# Shows app icons and background apps, spreads icons in the same place.
+# Window hinting
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
+config windowHintsDuration 5
 config windowHintsSpread true
 config windowHintsRoundedCornerSize 10
+
+bind e:cmd hint ASDFGQWERT
 
 # Monitor Aliases
 alias mon-laptop 1440x900
@@ -34,8 +37,6 @@ bind left:ctrl;alt;cmd ${lefthalf}
 bind left:ctrl;alt      throw 0
 bind right:ctrl;alt     throw 1
 
-# Window Hints
-bind e:cmd hint
 
 # Layouts
 layout 1monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf}
