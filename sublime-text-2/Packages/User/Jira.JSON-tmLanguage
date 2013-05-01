@@ -1,6 +1,6 @@
 { "name": "Jira",
   "scopeName": "source.textile",
-  "fileTypes": ["textile"],
+  "fileTypes": ["jira"],
   "patterns": [
     {
         "match": "^([#\\*])+(\\([^)]*\\)|{[^}]*})*(\\s+|$)",

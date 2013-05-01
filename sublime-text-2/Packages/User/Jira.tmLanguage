@@ -4,7 +4,7 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>textile</string>
+		<string>jira</string>
 	</array>
 	<key>name</key>
 	<string>Jira</string>
@@ -22,7 +22,7 @@
 			<key>comment</key>
 			<string>Unnumbered lists</string>
 			<key>match</key>
-			<string>^([\*#])+(\([^)]*\)|{[^}]*})*(\s+|$)</string>
+			<string>^([#\*])+(\([^)]*\)|{[^}]*})*(\s+|$)</string>
 			<key>name</key>
 			<string>markup.list.textile</string>
 		</dict>
