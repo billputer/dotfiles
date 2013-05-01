@@ -13,6 +13,7 @@ config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 config windowHintsDuration 5
 config windowHintsSpread true
+config windowHintsOrder leftToRight
 config windowHintsRoundedCornerSize 10
 
 bind e:cmd hint ASDFGQWERT
