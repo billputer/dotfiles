@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # look for custom zsh plugins/themes in .zsh
-ZSH_CUSTOM=".zsh"
+ZSH_CUSTOM=$HOME/.files/zsh
 
 # set zsh theme to load
 ZSH_THEME="billputer"
