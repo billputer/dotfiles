@@ -84,6 +84,9 @@ alias sdif='svn diff'
 # horse ebooks
 alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; done;"
 
+# yolo
+alias git-yolo='git commit -am "`curl -s http://whatthecommit.com/index.txt`"'
+
 # Red STDERR
 # rse <command string>
 rse () {
