@@ -25,6 +25,7 @@
   oneline = log --pretty=oneline
   amend = commit --amend
   out = log origin..HEAD
+  pushup = push --set-upstream origin
 
   # pretty logs
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
