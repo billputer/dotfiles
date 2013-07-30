@@ -60,3 +60,5 @@
 # uncomment for git >= 1.8
 #[push]
 #  default = simple
+[push]
+  default = current
