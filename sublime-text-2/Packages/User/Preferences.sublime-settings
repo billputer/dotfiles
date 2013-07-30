@@ -19,8 +19,8 @@
 		"Vintage",
 		"YAML",
 		"Haskell",
-		"Lisp",
 		"OCaml",
+		"SVN",
 		"Graphviz",
 		"Lua",
 		"Objective-C",
@@ -28,7 +28,7 @@
 		"Matlab",
 		"Go",
 		"Erlang",
-		"SVN"
+		"Lisp"
 	],
 	"indent_subsequent_lines": true,
 	"shift_tab_unindent": true,
