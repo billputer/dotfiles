@@ -29,7 +29,7 @@ function ruby_info {
 }
 
 # Git variables
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="on %{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}?"
