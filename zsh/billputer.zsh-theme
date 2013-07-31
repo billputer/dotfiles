@@ -21,10 +21,12 @@ function python_info {
 }
 
 function ruby_info {
-    local RVM_PROMPT="[$(rvm-prompt i v g)]"
-    # show if not using default ruby
-    if [[ $RVM_PROMPT != "[ruby-2.0.0]" ]];
-        then echo ${RVM_PROMPT};
+    if [[ -x `which rvm-prompt` ]]; then
+        local RVM_PROMPT="[$(rvm-prompt i v g)]"
+        # show if not using default ruby
+        if [[ $RVM_PROMPT != "[ruby-2.0.0]" ]];
+            then echo ${RVM_PROMPT};
+        fi;
     fi;
 }
 
