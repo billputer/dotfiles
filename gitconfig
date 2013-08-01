@@ -55,7 +55,7 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   editor = subl -n -w
-  pager = cat
+  pager = less -F -X
 
 # uncomment for git >= 1.8
 #[push]
