@@ -7,6 +7,7 @@ Clone repo (with submodules)
 
 Run `install.sh` to install:
 
+    $ cd .files
     $ bash install.sh
 
 ZSH
