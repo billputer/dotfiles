@@ -1,0 +1,38 @@
+Sublime SVN 1.6.0 Changelog:
+
+New Features
+
+ - Sublime Text 3 support
+
+ - Added the "diff_command_args" settings
+
+ - Added some addition output  the "debug" setting is turned on
+
+Bug Fixes
+
+ In addition to the bug fixes below, I am aware of a number of other bugs that
+ will be addressed in the near future. I apologize if you have emailed me and
+ not received a reponse - I will try my best to follow up with everyone.
+
+ - Fixed a bug with chcp.com on Windows XP 64bit
+
+ - Fixed some filename unicode normalization issues on OS X
+
+ - Added fixes for non-ASCII working directory when trying to determing the
+   svn binary version
+
+ - Added realpath calls to resolve symlinks
+
+ - Fixed a bug with Add Interactive being run via the command palette
+
+ - Fixed a bug with folders adding during a commit not having their files
+   committed also
+
+ - Added /opt/ubersvn/bin to the PATH when checking for svn
+
+ - Fixed some Windows localization issues when calling chcp.com
+
+ - Fixed a threading bug in OS X when branching
+
+ - Fixed a bug with the temp working dir getting deleting when a commit takes
+   a long time to complete
