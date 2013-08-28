@@ -23,9 +23,6 @@ else
   export VISUAL='vim'
 fi
 
-alias edit=$EDITOR
-alias e='edit'
-
 # Mac specific PATH
 if [[ $SYSTEM = $SYSTEM_OSX ]]; then
   # HomeBrew
@@ -44,7 +41,24 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 # add Heroku Toolbelt to path
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# Red STDERR
+# rse <command string>
+rse () {
+  # We need to wrap each phrase of the command in quotes to preserve arguments that contain whitespace
+  # Execute the command, swap STDOUT and STDERR, colour STDOUT, swap back
+  ((eval $(for phrase in "$@"; do echo -n "'$phrase' "; done)) 3>&1 1>&2 2>&3 | sed -e "s/^\(.*\)$/$(echo -en \\033)[31;1m\1$(echo -en \\033)[0m/") 3>&1 1>&2 2>&3
+}
+
+# Create files as u=rwx, g=rx, o=rx
+umask 022
+
+
+#
 # Aliases
+#
+alias edit=$EDITOR
+alias e='edit'
+
 alias ll='ls -l'
 alias la='ls -a'
 alias dm="python manage.py"
@@ -89,16 +103,3 @@ alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; d
 
 # yolo
 alias git-yolo='git commit -am "`curl -s http://whatthecommit.com/index.txt`"'
-
-# Red STDERR
-# rse <command string>
-rse () {
-  # We need to wrap each phrase of the command in quotes to preserve arguments that contain whitespace
-  # Execute the command, swap STDOUT and STDERR, colour STDOUT, swap back
-  ((eval $(for phrase in "$@"; do echo -n "'$phrase' "; done)) 3>&1 1>&2 2>&3 | sed -e "s/^\(.*\)$/$(echo -en \\033)[31;1m\1$(echo -en \\033)[0m/") 3>&1 1>&2 2>&3
-}
-
-# Create files as u=rwx, g=rx, o=rx
-umask 022
-
-test -r
