@@ -59,13 +59,16 @@ alias mkdir='mkdir -p'
 alias ss='screen -S'
 alias sls='screen -list'
 
+# tmux
+alias tm='tmux -u2'
+
 # Server control
 alias df='df -kH'
 
 alias grep='grep --color=auto -I --exclude="*\.svn*"'
 
-alias tu='top -o cpu'
-alias tm='top -o vsize'
+alias tou='top -o cpu'
+alias tom='top -o vsize'
 
 # convert newlines to LF
 alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
