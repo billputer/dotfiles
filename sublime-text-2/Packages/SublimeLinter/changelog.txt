@@ -426,7 +426,7 @@ SublimeLinter 1.7.0 changelog
 NEW FEATURES
 ------------
 - Add "Quick Start" section to the README
-- New commands for the (Sublime Text) command palette to open the 
+- New commands for the (Sublime Text) command palette to open the
   SublimeLinter preferences files (Default & User)
 - Ruby linting support via [ruby-lint](https://github.com/YorickPeterse/ruby-lint)
 - Haskell linting support via [hlint](http://community.haskell.org/~ndm/hlint/)
@@ -449,3 +449,28 @@ IMPORTANT
 ---------
 Due to the fix for `lint_args`, if you are currently customizing this
 setting, you **must** adjust your settings.
+
+
+SublimeLinter 1.7.1 changelog
+=============================
+
+CHANGES/FIXES
+-------------
+- Update JSLint to latest
+- Update JSHint to v2.1.5
+- Updated link to JSHint documentation
+- Updated PEP8 to v1.4.6
+- Updated Pyflakes to v0.7.3
+- Gutter mark icons are now retina quality
+- Included Gutter mark icon PSD (for tinkering :)
+
+
+SublimeLinter 1.7.2 changelog
+=============================
+
+CHANGES/FIXES
+-------------
+- Update JSHint to v2.1.8
+- Fixing compatibility regression with latest JSHint
+- Fixing compatibility regression with latest Pyflakes
+- Apologizing for hasty v1.7.1 release ;)
