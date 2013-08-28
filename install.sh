@@ -15,6 +15,7 @@ FILES="
   oh-my-zsh
   profile
   slate
+  tmux.conf
   vim
   vimrc
   zsh
