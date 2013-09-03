@@ -23,6 +23,9 @@ else
   export VISUAL='vim'
 fi
 
+# set default Vagrant provider
+export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
+
 # Mac specific PATH
 if [[ $SYSTEM = $SYSTEM_OSX ]]; then
   # HomeBrew
@@ -103,3 +106,9 @@ alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; d
 
 # yolo
 alias git-yolo='git commit -am "`curl -s http://whatthecommit.com/index.txt`"'
+
+# vagrant
+alias vup='vagrant up'
+alias vupno='vagrant up --no-provision'
+alias vre='vagrant halt && vagrant up --no-provision'
+alias vdown='vagrant halt'
