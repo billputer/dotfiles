@@ -35,6 +35,9 @@
   # log for particular file
   fl = log -u
 
+  # show branches by latest changes
+  latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+
   # show modified files in last commit
   dl = "!git ll -1"
   # diff last commit
