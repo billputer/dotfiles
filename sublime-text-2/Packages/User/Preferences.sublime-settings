@@ -12,7 +12,7 @@
 		"C#",
 		"Clojure",
 		"D",
-		"Erlang"
+		"Erlang",
 		"Go",
 		"Graphviz",
 		"Groovy",
@@ -27,7 +27,7 @@
 		"Scala",
 		"SVN",
 		"Vintage",
-		"YAML",
+		"YAML"
 	],
 	"indent_subsequent_lines": true,
 	"shift_tab_unindent": true,
