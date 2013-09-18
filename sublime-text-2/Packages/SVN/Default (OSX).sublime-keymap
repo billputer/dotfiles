@@ -1,3 +1,0 @@
-[
-	{ "keys": ["super+ctrl+s","super+ctrl+n"], "command": "show_overlay", "args": {"overlay": "command_palette", "text": "SVN: "} }
-]
