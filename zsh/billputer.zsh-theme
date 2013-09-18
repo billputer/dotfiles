@@ -8,7 +8,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT='1'
 function python_info {
     [ $VIRTUAL_ENV ] && echo "(%{$reset_color%}"`basename $VIRTUAL_ENV`"%{$reset_color%})"
 
-    # TODO: switch to pyenv
+    # TODO: switch to pyenv - see http://www.sourcedrop.net/Oeo8527d47241
     #
     # PYTHON_VERSION=$(pyenv local 2>&1)
     # if [ $PYTHON_VERSION = "pyenv: no local version configured for this directory" ]; then
