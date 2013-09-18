@@ -207,5 +207,5 @@ nnoremap <C-l> <C-w>l
 " F2 toggles NERDTree
 map <F2> :NERDTreeToggle<cr>
 
-" F3 disables autoindenting
-nnoremap <F3> :setl noai nocin nosi inde=<CR>
+" F3 disables autoindenting and autocommenting
+nnoremap <F3> :setl noai nocin nosi formatoptions-=c formatoptions-=r formatoptions-=o inde=<CR>
