@@ -107,6 +107,9 @@ alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; d
 # yolo
 alias git-yolo='git commit -am "`curl -s http://whatthecommit.com/index.txt`"'
 
+# sl
+alias sl='~/.files/bin/sl.sh'
+
 # vagrant
 alias vup='vagrant up'
 alias vupno='vagrant up --no-provision'
