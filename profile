@@ -44,6 +44,9 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 # add Heroku Toolbelt to path
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# use a download cache for pip
+export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
+
 # Red STDERR
 # rse <command string>
 rse () {
