@@ -23,5 +23,7 @@
     "1.6.13": "messages/1.6.13.txt",
     "1.7.0": "messages/1.7.0.txt",
     "1.7.1": "messages/1.7.1.txt",
-    "1.7.2": "messages/1.7.2.txt"
+    "1.7.2": "messages/1.7.2.txt",
+    "1.7.2+1": "messages/SublimeLinter3.txt",
+    "1.7.2+2": "messages/SublimeLinter3-update1.txt"
 }
