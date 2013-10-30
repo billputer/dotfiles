@@ -140,7 +140,8 @@ if executable("ack")
 endif
 
 " Color scheme
-colorscheme vividchalk
+set background=dark
+colorscheme solarized
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
