@@ -12,3 +12,6 @@ sublime-text-2/Settings
 sublime-text-2/Pristine Packages
 *.cache
 sublime-text-2/Packages/User/Package Control.last-run
+
+# vim history
+vim/.netrwhist
