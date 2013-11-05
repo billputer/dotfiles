@@ -2021,6 +2021,50 @@
 				<string>#cb4b16</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>name</key>
+			<string>Textile: heading marker</string>
+			<key>scope</key>
+			<string>markup.heading.textile</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#D33682</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Textile: header text</string>
+			<key>scope</key>
+			<string>markup.heading.text.textile</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#268BD2</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Textile: unnumbered list</string>
+			<key>scope</key>
+			<string>markup.list.unnumbered.textile</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#B58900</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Textile: numbered list</string>
+			<key>scope</key>
+			<string>markup.list.numbered.textile</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#DC322F</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>A4299D9B-1DE5-4BC4-87F6-A757E71B1597</string>

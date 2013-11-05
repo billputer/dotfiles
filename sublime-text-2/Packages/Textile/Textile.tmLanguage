@@ -22,22 +22,27 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.heading.textile</string>
+					<string>markup.heading.textile</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>markup.heading.textile</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.textile</string>
+					<string>markup.heading.textile</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.heading.textile</string>
+					<string>markup.heading.textile</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
-					<string>string</string>
+					<string>markup.heading.text.textile</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -232,19 +237,34 @@
 					<string>text.html.textile</string>
 				</dict>
 				<dict>
+					<key>name</key>
+					<string>markup.list.unnumbered.textile</string>
+					<key>match</key>
+					<string>^(\*+?)(\([^)]*\)|{[^}]*})*(\s+|$)</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.tag.list.textile</string>
+							<string>markup.list.unnumbered.textile</string>
 						</dict>
 					</dict>
-					<key>match</key>
-					<string>^([#\*]+?)(\([^)]*\)|{[^}]*})*(\s+|$)</string>
-					<key>name</key>
-					<string>markup.list.unnumbered.textile</string>
 				</dict>
+				<dict>
+					<key>name</key>
+					<string>markup.list.numbered.textile</string>
+					<key>match</key>
+					<string>^(#+?)(\([^)]*\)|{[^}]*})*(\s+|$)</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>markup.list.numbered.textile</string>
+						</dict>
+					</dict>
+				</dict>
+
 				<dict>
 					<key>captures</key>
 					<dict>
