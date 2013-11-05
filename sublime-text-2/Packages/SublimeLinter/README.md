@@ -1,6 +1,20 @@
 SublimeLinter
 =============
 
+## We need your help
+
+We are working on a new version of SublimeLinter for Sublime Text 3. But to make that happen sooner rather than later, we need your help. If you are one of the thousands of happy SublimeLinter users, please consider making a small donation to keep this plugin alive. Open source software is not free! It is we the developers who usually end up paying for it.
+
+To donate and find out more about what you can expect from SublimeLinter3,
+go here:
+
+https://github.com/SublimeLinter/SublimeLinter3#sublimelinter3
+
+Thank you for your support!
+
+Overview
+---------
+
 SublimeLinter is a plugin that supports "lint" programs (known as "linters"). SublimeLinter highlights
 lines of code the linter deems to contain (potential) errors. It also
 supports highlighting special annotations (for example: TODO) so that they

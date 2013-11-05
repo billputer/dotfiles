@@ -10,6 +10,11 @@ please consider making a small donation to keep this plugin alive.
 Open source software is not free! It is we the developers who usually
 end up paying for it.
 
+To donate and find out more about what you can expect from SublimeLinter3,
+go here:
+
+https://github.com/SublimeLinter/SublimeLinter3#sublimelinter3
+
 If you are interested in helping with development, please leave a message
 here:
 
