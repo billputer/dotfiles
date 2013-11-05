@@ -2065,6 +2065,17 @@
 				<string>#DC322F</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>name</key>
+			<string>Textile: link URL</string>
+			<key>scope</key>
+			<string>markup.underline.link.textile</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#93A1A1</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>A4299D9B-1DE5-4BC4-87F6-A757E71B1597</string>
