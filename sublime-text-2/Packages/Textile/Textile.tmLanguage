@@ -240,7 +240,7 @@
 					<key>name</key>
 					<string>markup.list.unnumbered.textile</string>
 					<key>match</key>
-					<string>^(\*+?)(\([^)]*\)|{[^}]*})*(\s+|$)</string>
+					<string>^(\*+?)(#*)(\([^)]*\)|{[^}]*})*(\s+|$)</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -248,19 +248,29 @@
 							<key>name</key>
 							<string>markup.list.unnumbered.textile</string>
 						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>markup.list.numbered.textile</string>
+						</dict>
 					</dict>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>markup.list.numbered.textile</string>
 					<key>match</key>
-					<string>^(#+?)(\([^)]*\)|{[^}]*})*(\s+|$)</string>
+					<string>^(#+?)(\**)(\([^)]*\)s|{[^}]*})*(\s+|$)</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
 							<string>markup.list.numbered.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>markup.list.unnumbered.textile</string>
 						</dict>
 					</dict>
 				</dict>
