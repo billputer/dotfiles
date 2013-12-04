@@ -33,6 +33,10 @@ if [[ $SYSTEM = $SYSTEM_OSX ]]; then
 fi
 export PATH="/usr/local/bin:$PATH"
 
+# Enable pyenv, if it exists
+if [[ -x $(which pyenv) ]]; then
+  eval "$(pyenv init -)";
+fi
 
 # add npm binaries to path
 export PATH="/usr/local/share/npm/bin:$PATH"
