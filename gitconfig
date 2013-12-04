@@ -65,3 +65,5 @@
 #  default = simple
 [push]
   default = current
+[help]
+	autocorrect = 7
