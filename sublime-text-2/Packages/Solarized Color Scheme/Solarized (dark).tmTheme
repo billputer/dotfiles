@@ -2023,42 +2023,20 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Textile: heading marker</string>
+			<string>Find In Files: File Name</string>
 			<key>scope</key>
-			<string>markup.heading.textile</string>
+			<string>entity.name.filename.find-in-files</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#D33682</string>
+				<string>#2AA198</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Textile: header text</string>
+			<string>GitGutter deleted</string>
 			<key>scope</key>
-			<string>markup.heading.text.textile</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#268BD2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Textile: unnumbered list</string>
-			<key>scope</key>
-			<string>markup.list.unnumbered.textile</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#B58900</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Textile: numbered list</string>
-			<key>scope</key>
-			<string>markup.list.numbered.textile</string>
+			<string>markup.deleted.git_gutter</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -2067,13 +2045,24 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Textile: link URL</string>
+			<string>GitGutter inserted</string>
 			<key>scope</key>
-			<string>markup.underline.link.textile</string>
+			<string>markup.inserted.git_gutter</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#93A1A1</string>
+				<string>#859900</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>GitGutter changed</string>
+			<key>scope</key>
+			<string>markup.changed.git_gutter</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#B58900</string>
 			</dict>
 		</dict>
 	</array>
