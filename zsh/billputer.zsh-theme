@@ -6,18 +6,20 @@ function prompt_char {
 # Disable the default virtual env prompt so we can set our own
 export VIRTUAL_ENV_DISABLE_PROMPT='1'
 function python_info {
-    [ $VIRTUAL_ENV ] && echo "(%{$reset_color%}"`basename $VIRTUAL_ENV`"%{$reset_color%})"
+    local DEFAULT_PYTHON_VERSION="2.7.6"
 
-    # TODO: switch to pyenv - see http://www.sourcedrop.net/Oeo8527d47241
-    #
-    # PYTHON_VERSION=$(pyenv local 2>&1)
-    # if [ $PYTHON_VERSION = "pyenv: no local version configured for this directory" ]; then
-    #     PYTHON_VERSION=$(pyenv global 2>&1)
-    # fi
-    # if [ $VIRTUAL_ENV ]; then
-    #     local VIRTUALENV="@"`basename $VIRTUAL_ENV`
-    # fi
-    # echo "(python-"`basename $PYTHON_VERSION`"${VIRTUALENV}) "
+    PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
+    if [ "$PYTHON_VERSION" != "$DEFAULT_PYTHON_VERSION" ]; then
+        local PYTHON_VERSION_DISPLAY="python-$PYTHON_VERSION";
+    fi
+
+    if [ "$VIRTUAL_ENV" ]; then
+        local VIRTUALENV_DISPLAY="@"$(basename "$VIRTUAL_ENV");
+    fi
+
+    if [ "$VIRTUALENV_DISPLAY" ] || [ "$PYTHON_VERSION_DISPLAY" ]; then
+        echo "(${PYTHON_VERSION_DISPLAY}${VIRTUALENV_DISPLAY})";
+    fi
 }
 
 function ruby_info {
