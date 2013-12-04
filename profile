@@ -16,11 +16,13 @@ export PAGER='less'
 
 # Set text editor
 if [[ $SYSTEM = $SYSTEM_OSX ]]; then
-  export EDITOR='subl --new-window'
-  export VISUAL='subl --new-window'
+  export EDITOR='subl --new-window --wait'
+  export VISUAL='subl --new-window --wait'
+  alias e='subl --new-window'
 else
   export EDITOR='vim'
   export VISUAL='vim'
+  alias e='vim'
 fi
 
 # set default Vagrant provider
@@ -74,9 +76,6 @@ umask 022
 #
 # Aliases
 #
-alias edit=$EDITOR
-alias e='edit'
-
 alias ll='ls -l'
 alias la='ls -a'
 alias dm="python manage.py"
