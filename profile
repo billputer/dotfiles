@@ -39,10 +39,14 @@ if [[ -x $(which pyenv) ]]; then
 fi
 
 # add npm binaries to path
-export PATH="/usr/local/share/npm/bin:$PATH"
+if [[ -d "/usr/local/share/npm/bin" ]]; then
+  export PATH="/usr/local/share/npm/bin:$PATH";
+fi
 
 # add Heroku Toolbelt to path
-export PATH="/usr/local/heroku/bin:$PATH"
+if [[ -d "/usr/local/heroku/bin" ]]; then
+  export PATH="/usr/local/heroku/bin:$PATH";
+fi
 
 if [[ -x "$HOME/.rvm/scripts/rvm" ]]; then
   # Add RVM to PATH for scripting
