@@ -33,16 +33,19 @@ if [[ $SYSTEM = $SYSTEM_OSX ]]; then
 fi
 export PATH="/usr/local/bin:$PATH"
 
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # add npm binaries to path
 export PATH="/usr/local/share/npm/bin:$PATH"
 
 # add Heroku Toolbelt to path
 export PATH="/usr/local/heroku/bin:$PATH"
+
+if [[ -x "$HOME/.rvm/scripts/rvm" ]]; then
+  # Add RVM to PATH for scripting
+  PATH=$PATH:$HOME/.rvm/bin
+  # Load RVM into a shell session *as a function*
+  source "$HOME/.rvm/scripts/rvm";
+fi
 
 # use a download cache for pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
