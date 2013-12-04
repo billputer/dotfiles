@@ -6,8 +6,6 @@ function prompt_char {
 # Disable the default virtual env prompt so we can set our own
 export VIRTUAL_ENV_DISABLE_PROMPT='1'
 function python_info {
-    local DEFAULT_PYTHON_VERSION="2.7.6"
-
     PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
     if [ "$PYTHON_VERSION" != "$DEFAULT_PYTHON_VERSION" ]; then
         local PYTHON_VERSION_DISPLAY="python-$PYTHON_VERSION";

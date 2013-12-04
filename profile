@@ -37,6 +37,7 @@ export PATH="/usr/local/bin:$PATH"
 if [[ -x $(which pyenv) ]]; then
   eval "$(pyenv init -)";
 fi
+export DEFAULT_PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
 
 # add npm binaries to path
 if [[ -d "/usr/local/share/npm/bin" ]]; then
