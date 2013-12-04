@@ -66,4 +66,4 @@
 [push]
   default = current
 [help]
-	autocorrect = 7
+	autocorrect = 1
