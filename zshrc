@@ -18,8 +18,17 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Disable AUTO_TITLE
+DISABLE_AUTO_TITLE="true"
+# Set our own title
+precmd () {
+    # print hostname (%m) if SSH_CLIENT variable is set
+    if [ $SSH_CLIENT ]; then
+        print -Pn "\e]0;%m: %~\a"
+    else
+        print -Pn "\e]0;%~\a"
+    fi
+}
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
