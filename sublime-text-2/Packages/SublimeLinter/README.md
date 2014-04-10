@@ -1,18 +1,23 @@
 SublimeLinter
 =============
 
-## We need your help
+## SublimeLinter 3 has landed!
 
-We are working on a new version of SublimeLinter for Sublime Text 3. But to make that happen sooner rather than later, we need your help. If you are one of the thousands of happy SublimeLinter users, please consider making a small donation to keep this plugin alive. Open source software is not free! It is we the developers who usually end up paying for it.
+SublimeLinter for Sublime Text 3 is [here](https://github.com/SublimeLinter/SublimeLinter3), and it’s soooooo much better than before! Install it from Package Control and enjoy!
 
-To donate and find out more about what you can expect from SublimeLinter3,
-go here:
+Unless someone else comes forward, SublimeLinter for Sublime Text 2 will no longer be supported. I strongly encourage everyone to upgrade to Sublime Text 3 and SublimeLinter 3 — you’ll be glad you did! Take a look at the [extensive documentation](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki) to see the great new features in SublimeLinter 3.
 
-https://github.com/SublimeLinter/SublimeLinter3#sublimelinter3
+## Share the love!
+
+I spent hundreds of hours writing and documenting SublimeLinter 3 to make it the best it can be — easy to use, easy to configure, easy to update, easy to extend. If you use SublimeLinter and feel it is making your coding life better and easier, please consider making a donation to help fund development and support. Thank you!
+
+To donate: https://github.com/SublimeLinter/SublimeLinter3#share-the-love
 
 Thank you for your support!
 
-Overview
+---
+
+SublimeLinter v1.7 Overview
 ---------
 
 SublimeLinter is a plugin that supports "lint" programs (known as "linters"). SublimeLinter highlights
