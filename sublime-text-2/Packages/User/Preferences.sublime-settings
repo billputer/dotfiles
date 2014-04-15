@@ -4,6 +4,7 @@
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": false,
 	"fallback_encoding": "UTF-8",
+	"font_face": "Inconsolata-g",
 	"font_size": 15.0,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
