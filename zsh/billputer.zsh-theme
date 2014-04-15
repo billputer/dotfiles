@@ -24,7 +24,8 @@ function ruby_info {
     if [[ -x `which rvm-prompt` ]]; then
         local RVM_PROMPT="[$(rvm-prompt i v g)]"
         # show if not using default ruby
-        if [[ $RVM_PROMPT != "[ruby-2.0.0]" ]];
+        local DEFAULT_RUBY="2.1.1"
+        if [[ $RVM_PROMPT != "[ruby-$DEFAULT_RUBY]" ]];
             then echo ${RVM_PROMPT};
         fi;
     fi;
