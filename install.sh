@@ -8,6 +8,7 @@ CURRENT_DIRECTORY="$( cd "$( dirname "$0" )" && pwd )"
 FILES="
   bin
   bash_profile
+  gemrc
   gitconfig
   gitignore
   hgrc
