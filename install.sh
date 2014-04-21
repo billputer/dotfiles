@@ -6,6 +6,7 @@
 
 CURRENT_DIRECTORY="$( cd "$( dirname "$0" )" && pwd )"
 FILES="
+  ackrc
   bin
   bash_profile
   gemrc

@@ -1,0 +1,12 @@
+--smart-case
+--type-set
+php=.php,.module,.inc
+--type-set
+log=.log
+--type-set
+docs=.markdown,.md,.mdown,.rst,.textile,.info,.txt
+--ignore-dir=public/media/cache
+--ignore-dir=public/static/cache
+--ignore-dir=build/html
+--ignore-dir=docs/build
+--ignore-dir=migrations
