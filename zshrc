@@ -56,6 +56,7 @@ __git_files () {
 unsetopt cdablevars
 
 # history settings
+HISTCONTROL=erasedups
 HISTFILE=~/.zsh_history
 HISTSIZE=9999
 SAVEHIST=9999
