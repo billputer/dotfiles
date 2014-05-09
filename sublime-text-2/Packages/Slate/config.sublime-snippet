@@ -1,7 +1,0 @@
-<snippet>
-    <content><![CDATA[config ${1:key} ${2:value}
-]]></content>
-    <tabTrigger>config</tabTrigger>
-    <description>config</description>
-    <scope>source.slate</scope>
-</snippet>

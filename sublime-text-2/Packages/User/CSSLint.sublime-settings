@@ -1,4 +1,0 @@
-{
-    "errors": ["empty-rules","errors","compatible-vendor-prefixes","known-properties"],
-    "warnings": ["adjoining-classes","box-model","box-sizing","display-property-grouping","duplicate-background-images","duplicate-properties","fallback-colors","floats","font-faces","font-sizes","gradients","import","important","shorthand","text-indent","unique-headings","vendor-prefix","zero-units"]
-}

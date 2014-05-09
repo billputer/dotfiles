@@ -1,7 +1,0 @@
-<snippet>
-    <content><![CDATA[layout ${1:name} '${2:app-name}'${3::options} ${4:operations}
-]]></content>
-    <tabTrigger>layout</tabTrigger>
-    <description>layout</description>
-    <scope>source.slate</scope>
-</snippet>
