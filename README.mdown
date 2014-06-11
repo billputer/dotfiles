@@ -36,3 +36,9 @@ OS X
 Run `ns-defaults.sh` to set Mac OS X defaults:
 
     $ ./ns-defaults.sh
+
+## tmux
+
+Install tmux along with reattach-to-user-namespace workaround.
+
+    brew install tmux reattach-to-user-namespace
