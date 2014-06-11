@@ -19,7 +19,7 @@ local CYAN="37"
 local GREEN="64"
 
 function prompt_char {
-	if [ $UID -eq 0 ]; then echo "%F{${RED}}#%{$reset_color%}"; else echo $; fi
+    if [ $UID -eq 0 ]; then echo "%F{${RED}}#%{$reset_color%}"; else echo $; fi
 }
 
 # Disable the default virtual env prompt so we can set our own
