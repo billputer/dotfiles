@@ -26,8 +26,8 @@ echo "Enable iTunes track notifications in the Dock"
 defaults write com.apple.dock itunes-notifications -bool true
 
 
-# echo "Always show scrollbars"
-# defaults write NSGlobalDomain AppleShowScrollBars -string "Auto"
+echo "Always show scrollbars"
+defaults write NSGlobalDomain AppleShowScrollBars -string "Auto"
 
 echo "Allow quitting Finder via ⌘ + Q; doing so will also hide desktop icons"
 defaults write com.apple.finder QuitMenuItem -bool true
