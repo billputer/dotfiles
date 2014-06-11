@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 #
 # for funsies
 # see https://gist.github.com/ieure/6876784
