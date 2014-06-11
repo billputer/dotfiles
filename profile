@@ -3,19 +3,15 @@ if [[ $- != *i* ]] ; then
   return
 fi
 
-export SYSTEM_OSX='Mac OS X'
-export SYSTEM_NIX='Linux'
-export SYSTEM_CENTOS='Centos'
-export SYSTEM_UBUNTU='Ubuntu'
-export SYSTEM_UNKNOWN='Unknown'
-
 source $HOME/.profile.local
+
+export SYSTEM=$(uname)
 
 # fix less
 export PAGER='less'
 
 # Set text editor
-if [[ $SYSTEM = $SYSTEM_OSX ]]; then
+if [[ $SYSTEM = 'Darwin' ]]; then
   export EDITOR='subl --new-window --wait'
   export VISUAL='subl --new-window --wait'
   alias e='subl --new-window'
@@ -29,7 +25,7 @@ fi
 export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 
 # Mac specific PATH
-if [[ $SYSTEM = $SYSTEM_OSX ]]; then
+if [[ $SYSTEM = 'Darwin' ]]; then
   # HomeBrew
   export PATH=/usr/local/sbin:$PATH
 fi
