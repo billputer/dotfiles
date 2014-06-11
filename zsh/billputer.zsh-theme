@@ -78,6 +78,6 @@ local DATETIME="%F{${GREEN}}[%*]%{$reset_color%}"
 
 PROMPT="
 ${USER_HOST}: ${CURRENT_DIR} ${GIT_INFO}
- ${PROMT_CHARACTER} "
+ ${PROMT_CHARACTER} %{[0m%}"
 
 RPROMPT="${PYTHON_INFO} ${RUBY_INFO} ${DATETIME}"
