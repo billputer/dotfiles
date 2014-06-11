@@ -3,39 +3,38 @@ General instructions
 
 Clone repo (with submodules)
 
-    $ git clone git@github.com:billputer/dotfiles.git ~/.files --recursive
+    git clone git@github.com:billputer/dotfiles.git ~/.files --recursive
 
 Run `install.sh` to install:
 
-    $ cd .files
-    $ bash install.sh
+    ~/.files/install.sh
 
 ZSH
 ---
 
 Install ZSH:
 
-    $ sudo apt-get install zsh
+    sudo apt-get install zsh
 
 Switch shell to ZSH:
 
-    $ chsh -s /bin/zsh
+    chsh -s /bin/zsh
 
 Alternatively:
 
-    $ sudo chsh -s /bin/zsh $USER
+    sudo chsh -s /bin/zsh $USER
 
 If you encounter "add-zsh-hook: function definition file not found".
 
-    $ cd ~/.files/oh-my-zsh
-    $ git apply < ../zsh/term-support.patch
+    cd ~/.files/oh-my-zsh
+    git apply < ../zsh/term-support.patch
 
 OS X
 -----
 
 Run `ns-defaults.sh` to set Mac OS X defaults:
 
-    $ ./ns-defaults.sh
+    ~/.files/ns-defaults.sh
 
 ## tmux
 
