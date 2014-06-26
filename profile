@@ -54,6 +54,12 @@ if [[ -x "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm";
 fi
 
+# use chruby, if it exists
+if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
+  source /usr/local/share/chruby/chruby.sh
+  chruby ruby-2.1.2
+fi
+
 # use a download cache for pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
