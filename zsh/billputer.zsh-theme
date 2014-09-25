@@ -67,7 +67,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND=" ⬇"
 ZSH_THEME_GIT_PROMPT_DIVERGED=" ⬍"
 
 # Local variables for prompt parts
-local USER_HOST="%F{${MAGENTA}}%n%F{${BASE0}@%F{${YELLOW}}%m"
+local USER_HOST="%F{${MAGENTA}}%n%F{${BASE0}}@%F{${YELLOW}}%m"
 local CURRENT_DIR="%F{${BLUE}}\${PWD/#\$HOME/~}%F{${BASE0}}"
 local PYTHON_INFO='$(python_info)'
 local RUBY_INFO='$(ruby_info)'
