@@ -24,8 +24,8 @@ alias mon-dell 1920x1080
 
 # Abstract positions
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
-alias lefthalf move screenOriginX;screenOriginY screenSizeX*.55;screenSizeY
-alias righthalf move screenOriginX+screenSizeX*.55;screenOriginY screenSizeX*.45;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX*.5;screenSizeY
+alias righthalf move screenOriginX+screenSizeX*.5;screenOriginY screenSizeX*.5;screenSizeY
 alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY*.45
 alias bottomhalf move screenOriginX;screenOriginY+screenSizeY*.45 screenSizeX;screenSizeY*.55
 alias center move screenOriginX+screenSizeX*.15;screenOriginY+screenSizeY*.15 screenSizeX*.7;screenSizeY*.7
