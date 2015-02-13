@@ -66,6 +66,13 @@ if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
   chruby ruby-2.1.2
 fi
 
+# use gnu coreutils, if they exist
+if [[ -d "/usr/local/opt/coreutils/libexec/gnubin" ]]; then
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  # use man gor coreutils first, then system man
+  export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/share/man:/usr/local/share/man
+fi
+
 # use a download cache for pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 

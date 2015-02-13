@@ -41,3 +41,14 @@ Run `ns-defaults.sh` to set Mac OS X defaults:
 Install tmux along with reattach-to-user-namespace workaround.
 
     brew install tmux reattach-to-user-namespace
+
+## GNU coreutils
+
+Install GNU coreutils, etc, instead of using BSD versions (added to PATH in profile).
+
+    brew install coreutil
+    brew install findutils --with-default-names
+    brew install gnu-getopt --with-default-names
+    brew install gnu-indent --with-default-names
+    brew install gnu-sed --with-default-names
+    brew install gnu-tar --with-default-names
