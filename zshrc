@@ -36,7 +36,7 @@ precmd () {
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler capistrano fabric gem git git-flow knife osx pip python vagrant)
+plugins=(brew bundler capistrano fabric gem git git-flow history-substring-search knife osx pip python vagrant)
 
 
 source $ZSH/oh-my-zsh.sh
