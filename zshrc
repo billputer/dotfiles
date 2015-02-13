@@ -41,7 +41,7 @@ plugins=(brew bundler capistrano fabric gem git git-flow knife osx pip python va
 
 source $ZSH/oh-my-zsh.sh
 
-unsetopt correctall
+setopt correct
 
 source $HOME/.profile
 
