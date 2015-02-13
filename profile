@@ -73,6 +73,9 @@ if [[ -d "/usr/local/opt/coreutils/libexec/gnubin" ]]; then
   export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/share/man:/usr/local/share/man
 fi
 
+# set LS_COLORS (generated from dircolors)
+eval $(dircolors ~/.dir_colors)
+
 # use a download cache for pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
@@ -91,6 +94,7 @@ umask 022
 #
 # Aliases
 #
+alias ls='ls --color'
 alias ll='ls -l'
 alias la='ls -a'
 alias dm="python manage.py"

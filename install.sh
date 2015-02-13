@@ -9,6 +9,7 @@ FILES="
   ackrc
   bin
   bash_profile
+  dir_colors
   gemrc
   gitconfig
   gitignore

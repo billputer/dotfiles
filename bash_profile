@@ -12,9 +12,6 @@ function bashcoloring {
 }
 bashcoloring
 
-export CLICOLOR='yes'
-export LSCOLORS=Gxfxcxdxbxegedabagacad
-
 # history settings
 export HISTIGNORE="&:ls:exit"
 export HISTSIZE=10000
