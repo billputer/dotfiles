@@ -152,7 +152,3 @@ alias vp='vagrant provision'
 alias vsh='vagrant ssh'
 alias vst='vagrant status'
 alias vgst='vagrant global-status'
-
-# list tmux sessions on startup
-echo "tmux sessions:"
-tmux list-sessions 2> /dev/null
