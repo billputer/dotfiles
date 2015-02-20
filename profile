@@ -10,9 +10,13 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 
 source $HOME/.profile.local
+source $HOME/.files/aliases
 
 # fix less
 export PAGER='less'
+
+# Create files as u=rwx, g=rx, o=rx
+umask 022
 
 # Set text editor
 if [[ $(uname) = 'Darwin' ]]; then
@@ -24,9 +28,6 @@ else
   export VISUAL='vim'
   alias e='vim'
 fi
-
-# set default Vagrant provider
-export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 
 # Mac specific PATH
 if [[ $(uname) = 'Darwin' ]]; then
@@ -42,11 +43,20 @@ if [[ -d "/usr/local/opt/coreutils/libexec/gnubin" ]]; then
   export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/share/man:/usr/local/share/man
 fi
 
+# set LS_COLORS (generated from dircolors)
+eval $(dircolors ~/.dir_colors)
+
+###
+# language/tool-specific
+###
+
 # Enable pyenv, if it exists
 if [[ -x $(which pyenv) ]]; then
   eval "$(pyenv init -)";
 fi
 export DEFAULT_PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
+# use a download cache for pip
+export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
 # add npm binaries to path
 if [[ -d "/usr/local/share/npm/bin" ]]; then
@@ -71,15 +81,6 @@ if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
   chruby ruby-2.1.2
 fi
 
-# set LS_COLORS (generated from dircolors)
-eval $(dircolors ~/.dir_colors)
-
-# use a download cache for pip
-export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
-
-# load aliases
-source $HOME/.files/aliases
-
-# Create files as u=rwx, g=rx, o=rx
-umask 022
+# set default Vagrant provider
+export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 
