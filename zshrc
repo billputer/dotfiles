@@ -1,23 +1,18 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#################################################
+# ZSH specific configuration
+#################################################
 
+# Path to oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 # look for custom zsh plugins/themes in .zsh
 ZSH_CUSTOM=$HOME/.files/zsh
-
 # set zsh theme to load
 ZSH_THEME="billputer"
-
-
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
+# disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
-
-# Disable AUTO_TITLE
+# disable AUTO_TITLE
 DISABLE_AUTO_TITLE="true"
-# Set our own title
+# set our own title
 precmd () {
     # print hostname (%m) if SSH_CLIENT variable is set
     if [ $SSH_CLIENT ]; then
@@ -27,29 +22,29 @@ precmd () {
     fi
 }
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew bundler capistrano fabric gem git git-flow history-substring-search knife osx pip python vagrant)
-
+plugins=(
+  brew
+  bundler
+  capistrano
+  fabric
+  gem
+  git
+  git-flow
+  history-substring-search
+  knife
+  osx
+  pip
+  python
+  vagrant
+)
 
 source $ZSH/oh-my-zsh.sh
-
-setopt correct
-setopt noclobber
-
 source $HOME/.profile
 
-
-# Fix issue where git autocompletion takes forever and eats cpu.
-# See http://superuser.com/questions/458906/zsh-tab-completion-of-git-commands-is-very-slow-how-can-i-turn-it-off
-__git_files () {
-  _wanted files expl 'local files' _files
-}
-
+# spelling correction
+setopt correct
+# prevents from accidentally overwriting a file with >
+setopt noclobber
 # disables auto-completion of LDAP usernames
 unsetopt cdablevars
 
@@ -59,3 +54,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=9999
 SAVEHIST=9999
 setopt extendedhistory
+
+# Fix issue where git autocompletion takes forever and eats cpu.
+# See http://superuser.com/questions/458906/zsh-tab-completion-of-git-commands-is-very-slow-how-can-i-turn-it-off
+__git_files () {
+  _wanted files expl 'local files' _files
+}
