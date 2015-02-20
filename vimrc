@@ -2,9 +2,16 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Load pathogen
 filetype off
-call pathogen#runtime_append_all_bundles()
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'scrooloose/nerdtree'
+
+call vundle#end()
+
 
 set modelines=0
 
