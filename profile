@@ -77,6 +77,9 @@ eval $(dircolors ~/.dir_colors)
 # use a download cache for pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
+# load aliases
+source $HOME/.files/aliases
+
 # Create files as u=rwx, g=rx, o=rx
 umask 022
 
