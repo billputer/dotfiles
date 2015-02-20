@@ -24,11 +24,6 @@ Alternatively:
 
     sudo chsh -s /bin/zsh $USER
 
-If you encounter "add-zsh-hook: function definition file not found".
-
-    cd ~/.files/oh-my-zsh
-    git apply < ../zsh/term-support.patch
-
 OS X
 -----
 
