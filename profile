@@ -11,13 +11,11 @@ fi
 
 source $HOME/.profile.local
 
-export SYSTEM=$(uname)
-
 # fix less
 export PAGER='less'
 
 # Set text editor
-if [[ $SYSTEM = 'Darwin' ]]; then
+if [[ $(uname) = 'Darwin' ]]; then
   export EDITOR='subl --new-window --wait'
   export VISUAL='subl --new-window --wait'
   alias e='subl --new-window'
@@ -31,7 +29,7 @@ fi
 export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 
 # Mac specific PATH
-if [[ $SYSTEM = 'Darwin' ]]; then
+if [[ $(uname) = 'Darwin' ]]; then
   # HomeBrew
   export PATH=/usr/local/sbin:$PATH
 fi
@@ -73,20 +71,11 @@ if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
   chruby ruby-2.1.2
 fi
 
-
 # set LS_COLORS (generated from dircolors)
 eval $(dircolors ~/.dir_colors)
 
 # use a download cache for pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
-
-# Red STDERR
-# rse <command string>
-rse () {
-  # We need to wrap each phrase of the command in quotes to preserve arguments that contain whitespace
-  # Execute the command, swap STDOUT and STDERR, colour STDOUT, swap back
-  ((eval $(for phrase in "$@"; do echo -n "'$phrase' "; done)) 3>&1 1>&2 2>&3 | sed -e "s/^\(.*\)$/$(echo -en \\033)[31;1m\1$(echo -en \\033)[0m/") 3>&1 1>&2 2>&3
-}
 
 # Create files as u=rwx, g=rx, o=rx
 umask 022
