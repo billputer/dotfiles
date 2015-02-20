@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 #
 # Installs dotfiles, making backups of files before overwriting
 #

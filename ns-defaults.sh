@@ -5,6 +5,7 @@
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #   https://raw.github.com/gist/2108403/hack.sh
 
+set -e
 set -v
 
 echo "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
