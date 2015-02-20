@@ -4,17 +4,13 @@
 alias ls='ls --color'
 alias ll='ls -l'
 alias la='ls -a'
-alias dm="python manage.py"
-alias digg="dig +multiline +nocomments +nocmd +noquestion +nostats +search"
 
-alias q='exit'
+alias dm="python manage.py"
+
+alias digg="dig +multiline +nocomments +nocmd +noquestion +nostats +search"
 
 # Make mkdir recursive
 alias mkdir='mkdir -p'
-
-# Screen tools
-alias ss='screen -S'
-alias sls='screen -list'
 
 # tmux
 alias tm='tmux -u2'
