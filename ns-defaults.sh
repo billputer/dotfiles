@@ -126,6 +126,15 @@ defaults write com.apple.iTunes disablePing -bool true
 echo "Make ⌘ + F focus the search input in iTunes"
 defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
 echo "Disable the “reopen windows when logging back in” option"
 # This works, although the checkbox will still appear to be checked.
 #defaults write com.apple.loginwindow TALLogoutSavesState -bool false
