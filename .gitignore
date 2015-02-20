@@ -1,2 +1,4 @@
 # vim history
 vim/.netrwhist
+# vim bundles
+vim/bundle/**
