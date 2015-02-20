@@ -37,6 +37,13 @@ if [[ $SYSTEM = 'Darwin' ]]; then
 fi
 export PATH="/usr/local/bin:$PATH"
 
+# use gnu coreutils, if they exist
+if [[ -d "/usr/local/opt/coreutils/libexec/gnubin" ]]; then
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  # use man gor coreutils first, then system man
+  export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/share/man:/usr/local/share/man
+fi
+
 # Enable pyenv, if it exists
 if [[ -x $(which pyenv) ]]; then
   eval "$(pyenv init -)";
@@ -66,12 +73,6 @@ if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
   chruby ruby-2.1.2
 fi
 
-# use gnu coreutils, if they exist
-if [[ -d "/usr/local/opt/coreutils/libexec/gnubin" ]]; then
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  # use man gor coreutils first, then system man
-  export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/share/man:/usr/local/share/man
-fi
 
 # set LS_COLORS (generated from dircolors)
 eval $(dircolors ~/.dir_colors)
