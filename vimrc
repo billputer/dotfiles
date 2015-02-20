@@ -205,8 +205,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" F2 toggles NERDTree
-map <F2> :NERDTreeToggle<cr>
+" Ctrl+n toggles NERDTree
+map <C-n> :NERDTreeToggle<cr>
 
 " F3 disables autoindenting and autocommenting
 nnoremap <F3> :setl noai nocin nosi formatoptions-=c formatoptions-=r formatoptions-=o inde=<CR>
