@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Bundle 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
 
 call vundle#end()
@@ -151,6 +152,10 @@ set background=dark
 colorscheme solarized
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+" Airline
+let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#enabled=1
 
 " Numbers
 set number
