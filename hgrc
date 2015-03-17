@@ -1,5 +1,9 @@
 [ui]
 username = Bill Wiens <billwiens@gmail.com>
 
+[extensions]
+color =
+strip =
+
 # Local settings
 %include ~/.hgrc_local
