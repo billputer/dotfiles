@@ -49,7 +49,7 @@ Install tmux along with reattach-to-user-namespace workaround.
 
 Install GNU coreutils, etc, instead of using BSD versions (added to PATH in profile).
 
-    brew install coreutil
+    brew install coreutils
     brew install findutils --with-default-names
     brew install gnu-getopt --with-default-names
     brew install gnu-indent --with-default-names
