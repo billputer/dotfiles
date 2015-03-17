@@ -1,2 +1,5 @@
 [ui]
 username = Bill Wiens <billwiens@gmail.com>
+
+# Local settings
+%include ~/.hgrc_local
