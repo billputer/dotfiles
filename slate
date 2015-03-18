@@ -39,8 +39,8 @@ bind up:ctrl;alt;cmd ${tophalf}
 bind down:ctrl;alt;cmd ${bottomhalf}
 
 # Throw Bindings
-bind left:ctrl;alt      throw 0
-bind right:ctrl;alt     throw 1
+bind left:ctrl;alt      throw left resize
+bind right:ctrl;alt     throw right resize
 
 
 # Layouts
