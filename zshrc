@@ -60,3 +60,7 @@ setopt extendedhistory
 __git_files () {
   _wanted files expl 'local files' _files
 }
+
+# bind Home and End
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
