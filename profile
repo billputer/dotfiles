@@ -9,7 +9,6 @@ if [ -x /usr/libexec/path_helper ]; then
     source /etc/profile
 fi
 
-source $HOME/.profile.local
 source $HOME/.files/aliases
 
 # fix less
@@ -84,3 +83,4 @@ fi
 # set default Vagrant provider
 export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 
+source $HOME/.profile.local
