@@ -3,7 +3,51 @@ username = Bill Wiens <billwiens@gmail.com>
 
 [extensions]
 color =
+fetch =
+graphlog =
+pager =
+progress =
+record =
+shelve =
 strip =
+
+[pager]
+pager = LESS='FRX' less
+
+[progress]
+delay = 1.0
+
+[diff]
+git = True
+unified = 5
+
+[color]
+status.modified = cyan
+status.added = green
+status.removed = red
+status.deleted = yellow bold underline
+status.unknown = magenta bold underline
+status.ignored = black bold
+diff.diffline = none
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
+diff.hunk = yellow bold
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = white_background
+
+[alias]
+# Nudge: just push the current branch.
+nudge = push --branch .
+
+# revert, but don't leave .orig files
+undo = revert --no-backup
+
+# Easily add ignore patterns to .hgignore and commit.
+ignore = ![ -n "$@" ] && echo '$@' >> `$HG root`/.hgignore && \
+          $HG commit `$HG root`/.hgignore -Am 'Add "$@" to .hgignore.'
 
 # Local settings
 %include ~/.hgrc_local
