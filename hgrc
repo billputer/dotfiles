@@ -4,7 +4,6 @@ username = Bill Wiens <billwiens@gmail.com>
 [extensions]
 color =
 fetch =
-graphlog =
 pager =
 progress =
 record =
