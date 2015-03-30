@@ -16,7 +16,6 @@ FILES="
   gitconfig
   gitignore
   hgrc
-  hushlogin
   oh-my-zsh
   profile
   slate
