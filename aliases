@@ -9,6 +9,8 @@ alias dm="python manage.py"
 
 alias digg="dig +multiline +nocomments +nocmd +noquestion +nostats +search"
 
+alias hgrep="history | grep "
+
 # Make mkdir recursive
 alias mkdir='mkdir -p'
 
