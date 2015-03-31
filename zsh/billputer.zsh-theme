@@ -50,8 +50,8 @@ function ruby_info {
     fi;
 }
 
-# Git variables
-ZSH_THEME_GIT_PROMPT_PREFIX=" \ue0a0 %F{${GREEN}"
+# Git prompt variables
+ZSH_THEME_GIT_PROMPT_PREFIX=" \ue0a0 "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %F{${RED}}✘"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %F{${GREEN}}✔"
@@ -66,18 +66,30 @@ ZSH_THEME_GIT_PROMPT_AHEAD=" ⬆"
 ZSH_THEME_GIT_PROMPT_BEHIND=" ⬇"
 ZSH_THEME_GIT_PROMPT_DIVERGED=" ⬍"
 
+# Mercurial prompt variables
+ZSH_THEME_HG_PROMPT_PREFIX=" \ue0a0 "
+ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_DIRTY=""
+ZSH_THEME_HG_PROMPT_CLEAN=" %F{${GREEN}}✔"
+
+ZSH_THEME_HG_PROMPT_MODIFIED=" %F{${CYAN}}✹"
+ZSH_THEME_HG_PROMPT_ADDED=" %F{${GREEN}}✚"
+ZSH_THEME_HG_PROMPT_DELETED=" %F{${RED}}✖"
+ZSH_THEME_HG_PROMPT_MISSING=" %F{${BASE0}}!"
+ZSH_THEME_HG_PROMPT_UNTRACKED=" %F{${VIOLET}}✭"
+
 # Local variables for prompt parts
 local USER_HOST="%F{${MAGENTA}}%n%F{${BASE0}}@%F{${YELLOW}}%m"
 local CURRENT_DIR="%F{${BLUE}}\${PWD/#\$HOME/~}%F{${BASE0}}"
 local PYTHON_INFO='$(python_info)'
 local RUBY_INFO='$(ruby_info)'
-local MERCURIAL_INFO='$(hg_prompt_info)'
+local MERCURIAL_INFO='$(hg_prompt_info)$(hg_prompt_status)%{$reset_color%}'
 local GIT_INFO='$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
 local PROMT_CHARACTER='$(prompt_char)'
 local DATETIME="%F{${GREEN}}[%*]%{$reset_color%}"
 
 PROMPT="
-${USER_HOST}: ${CURRENT_DIR} ${GIT_INFO}
+${USER_HOST}: ${CURRENT_DIR} ${GIT_INFO} ${MERCURIAL_INFO}
  ${PROMT_CHARACTER} %{[0m%}"
 
 RPROMPT="${PYTHON_INFO} ${RUBY_INFO} ${DATETIME}"

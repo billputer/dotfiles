@@ -32,7 +32,6 @@ plugins=(
   git-flow
   history-substring-search
   knife
-  mercurial
   osx
   pip
   python
