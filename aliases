@@ -30,9 +30,9 @@ alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 
 # ansible
 alias ap='ansible-playbook -i /workspace/lp-devops/inventories/local '
-alias apc='ansible-playbook -i /workspace/lp-devops/inventories/local common.yml'
-alias aps='ansible-playbook -i /workspace/lp-devops/inventories/local site.yml'
-alias apt='ansible-playbook -i /workspace/lp-devops/inventories/local site.yml --tags='
+alias apc='ansible-playbook -i /workspace/lp-devops/inventories/local /workspace/lp-devops/common.yml'
+alias aps='ansible-playbook -i /workspace/lp-devops/inventories/local /workspace/lp-devops/site.yml'
+alias apt='ansible-playbook -i /workspace/lp-devops/inventories/local /workspace/lp-devops/site.yml --tags='
 
 # SVN
 alias sco='svn co'
