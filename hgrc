@@ -1,6 +1,9 @@
 [ui]
 username = Bill Wiens <billwiens@gmail.com>
 
+[defaults]
+log = -f
+
 [extensions]
 color =
 fetch =
