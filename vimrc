@@ -149,9 +149,12 @@ endif
 
 " Color scheme
 set background=dark
-colorscheme solarized
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
+if filereadable("~/.vim/bundle/vim-colors-solarized")
+  colorscheme solarized
+endif
+
 
 " Airline
 let g:airline_powerline_fonts=1
