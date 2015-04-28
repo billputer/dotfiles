@@ -1,5 +1,6 @@
 [ui]
 username = Bill Wiens <billwiens@gmail.com>
+merge = vimdiff
 
 [defaults]
 log = -f
@@ -9,6 +10,7 @@ color =
 fetch =
 pager =
 progress =
+rebase =
 record =
 shelve =
 strip =
@@ -39,6 +41,10 @@ diff.deleted = red
 diff.inserted = green
 diff.changed = white
 diff.trailingwhitespace = white_background
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
 
 [alias]
 # Nudge: just push the current branch.
