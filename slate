@@ -64,9 +64,23 @@ layout 2monitors 'Sublime Text 2':REPEAT ${lefthalf} ${mon-dell}
 layout 2monitors 'Tweetbot' ${lefthalf} ${mon-dell}
 
 
+layout 3monitors-base 'iTerm':REPEAT,SORT_TITLE ${full} 2
+layout 3monitors-base 'Google Chrome' ${full} 1
+layout 3monitors-base 'HipChat' ${full} 0
+layout 3monitors-base 'Microsoft Outlook' ${full} 1
+layout 3monitors-base 'Sublime Text':REPEAT ${full} 2
+
+layout 3monitors-workspace 'iTerm':REPEAT,SORT_TITLE ${full} 2
+layout 3monitors-workspace 'Google Chrome' ${full} 1
+layout 3monitors-workspace 'Sublime Text':REPEAT ${full} 0
+
+
 default 1monitor resolutions:${mon-laptop}
 default 2monitors resolutions:${mon-laptop};${mon-dell}
 
+
 # layout binding
+bind h:ctrl;alt;cmd layout 3monitors-base
+bind j:ctrl;alt;cmd layout 3monitors-workspace
 bind l:ctrl;alt;cmd  layout 2monitors
 bind l:shift;ctrl;alt;cmd  layout 1monitor
