@@ -28,6 +28,13 @@ alias tom='top -o vsize'
 # convert newlines to LF
 alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 
+# ansible
+alias apl='ansible-playbook -i /workspace/lp-devops/inventories/local /workspace/lp-devops/development.yml'
+alias apd='ansible-playbook -i /workspace/lp-devops/inventories/dogfood /workspace/lp-devops/lp-app.yml'
+alias apf='ansible-playbook -i /workspace/lp-devops/inventories/frontier /workspace/lp-devops/lp-app.yml'
+alias api='ansible-playbook -i /workspace/lp-devops/inventories/infrastructure /workspace/lp-devops/infrastructure.yml'
+alias app='ansible-playbook -i /workspace/lp-devops/inventories/production /workspace/lp-devops/lp-app.yml'
+
 # SVN
 alias sco='svn co'
 alias sup='svn up'
