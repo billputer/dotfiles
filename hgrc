@@ -17,6 +17,7 @@ strip =
 
 [pager]
 pager = LESS='FRX' less
+attend = diff,status,log,qdiff,blame,annotate,pdiff,glog,show,slog,nlog,sglog
 
 [progress]
 delay = 1.0
@@ -56,6 +57,12 @@ undo = revert --no-backup
 # Easily add ignore patterns to .hgignore and commit.
 ignore = ![ -n "$@" ] && echo '$@' >> `$HG root`/.hgignore && \
           $HG commit `$HG root`/.hgignore -Am 'Add "$@" to .hgignore.'
+
+# log aliases
+show = log --patch --verbose --rev
+slog = log --style=$HOME/.files/hg/templates/map-cmdline.slog
+nlog = log --style=$HOME/.files/hg/templates/map-cmdline.nlog
+sglog = log -G --style=$HOME/.files/hg/templates/map-cmdline.sglog
 
 # Local settings
 %include ~/.hgrc_local
