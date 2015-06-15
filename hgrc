@@ -4,6 +4,7 @@ merge = vimdiff
 
 [defaults]
 log = -f
+revert = --no-backup
 
 [extensions]
 color =
