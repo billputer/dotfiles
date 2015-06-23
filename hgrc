@@ -15,6 +15,7 @@ rebase =
 record =
 shelve =
 strip =
+transplant =
 
 [pager]
 pager = LESS='FRX' less
