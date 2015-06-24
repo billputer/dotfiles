@@ -64,3 +64,6 @@ __git_files () {
 # bind Home and End
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
+# bind ctrl-y and ctrl-o to forward and back word
+bindkey '' backward-word
+bindkey '' forward-word
