@@ -50,6 +50,15 @@ function ruby_info {
     fi;
 }
 
+# set username color in terminal based on username
+function user_color {
+    if [[ $USER == bill* ]]; then
+        echo ${MAGENTA}
+    else
+        echo ${ORANGE}
+    fi
+}
+
 # Git prompt variables
 ZSH_THEME_GIT_PROMPT_PREFIX=" \ue0a0 "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -79,7 +88,7 @@ ZSH_THEME_HG_PROMPT_MISSING=" %F{${BASE0}}!"
 ZSH_THEME_HG_PROMPT_UNTRACKED=" %F{${VIOLET}}✭"
 
 # Local variables for prompt parts
-local USER_HOST="%F{${MAGENTA}}%n%F{${BASE0}}@%F{${YELLOW}}%m"
+local USER_HOST="%F{$(user_color)}%n%F{${BASE0}}@%F{${YELLOW}}%m"
 local CURRENT_DIR="%F{${BLUE}}\${PWD/#\$HOME/~}%F{${BASE0}}"
 local PYTHON_INFO='$(python_info)'
 local RUBY_INFO='$(ruby_info)'
