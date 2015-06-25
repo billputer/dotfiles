@@ -23,16 +23,14 @@ precmd () {
 }
 
 plugins=(
+  aws
   brew
   bundler
-  capistrano
   fabric
   gem
-  git
-  git-flow
+  golang
   history-substring-search
-  knife
-  osx
+  redis-cli
   pip
   python
   vagrant
