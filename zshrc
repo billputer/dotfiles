@@ -41,8 +41,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 
-# spelling correction
-setopt correct
+# disable spelling correction
+unsetopt correct
 # prevents from accidentally overwriting a file with >
 setopt noclobber
 # disables auto-completion of LDAP usernames
