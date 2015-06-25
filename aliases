@@ -58,6 +58,9 @@ alias serveit='python -m SimpleHTTPServer'
 # sl
 alias sl='~/.files/bin/sl.sh'
 
+# sudo switch user with zsh shell
+alias sudosuz='sudo -E su --shell /usr/bin/zsh'
+
 # vagrant
 alias vup='vagrant up'
 alias vupno='vagrant up --no-provision'
