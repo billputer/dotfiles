@@ -18,8 +18,8 @@ local BLUE="33"
 local CYAN="37"
 local GREEN="64"
 
-function prompt_char {
-    if [ $UID -eq 0 ]; then echo "%F{${RED}}#%{$reset_color%}"; else echo $; fi
+function return_code {
+    echo "%(?..%F{${RED}}[%?]%{$reset_color%})"
 }
 
 # Disable the default virtual env prompt so we can set our own
@@ -90,15 +90,13 @@ ZSH_THEME_HG_PROMPT_UNTRACKED=" %F{${VIOLET}}✭"
 # Local variables for prompt parts
 local USER_HOST="%F{$(user_color)}%n%F{${BASE0}}@%F{${YELLOW}}%m"
 local CURRENT_DIR="%F{${BLUE}}\${PWD/#\$HOME/~}%F{${BASE0}}"
-local PYTHON_INFO='$(python_info)'
-local RUBY_INFO='$(ruby_info)'
 local MERCURIAL_INFO='$(hg_prompt_info)$(hg_prompt_status)%{$reset_color%}'
 local GIT_INFO='$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
-local PROMT_CHARACTER='$(prompt_char)'
+local PROMPT_CHARACTER='$'
 local DATETIME="%F{${GREEN}}[%*]%{$reset_color%}"
 
 PROMPT="
-${USER_HOST}: ${CURRENT_DIR} ${GIT_INFO} ${MERCURIAL_INFO}
- ${PROMT_CHARACTER} %{[0m%}"
+${USER_HOST}: ${CURRENT_DIR} $(return_code) ${GIT_INFO}${MERCURIAL_INFO}
+ ${PROMPT_CHARACTER} %{[0m%}"
 
-RPROMPT="${PYTHON_INFO} ${RUBY_INFO} ${DATETIME}"
+RPROMPT="$(python_info) $(ruby_info) ${DATETIME}"
