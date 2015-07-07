@@ -92,6 +92,8 @@ local USER_HOST="%F{$(user_color)}%n%F{${BASE0}}@%F{${YELLOW}}%m"
 local CURRENT_DIR="%F{${BLUE}}\${PWD/#\$HOME/~}%F{${BASE0}}"
 local MERCURIAL_INFO='$(hg_prompt_info)$(hg_prompt_status)%{$reset_color%}'
 local GIT_INFO='$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
+local PYTHON_INFO='$(python_info)'
+local RUBY_INFO='$(ruby_info)'
 local PROMPT_CHARACTER='$'
 local DATETIME="%F{${GREEN}}[%*]%{$reset_color%}"
 
@@ -99,4 +101,4 @@ PROMPT="
 ${USER_HOST}: ${CURRENT_DIR} $(return_code) ${GIT_INFO}${MERCURIAL_INFO}
  ${PROMPT_CHARACTER} %{[0m%}"
 
-RPROMPT="$(python_info) $(ruby_info) ${DATETIME}"
+RPROMPT="${PYTHON_INFO} ${RUBY_INFO} ${DATETIME}"
