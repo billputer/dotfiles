@@ -18,6 +18,15 @@ local BLUE="33"
 local CYAN="37"
 local GREEN="64"
 
+function os_emoji {
+    UNAME=$(uname)
+    if [[ "$UNAME" == "Darwin" ]]; then
+        echo ""
+    elif [[ "$UNAME" == "Linux" ]]; then
+        echo "🐧"
+    fi
+}
+
 function return_code {
     echo "%(?..%F{${RED}}[%?]%{$reset_color%})"
 }
@@ -88,7 +97,7 @@ ZSH_THEME_HG_PROMPT_MISSING=" %F{${BASE0}}!"
 ZSH_THEME_HG_PROMPT_UNTRACKED=" %F{${VIOLET}}✭"
 
 # Local variables for prompt parts
-local USER_HOST="%F{$(user_color)}%n%F{${BASE0}}@%F{${YELLOW}}%m"
+local USER_HOST="%F{$(user_color)}%n%F{${BASE0}}@%F{${YELLOW}}%m %F{${GREEN}}$(os_emoji)"
 local CURRENT_DIR="%F{${BLUE}}\${PWD/#\$HOME/~}%F{${BASE0}}"
 local MERCURIAL_INFO='$(hg_prompt_info)$(hg_prompt_status)%{$reset_color%}'
 local GIT_INFO='$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
@@ -98,7 +107,7 @@ local PROMPT_CHARACTER='$'
 local DATETIME="%F{${GREEN}}[%*]%{$reset_color%}"
 
 PROMPT="
-${USER_HOST}: ${CURRENT_DIR} $(return_code) ${GIT_INFO}${MERCURIAL_INFO}
+${USER_HOST} ${CURRENT_DIR} $(return_code) ${GIT_INFO}${MERCURIAL_INFO}
  ${PROMPT_CHARACTER} %{[0m%}"
 
 RPROMPT="${PYTHON_INFO} ${RUBY_INFO} ${DATETIME}"
