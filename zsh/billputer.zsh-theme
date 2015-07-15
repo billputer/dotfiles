@@ -23,7 +23,7 @@ function os_emoji {
     if [[ "$UNAME" == "Darwin" ]]; then
         echo ""
     elif [[ "$UNAME" == "Linux" ]]; then
-        echo "🐧"
+        echo "🐧 "
     fi
 }
 
