@@ -55,3 +55,9 @@ Install GNU coreutils, etc, instead of using BSD versions (added to PATH in prof
     brew install gnu-indent --with-default-names
     brew install gnu-sed --with-default-names
     brew install gnu-tar --with-default-names
+
+## Shellcheck
+
+Install shellcheck for SublimeLinter-shellcheck.
+
+    brew install shellcheck
