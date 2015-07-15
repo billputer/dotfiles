@@ -54,8 +54,6 @@ if [[ -x $(which pyenv) ]]; then
   eval "$(pyenv init -)";
 fi
 export DEFAULT_PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
-# use a download cache for pip
-export PIP_DOWNLOAD_CACHE=$HOME/.pip-download-cache
 
 # add npm binaries to path
 if [[ -d "/usr/local/share/npm/bin" ]]; then
