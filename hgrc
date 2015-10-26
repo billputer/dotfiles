@@ -1,6 +1,7 @@
 [ui]
 username = Bill Wiens <billwiens@gmail.com>
 merge = vimdiff
+ignore = ~/.hgignore
 
 [defaults]
 log = -f
@@ -65,6 +66,8 @@ show = log --patch --verbose --rev
 slog = log --style=$HOME/.files/hg/templates/map-cmdline.slog
 nlog = log --style=$HOME/.files/hg/templates/map-cmdline.nlog
 sglog = log -G --style=$HOME/.files/hg/templates/map-cmdline.sglog
+who = annotate -c -d -u -q
+huh = !$HG log -v -r `$HG annotate -c $1 | head -n $2 | tail -n 1 | cut -f 1 -d ':'`
 
 # Local settings
 %include ~/.hgrc_local
