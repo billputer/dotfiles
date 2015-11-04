@@ -18,6 +18,9 @@ config windowHintsRoundedCornerSize 10
 
 bind e:cmd hint ASDFGQWERT
 
+# Use hyper shortcut
+alias hyper ctrl;alt;cmd
+
 # Monitor Aliases
 alias mon-laptop 1440x900
 alias mon-dell 1920x1080
@@ -29,19 +32,6 @@ alias righthalf move screenOriginX+screenSizeX*.5;screenOriginY screenSizeX*.5;s
 alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY*.45
 alias bottomhalf move screenOriginX;screenOriginY+screenSizeY*.45 screenSizeX;screenSizeY*.55
 alias center move screenOriginX+screenSizeX*.15;screenOriginY+screenSizeY*.15 screenSizeX*.7;screenSizeY*.7
-
-# Move bindings
-bind m:ctrl;alt;cmd  ${full}
-bind c:ctrl;alt;cmd  ${center}
-bind right:ctrl;alt;cmd ${righthalf}
-bind left:ctrl;alt;cmd ${lefthalf}
-bind up:ctrl;alt;cmd ${tophalf}
-bind down:ctrl;alt;cmd ${bottomhalf}
-
-# Throw Bindings
-bind left:ctrl;alt      throw left resize
-bind right:ctrl;alt     throw right resize
-
 
 # Layouts
 layout 1monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf}
@@ -79,8 +69,16 @@ default 1monitor resolutions:${mon-laptop}
 default 2monitors resolutions:${mon-laptop};${mon-dell}
 
 
+# Move bindings
+bind left:${hyper} ${lefthalf}
+bind right:${hyper} ${righthalf}
+bind up:${hyper} ${full}
+bind down:${hyper} ${center}
+bind ,:${hyper} throw left resize
+bind .:${hyper} throw right resize
+
 # layout binding
-bind h:ctrl;alt;cmd layout 3monitors-base
-bind j:ctrl;alt;cmd layout 3monitors-workspace
-bind l:ctrl;alt;cmd  layout 2monitors
-bind l:shift;ctrl;alt;cmd  layout 1monitor
+bind h:${hyper} layout 3monitors-base
+bind j:${hyper} layout 3monitors-workspace
+bind l:${hyper}  layout 2monitors
+bind l:shift;${hyper}  layout 1monitor
