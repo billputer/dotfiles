@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Remap Control + S to Command + Control + F3</name>
+    <appendix>This command sequence is then bound to trigger mission control</appendix>
+    <identifier>bill.mission_control_hotkey</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::NONE,,
+      KeyCode::F3, ModifierFlag::COMMAND_L, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::CONTROL_R | ModifierFlag::NONE,,
+      KeyCode::F3, ModifierFlag::COMMAND_L, ModifierFlag::CONTROL_L,
+    </autogen>
+
+    <name>Remap Control + Shift + S to Control + S</name>
+    <appendix>This allows us to continue to use Control + S in applications</appendix>
+    <identifier>bill.remap_control_s</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+      KeyCode::S, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::CONTROL_R | ModifierFlag::SHIFT_L,
+      KeyCode::S, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Remap Middle click to Command + Control + F3</name>
+    <appendix>This triggers Mission Control</appendix>
+    <identifier>bill.middle_click_to_mission_control</identifier>
+    <autogen>
+      __KeyToKey__
+      PointingButton::MIDDLE,
+      KeyCode::F3, ModifierFlag::COMMAND_L, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Remap Control + Command + K to Control + Shift + Power (Display sleep)</name>
+    <appendix>This triggers Display Sleep</appendix>
+    <identifier>bill.display_sleep</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      ConsumerKeyCode::EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
+
+    </autogen>
+  </item>
+
+  <item>
+    <name>Remap F16 to Hyper</name>
+    <appendix>This maps F16 to Control + Option + Command for a 'hyper' key for macros.</appendix>
+
+    <identifier>bill.f16_to_hyper</identifier>
+
+    <autogen>
+        --KeyToKey--
+        KeyCode::F16,
+
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+    </autogen>
+</item>
+</root>
