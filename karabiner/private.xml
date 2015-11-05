@@ -49,7 +49,6 @@
       __KeyToKey__
       KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
       ConsumerKeyCode::EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
-
     </autogen>
   </item>
 
@@ -66,5 +65,21 @@
         KeyCode::COMMAND_L,
         ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
     </autogen>
-</item>
+  </item>
+
+  <item>
+    <name>Shortcuts for easier tab switching</name>
+    <appendix>This maps Command + Control + E,R to Command + Shift + [,] for easier tab switching.</appendix>
+    <identifier>bill.easier_tabs</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::R, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
 </root>
