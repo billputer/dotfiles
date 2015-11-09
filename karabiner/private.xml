@@ -68,6 +68,21 @@
   </item>
 
   <item>
+    <name>Remap Right Command to Hyper</name>
+    <appendix>This maps Right Command to Control + Option + Command for a 'hyper' key for macros.</appendix>
+
+    <identifier>bill.rcommand_to_hyper</identifier>
+
+    <autogen>
+        --KeyToKey--
+        KeyCode::COMMAND_R,
+
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
+
+  <item>
     <name>Shortcuts for easier tab switching</name>
     <appendix>This maps Command + Control + E,R to Command + Shift + [,] for easier tab switching.</appendix>
     <identifier>bill.easier_tabs</identifier>
