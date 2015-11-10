@@ -18,12 +18,24 @@ local BLUE="33"
 local CYAN="37"
 local GREEN="64"
 
+local UNAME=$(uname)
+local HOSTNAME=$(hostname)
+
 function os_emoji {
-    UNAME=$(uname)
-    if [[ "$UNAME" == "Darwin" ]]; then
-        echo ""
+    if [[ "$HOSTNAME" == "bdub-dev" ]]; then
+        echo -n "🍕🐐 "
+    elif [[ "$HOSTNAME" == "df-"* ]]; then
+        echo -n "🐶 "
+    elif [[ "$HOSTNAME" == "cf-"* ]]; then
+        echo -n "😺 "
+    elif [[ "$HOSTNAME" == "lp-"* ]]; then
+        echo -n "⛔️😱⛔️ "
+    elif [[ "$HOSTNAME" == "prod-"* ]]; then
+        echo -n "⛔️😱⛔️ "
+    elif [[ "$UNAME" == "Darwin" ]]; then
+        echo -n ""
     elif [[ "$UNAME" == "Linux" ]]; then
-        echo "🐧 "
+        echo -n "🐧 "
     fi
 }
 

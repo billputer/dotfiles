@@ -1,6 +1,7 @@
 [ui]
 username = Bill Wiens <billwiens@gmail.com>
 merge = vimdiff
+editor = vim
 ignore = ~/.hgignore
 
 [defaults]
