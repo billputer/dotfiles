@@ -29,9 +29,9 @@ function os_emoji {
     elif [[ "$HOSTNAME" == "cf-"* ]]; then
         echo -n "😺 "
     elif [[ "$HOSTNAME" == "lp-"* ]]; then
-        echo -n "⛔️😱⛔️ "
+        echo -n "⛔️ 😱 ⛔️ "
     elif [[ "$HOSTNAME" == "prod-"* ]]; then
-        echo -n "⛔️😱⛔️ "
+        echo -n "⛔️ 😱 ⛔️ "
     elif [[ "$UNAME" == "Darwin" ]]; then
         echo -n ""
     elif [[ "$UNAME" == "Linux" ]]; then
