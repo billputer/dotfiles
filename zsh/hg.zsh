@@ -10,7 +10,7 @@ function hg_get_branch_name() {
 
 function hg_prompt_info {
   if [ $(in_hg) ]; then
-    echo "$ZSH_THEME_HG_PROMPT_PREFIX$(hg_get_branch_name)$(hg_dirty)$ZSH_THEME_HG_PROMPT_SUFFIX"
+    echo -n "$ZSH_THEME_HG_PROMPT_PREFIX$(hg_get_branch_name)$(hg_dirty)$ZSH_THEME_HG_PROMPT_SUFFIX"
   fi
 }
 
@@ -18,10 +18,10 @@ function hg_dirty {
   hg status 2> /dev/null | command grep -Eq '^\s*[ACDIM!?L]'
   if [ $pipestatus[-1] -eq 0 ]; then
     # Grep exits with 0 when "One or more lines were selected", return "dirty".
-    echo $ZSH_THEME_HG_PROMPT_DIRTY
+    echo -n $ZSH_THEME_HG_PROMPT_DIRTY
   else
     # Otherwise, no lines were found, or an error occurred. Return clean.
-    echo $ZSH_THEME_HG_PROMPT_CLEAN
+    echo -n $ZSH_THEME_HG_PROMPT_CLEAN
   fi
 }
 
@@ -45,5 +45,5 @@ function hg_prompt_status() {
     STATUS="$ZSH_THEME_HG_PROMPT_MODIFIED$STATUS"
   fi
 
-  echo "${STATUS}"
+  echo -n "${STATUS}"
 }

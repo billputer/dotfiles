@@ -1,4 +1,6 @@
+#
 # billputer's best zsh theme
+#
 
 # Solarized colors
 local BASE03="234"
@@ -18,70 +20,8 @@ local BLUE="33"
 local CYAN="37"
 local GREEN="64"
 
-local UNAME=$(uname)
-local HOSTNAME=$(hostname)
-
-function os_emoji {
-    if [[ "$HOSTNAME" == "bdub-dev" ]]; then
-        echo -n "🍕🐐 "
-    elif [[ "$HOSTNAME" == "df-"* ]]; then
-        echo -n "🐶 "
-    elif [[ "$HOSTNAME" == "cf-"* ]]; then
-        echo -n "😺 "
-    elif [[ "$HOSTNAME" == "lp-"* ]]; then
-        echo -n "⛔️ 😱 ⛔️ "
-    elif [[ "$HOSTNAME" == "prod-"* ]]; then
-        echo -n "⛔️ 😱 ⛔️ "
-    elif [[ "$UNAME" == "Darwin" ]]; then
-        echo -n ""
-    elif [[ "$UNAME" == "Linux" ]]; then
-        echo -n "🐧 "
-    fi
-}
-
-function return_code {
-    echo "%(?..%F{${RED}}[%?]%{$reset_color%})"
-}
-
-# Disable the default virtual env prompt so we can set our own
-export VIRTUAL_ENV_DISABLE_PROMPT='1'
-function python_info {
-    PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
-    if [ "$PYTHON_VERSION" != "$DEFAULT_PYTHON_VERSION" ]; then
-        local PYTHON_VERSION_DISPLAY="python-$PYTHON_VERSION";
-    fi
-
-    if [ "$VIRTUAL_ENV" ]; then
-        local VIRTUALENV_DISPLAY="@"$(basename "$VIRTUAL_ENV");
-    fi
-
-    if [ "$VIRTUALENV_DISPLAY" ] || [ "$PYTHON_VERSION_DISPLAY" ]; then
-        echo "(${PYTHON_VERSION_DISPLAY}${VIRTUALENV_DISPLAY})";
-    fi
-}
-
-function ruby_info {
-    if [[ -x `which rvm-prompt` ]]; then
-        local RVM_PROMPT="[$(rvm-prompt i v g)]"
-        # show if not using default ruby
-        local DEFAULT_RUBY="2.1.1"
-        if [[ $RVM_PROMPT != "[ruby-$DEFAULT_RUBY]" ]];
-            then echo ${RVM_PROMPT};
-        fi;
-    fi;
-}
-
-# set username color in terminal based on username
-function user_color {
-    if [[ $USER == bill* ]]; then
-        echo ${MAGENTA}
-    else
-        echo ${ORANGE}
-    fi
-}
-
 # Git prompt variables
-ZSH_THEME_GIT_PROMPT_PREFIX=" \ue0a0 "
+ZSH_THEME_GIT_PROMPT_PREFIX="\ue0a0 "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %F{${RED}}✘"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %F{${GREEN}}✔"
@@ -97,7 +37,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND=" ⬇"
 ZSH_THEME_GIT_PROMPT_DIVERGED=" ⬍"
 
 # Mercurial prompt variables
-ZSH_THEME_HG_PROMPT_PREFIX=" \ue0a0 "
+ZSH_THEME_HG_PROMPT_PREFIX="\ue0a0 "
 ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_HG_PROMPT_DIRTY=""
 ZSH_THEME_HG_PROMPT_CLEAN=" %F{${GREEN}}✔"
@@ -108,18 +48,112 @@ ZSH_THEME_HG_PROMPT_DELETED=" %F{${RED}}✖"
 ZSH_THEME_HG_PROMPT_MISSING=" %F{${BASE0}}!"
 ZSH_THEME_HG_PROMPT_UNTRACKED=" %F{${VIOLET}}✭"
 
-# Local variables for prompt parts
-local USER_HOST="%F{$(user_color)}%n%F{${BASE0}}@%F{${YELLOW}}%m %F{${GREEN}}$(os_emoji)"
-local CURRENT_DIR="%F{${BLUE}}\${PWD/#\$HOME/~}%F{${BASE0}}"
-local MERCURIAL_INFO='$(hg_prompt_info)$(hg_prompt_status)%{$reset_color%}'
-local GIT_INFO='$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
-local PYTHON_INFO='$(python_info)'
-local RUBY_INFO='$(ruby_info)'
-local PROMPT_CHARACTER='$'
-local DATETIME="%F{${GREEN}}[%*]%{$reset_color%}"
+local UNAME=$(uname)
+local HOSTNAME=$(hostname)
 
-PROMPT="
-${USER_HOST} ${CURRENT_DIR} $(return_code) ${GIT_INFO}${MERCURIAL_INFO}
- ${PROMPT_CHARACTER} %{[0m%}"
 
-RPROMPT="${PYTHON_INFO} ${RUBY_INFO} ${DATETIME}"
+prompt_user_host() {
+  print -n "%F{${MAGENTA}}%n" # user
+  print -n "%F{${BASE0}}@"    # @ symbol
+  print -n "%F{${YELLOW}}%m"  # hostname
+  print -n "%{$reset_color%} "
+}
+
+prompt_current_dir() {
+  print -n "%F{${BLUE}}\${PWD/#\$HOME/~}%{$reset_color%} "
+}
+
+prompt_os_emoji() {
+  print -n "%F{${GREEN}}"
+  if [[ "$HOSTNAME" == "bdub-dev" ]]; then
+    print -n "🍕🐐 "
+  elif [[ "$HOSTNAME" == "df-"* ]]; then
+    print -n "🐶 "
+  elif [[ "$HOSTNAME" == "cf-"* ]]; then
+    print -n "😺 "
+  elif [[ "$HOSTNAME" == "lp-"* ]]; then
+    print -n "⛔️ 😱 ⛔️ "
+  elif [[ "$HOSTNAME" == "prod-"* ]]; then
+    print -n "⛔️ 😱 ⛔️ "
+  elif [[ "$UNAME" == "Darwin" ]]; then
+    print -n "%F{${GREEN}}"
+  elif [[ "$UNAME" == "Linux" ]]; then
+    print -n "🐧 "
+  fi
+  print -n "%{$reset_color%} "
+}
+
+prompt_return_code() {
+  print -n "%(?..%F{${RED}}[%?] %{$reset_color%})"
+}
+
+prompt_git_info() {
+  print -n "$(git_prompt_info)$(git_prompt_status)%{$reset_color%}"
+}
+
+prompt_hg_info() {
+  hg_prompt_info
+  hg_prompt_status
+  print -n "%{$reset_color%}"
+}
+
+# Disable the default virtual env prompt so we can set our own
+export VIRTUAL_ENV_DISABLE_PROMPT='1'
+prompt_python_info() {
+  PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
+  if [ "$PYTHON_VERSION" != "$DEFAULT_PYTHON_VERSION" ]; then
+    local PYTHON_VERSION_DISPLAY="python-$PYTHON_VERSION";
+  fi
+
+  if [ "$VIRTUAL_ENV" ]; then
+    local VIRTUALENV_DISPLAY="@"$(basename "$VIRTUAL_ENV");
+  fi
+
+  if [ "$VIRTUALENV_DISPLAY" ] || [ "$PYTHON_VERSION_DISPLAY" ]; then
+    print -n "(${PYTHON_VERSION_DISPLAY}${VIRTUALENV_DISPLAY}) ";
+  fi
+}
+
+prompt_ruby_info() {
+  if [[ -x `which rvm-prompt` ]]; then
+    local RVM_PROMPT="[$(rvm-prompt i v g)]"
+    # show if not using default ruby
+    local DEFAULT_RUBY="2.1.1"
+    if [[ $RVM_PROMPT != "[ruby-$DEFAULT_RUBY]" ]]; then
+      print "${RVM_PROMPT} ";
+    fi;
+  fi;
+}
+
+prompt_datetime() {
+  print -n "%F{${GREEN}}[%*]%{$reset_color%}"
+}
+
+prompt_billputer() {
+  print ""
+  prompt_user_host
+  prompt_os_emoji
+  prompt_current_dir
+  prompt_return_code
+  prompt_git_info
+  prompt_hg_info
+  print -n "\n $ %{[0m%}"
+}
+
+rprompt_billputer() {
+  prompt_python_info
+  prompt_ruby_info
+  prompt_datetime
+}
+
+prompt_billputer_precmd() {
+  PROMPT="$(prompt_billputer)"
+  RPROMPT="$(rprompt_billputer)"
+}
+
+prompt_billputer_setup() {
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd prompt_billputer_precmd
+}
+
+prompt_billputer_setup "$@"
