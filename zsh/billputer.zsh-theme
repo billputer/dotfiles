@@ -97,6 +97,14 @@ prompt_hg_info() {
   print -n "%{$reset_color%}"
 }
 
+prompt_lp_current_role() {
+  if [[ "$HOSTNAME" == "bdub-dev" ]]; then
+    print -n "%F{${VIOLET}}("
+    lp-current-role
+    print -n ")%{$reset_color%} "
+  fi
+}
+
 # Disable the default virtual env prompt so we can set our own
 export VIRTUAL_ENV_DISABLE_PROMPT='1'
 prompt_python_info() {
@@ -143,6 +151,7 @@ prompt_billputer() {
 rprompt_billputer() {
   prompt_python_info
   prompt_ruby_info
+  prompt_lp_current_role
   prompt_datetime
 }
 
