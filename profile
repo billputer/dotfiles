@@ -19,9 +19,9 @@ umask 022
 
 # Set text editor
 if [[ $(uname) = 'Darwin' ]]; then
-  export EDITOR='subl --new-window --wait'
-  export VISUAL='subl --new-window --wait'
-  alias e='subl --new-window'
+  export EDITOR='subl'
+  export VISUAL='subl'
+  alias e='subl'
 else
   export EDITOR='vim'
   export VISUAL='vim'
