@@ -13,6 +13,7 @@ color =
 fetch =
 pager =
 progress =
+purge =
 rebase =
 record =
 shelve =
