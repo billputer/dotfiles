@@ -65,3 +65,8 @@ bindkey '\e[4~' end-of-line
 # bind ctrl-y and ctrl-o to forward and back word
 bindkey '' backward-word
 bindkey '' forward-word
+
+# utility function for determining whether a name exists
+function exists {
+  whence -w $1 >/dev/null
+}
