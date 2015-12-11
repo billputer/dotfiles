@@ -78,7 +78,4 @@ if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
   chruby ruby-2.1.2
 fi
 
-# set default Vagrant provider
-export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
-
 source $HOME/.profile.local
