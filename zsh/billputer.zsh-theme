@@ -98,7 +98,7 @@ prompt_hg_info() {
 }
 
 prompt_lp_current_role() {
-  if [[ "$HOSTNAME" == "bdub-dev" ]]; then
+  if whence -w lp-assume-role >/dev/null; then
     print -n "%F{${VIOLET}}("
     lp-current-role
     print -n ")%{$reset_color%} "
