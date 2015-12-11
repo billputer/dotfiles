@@ -31,7 +31,9 @@ alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 # LP-specific aliases
 alias -g wa='~/workspace/lp-app'
 alias -g wd='~/workspace/lp-devops'
-
+alias lpa='lp-assume-role admin'
+alias lpo='lp-assume-role ops'
+alias lpd='lp-assume-role dev'
 
 # ansible
 alias apl='ansible-playbook -i /workspace/lp-devops/inventories/local /workspace/lp-devops/development.yml'
