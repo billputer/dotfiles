@@ -62,6 +62,9 @@ alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; d
 # yolo
 alias git-yolo='git commit -am "`curl -s http://whatthecommit.com/index.txt`"'
 
+# be quiet
+alias -g quietly='> /dev/null 2>&1'
+
 # serveit
 alias serveit='python -m SimpleHTTPServer'
 
