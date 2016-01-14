@@ -7,57 +7,5 @@ Clone repo (with submodules)
 
 Run `install.sh` to install:
 
-    ~/.files/install.sh
+     ~/.files/install/install.sh
 
-ZSH
----
-
-Install ZSH:
-
-    sudo apt-get install zsh
-
-Switch shell to ZSH:
-
-    chsh -s /bin/zsh
-
-Alternatively:
-
-    sudo chsh -s /bin/zsh $USER
-
-Vim
----
-
-Install Vim bundles.
-
-    vim +BundleInstall +qall
-
-
-OS X
------
-
-Run `ns-defaults.sh` to set Mac OS X defaults:
-
-    ~/.files/ns-defaults.sh
-
-## tmux
-
-Install tmux along with reattach-to-user-namespace workaround.
-
-    brew install tmux reattach-to-user-namespace
-
-## GNU coreutils
-
-Install GNU coreutils, etc, instead of using BSD versions (added to PATH in profile).
-
-    brew install coreutils
-    brew install findutils --with-default-names
-    brew install gnu-getopt --with-default-names
-    brew install gnu-indent --with-default-names
-    brew install gnu-sed --with-default-names
-    brew install gnu-tar --with-default-names
-
-## Shellcheck
-
-Install shellcheck for SublimeLinter-shellcheck.
-
-    brew install shellcheck

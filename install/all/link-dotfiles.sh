@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-
-set -e
-
 #
-# Installs dotfiles, making backups of files before overwriting
+# installs dotfiles, making backups of files before overwriting
 #
+set -o errexit
+set -o pipefail
+set -o nounset
 
-CURRENT_DIRECTORY="$( cd "$( dirname "$0" )" && pwd )"
+DOTFILE_DIR="$( cd "$( dirname "$0" )/.." && pwd )"
 FILES="
   ackrc
   bin
@@ -31,7 +31,7 @@ echo "Linking dotfiles in $HOME/"
 for file in $FILES
 do
   echo "Processing $file"
-  FROM=$CURRENT_DIRECTORY/$file
+  FROM=$DOTFILE_DIR/$file
   TO=$HOME/.$file
 
   # backup existing files
@@ -54,7 +54,7 @@ done
 # so that we can keep local changes out of git
 echo "Processing profile.local, special case"
 
-FROM=$CURRENT_DIRECTORY/profile.local
+FROM=$DOTFILE_DIR/profile.local
 TO=$HOME/.profile.local
 
 if [[ -e $TO ]]; then
