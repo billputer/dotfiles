@@ -78,4 +78,7 @@ if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
   chruby ruby-2.1.2
 fi
 
+# use fzf, if it exists
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source $HOME/.profile.local
