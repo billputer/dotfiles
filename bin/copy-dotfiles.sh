@@ -9,7 +9,7 @@ set -v
 function rsync_dotfiles {
   SERVER=$1
   rsync -ae 'ssh -o StrictHostKeyChecking=no' ~/.files/ ${SERVER}:~/.files/
-  ssh ${SERVER} -C '~/.files/install.sh'
+  ssh ${SERVER} -C '~/.files/install/install.sh'
 }
 
 for server in "$@"

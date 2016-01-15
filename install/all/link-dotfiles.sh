@@ -6,7 +6,7 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-DOTFILE_DIR="$( cd "$( dirname "$0" )/.." && pwd )"
+DOTFILE_DIR="$( cd "$( dirname "$0" )/../.." && pwd )"
 FILES="
   ackrc
   bin
