@@ -5,4 +5,5 @@
 set -o errexit
 set -o nounset
 
-yes | vim +PluginInstall +qall now
+echo "installing vim plugins"
+yes | vim +PluginInstall +qall now &> /dev/null

@@ -12,5 +12,5 @@ if [ -d "$HOME/.fzf" ]; then
 else
   echo "installing fzf"
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  printf 'y\ny' | ~/.fzf/install
+  printf 'y\ny' | ~/.fzf/install --no-update-rc > /dev/null
 fi
