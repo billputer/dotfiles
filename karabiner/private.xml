@@ -97,4 +97,20 @@
       KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
     </autogen>
   </item>
+
+  <item>
+    <name>Use Button4 and Button5 as Back/Forward</name>
+    <appendix>This maps Button4 and Button5 to Command + [/].</appendix>
+    <identifier>bill.mouse_4_5_to_back_forward</identifier>
+    <autogen>
+      --KeyToKey--
+      PointingButton::BUTTON4,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      PointingButton::BUTTON5,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
 </root>
