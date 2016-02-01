@@ -224,3 +224,6 @@ map <C-n> :NERDTreeToggle<cr>
 
 " F3 disables autoindenting and autocommenting
 nnoremap <F3> :setl noai nocin nosi formatoptions-=c formatoptions-=r formatoptions-=o inde=<CR>
+
+" F4 toggles line numbers and visible whitespace
+nnoremap <F4> :setlocal number! list!<CR>
