@@ -43,9 +43,10 @@ alias api='ansible-playbook -i /workspace/lp-devops/inventories/infrastructure /
 alias apld='ansible-playbook -i /workspace/lp-devops/inventories/legacy/dogfood /workspace/lp-devops/lp-app.yml'
 alias aplp='ansible-playbook -i /workspace/lp-devops/inventories/legacy/production /workspace/lp-devops/lp-app.yml'
 
-alias apad='ansible-playbook -i /workspace/lp-devops/inventories/aws/catfood.py /workspace/lp-devops/lp-app.yml'
+alias apac='ansible-playbook -i /workspace/lp-devops/inventories/aws/catfood.py /workspace/lp-devops/lp-app.yml'
+alias apad='ansible-playbook -i /workspace/lp-devops/inventories/aws/dogfood.py /workspace/lp-devops/lp-app.yml'
+alias apas='ansible-playbook -i /workspace/lp-devops/inventories/aws/staging.py /workspace/lp-devops/lp-app.yml'
 alias apap='ansible-playbook -i /workspace/lp-devops/inventories/aws/production.py /workspace/lp-devops/lp-app.yml'
-alias apc='apad'
 
 # mercurial
 
