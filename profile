@@ -19,9 +19,9 @@ umask 022
 
 # Set text editor
 if [[ $(uname) = 'Darwin' ]]; then
-  export EDITOR='subl'
-  export VISUAL='subl'
-  alias e='subl'
+  export EDITOR='atom'
+  export VISUAL='atom'
+  alias e='atom'
 else
   export EDITOR='vim'
   export VISUAL='vim'
