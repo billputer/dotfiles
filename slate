@@ -41,6 +41,7 @@ layout 1monitor 'HipChat' ${full}
 layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} | ${center}
 layout 1monitor 'Microsoft Outlook'  ${full}
 layout 1monitor 'Sublime Text 2':REPEAT ${lefthalf}
+layout 1monitor 'Atom':REPEAT ${lefthalf}
 layout 1monitors 'Tweetbot' ${lefthalf}
 
 
@@ -51,6 +52,7 @@ layout 2monitors 'HipChat' ${full} ${mon-laptop}
 layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} {mon-laptop} | ${center} ${mon-laptop}
 layout 2monitors 'Microsoft Outlook' ${full} ${mon-dell}
 layout 2monitors 'Sublime Text 2':REPEAT ${lefthalf} ${mon-dell}
+layout 2monitors 'Atom':REPEAT ${lefthalf} ${mon-dell}
 layout 2monitors 'Tweetbot' ${lefthalf} ${mon-dell}
 
 
@@ -59,10 +61,12 @@ layout 3monitors-base 'Google Chrome' ${full} 1
 layout 3monitors-base 'HipChat' ${full} 0
 layout 3monitors-base 'Microsoft Outlook' ${full} 1
 layout 3monitors-base 'Sublime Text':REPEAT ${full} 2
+layout 3monitors-base 'Atom':REPEAT ${full} 2
 
 layout 3monitors-workspace 'iTerm':REPEAT,SORT_TITLE ${full} 2
 layout 3monitors-workspace 'Google Chrome' ${full} 1
 layout 3monitors-workspace 'Sublime Text':REPEAT ${full} 0
+layout 3monitors-workspace 'Atom':REPEAT ${full} 0
 
 
 default 1monitor resolutions:${mon-laptop}
