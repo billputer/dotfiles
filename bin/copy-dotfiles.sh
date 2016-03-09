@@ -8,6 +8,7 @@ set -v
 
 function rsync_dotfiles {
   SERVER=$1
+  echo "Installing on ${SERVER}"
   rsync -ae 'ssh -o StrictHostKeyChecking=no' ~/.files/ ${SERVER}:~/.files/
   ssh ${SERVER} -C '~/.files/install/install.sh'
 }
