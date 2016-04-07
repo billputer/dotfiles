@@ -5,7 +5,6 @@ editor = vim
 ignore = ~/.hgignore
 
 [defaults]
-log = -f
 revert = --no-backup
 
 [extensions]
