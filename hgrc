@@ -3,6 +3,7 @@ username = Bill Wiens <billwiens@gmail.com>
 merge = vimdiff
 editor = vim
 ignore = ~/.hgignore
+style = ~/.files/hg/templates/map-cmdline.nlog
 
 [defaults]
 revert = --no-backup
