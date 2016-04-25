@@ -35,18 +35,24 @@ alias lpa='lp-assume-role admin'
 alias lpo='lp-assume-role ops'
 alias lpd='lp-assume-role dev'
 
-# ansible
-alias apl='ansible-playbook -i /workspace/lp-devops/inventories/local /workspace/lp-devops/development.yml'
-alias apf='ansible-playbook -i /workspace/lp-devops/inventories/frontier /workspace/lp-devops/lp-app.yml'
-alias api='ansible-playbook -i /workspace/lp-devops/inventories/infrastructure /workspace/lp-devops/infrastructure.yml'
+# ansible playbook
+alias ap-local='ansible-playbook -i /workspace/lp-devops/inventories/local /workspace/lp-devops/development.yml'
+alias ap-frontier='ansible-playbook -i /workspace/lp-devops/inventories/frontier /workspace/lp-devops/lp-app.yml'
+alias ap-demo='ansible-playbook -i /workspace/lp-devops/inventories/demo /workspace/lp-devops/lp-app.yml'
+alias ap-infra='ansible-playbook -i /workspace/lp-devops/inventories/infrastructure /workspace/lp-devops/infrastructure.yml'
 
-alias apld='ansible-playbook -i /workspace/lp-devops/inventories/legacy/dogfood /workspace/lp-devops/lp-app.yml'
-alias aplp='ansible-playbook -i /workspace/lp-devops/inventories/legacy/production /workspace/lp-devops/lp-app.yml'
+alias ap-dogfood='ansible-playbook -i /workspace/lp-devops/inventories/aws/dogfood.py /workspace/lp-devops/lp-app.yml'
+alias ap-staging='ansible-playbook -i /workspace/lp-devops/inventories/aws/staging.py /workspace/lp-devops/lp-app.yml'
+alias ap-prod='ansible-playbook -i /workspace/lp-devops/inventories/aws/production.py /workspace/lp-devops/lp-app.yml'
 
-alias apac='ansible-playbook -i /workspace/lp-devops/inventories/aws/catfood.py /workspace/lp-devops/lp-app.yml'
-alias apad='ansible-playbook -i /workspace/lp-devops/inventories/aws/dogfood.py /workspace/lp-devops/lp-app.yml'
-alias apas='ansible-playbook -i /workspace/lp-devops/inventories/aws/staging.py /workspace/lp-devops/lp-app.yml'
-alias apap='ansible-playbook -i /workspace/lp-devops/inventories/aws/production.py /workspace/lp-devops/lp-app.yml'
+# ansible shell
+alias as-frontier='ansible -i /workspace/lp-devops/inventories/frontier all -m shell -a'
+alias as-demo='ansible -i /workspace/lp-devops/inventories/demo all -m shell -a'
+alias as-infra='ansible -i /workspace/lp-devops/inventories/infrastructure all -m shell -a'
+
+alias as-dogfood='ansible -i /workspace/lp-devops/inventories/aws/dogfood.py all -m shell -a'
+alias as-staging='ansible -i /workspace/lp-devops/inventories/aws/staging.py all -m shell -a'
+alias as-prod='ansible -i /workspace/lp-devops/inventories/aws/production.py all -m shell -a'
 
 # mercurial
 
