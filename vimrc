@@ -7,9 +7,16 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Bundle 'scrooloose/nerdtree'
+Plugin 'bogado/file-line'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ludovicchabant/vim-lawrencium'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
 
 call vundle#end()
 
@@ -227,3 +234,10 @@ nnoremap <F3> :setl noai nocin nosi formatoptions-=c formatoptions-=r formatopti
 
 " F4 toggles line numbers and visible whitespace
 nnoremap <F4> :setlocal number! list!<CR>
+
+" Lawrencium - Mercurial shortcuts
+map <Leader>ha :Hgannotate<CR>
+map <Leader>hc :Hgcommit<CR>
+map <Leader>hd :Hgvdiff<CR>
+map <Leader>hl :Hglogthis<CR>
+map <Leader>hs :Hgstatus<CR>
