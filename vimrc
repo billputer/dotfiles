@@ -153,6 +153,9 @@ nnoremap <leader>v V`]
 " jj exits insert mode
 inoremap jj <ESC>
 
+" L clears the highlighting of :set hlsearch
+nnoremap <leader>l :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
 " w opens a new vertical window and switches to it
 nnoremap <leader>w <C-w>v<C-w>l
 
