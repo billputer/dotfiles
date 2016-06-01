@@ -8,7 +8,6 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
 Plugin 'bogado/file-line'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ludovicchabant/vim-lawrencium'
@@ -17,6 +16,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
