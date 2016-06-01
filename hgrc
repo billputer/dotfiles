@@ -19,6 +19,10 @@ record =
 shelve =
 strip =
 transplant =
+fsmonitor =
+
+[fsmonitor]
+mode = paranoid
 
 [pager]
 pager = LESS='FRX' less
