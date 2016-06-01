@@ -113,4 +113,16 @@
       KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
+
+  <item>
+    <name>Map Control + Command + 2 to Mouse Button 8</name>
+    <appendix>This maps Control + Command + 2 to Mouse Button 8 for use in Synergy</appendix>
+    <identifier>bill.synergy_switch</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::2, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,
+
+      PointingButton::BUTTON8, Option::NOREPEAT,
+    </autogen>
+  </item>
 </root>
