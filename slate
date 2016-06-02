@@ -30,38 +30,28 @@ alias bottomhalf move screenOriginX;screenOriginY+screenSizeY*.45 screenSizeX;sc
 alias center move screenOriginX+screenSizeX*.15;screenOriginY+screenSizeY*.15 screenSizeX*.7;screenSizeY*.7
 
 # Layouts
-layout 1monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf} 0
-layout 1monitor 'iTerm':REPEAT,SORT_TITLE ${righthalf} 0
 layout 1monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 0
 layout 1monitor 'Google Chrome' ${full} 0
-layout 1monitor 'HipChat' ${full} 0
 layout 1monitor 'Slack' ${full} 0
 layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} 0 | ${center} 0
 layout 1monitor 'Microsoft Outlook'  ${full} 0
-layout 1monitor 'Sublime Text 2':REPEAT ${lefthalf} 0
 layout 1monitor 'Atom':REPEAT ${lefthalf} 0
 layout 1monitor 'Tweetbot' ${lefthalf} 0
 
-layout 2monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf} 1
-layout 2monitor 'iTerm':REPEAT,SORT_TITLE ${righthalf} 1
-layout 2monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 1
-layout 2monitor 'Google Chrome' ${lefthalf} 1
-layout 2monitor 'HipChat' ${full} 0
+layout 2monitor 'Atom':REPEAT ${full} 0
 layout 2monitor 'Slack' ${full} 0
 layout 2monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} 0 | ${center} 0
+layout 2monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 1
+layout 2monitor 'Google Chrome' ${lefthalf} 1
 layout 2monitor 'Microsoft Outlook' ${full} 1
-layout 2monitor 'Sublime Text 2':REPEAT ${full} 0
-layout 2monitor 'Atom':REPEAT ${full} 0
 layout 2monitor 'Tweetbot' ${lefthalf} 1
 
-layout 3monitor 'iTerm':REPEAT,SORT_TITLE ${full} 2
-layout 3monitor 'iTerm2':REPEAT,SORT_TITLE ${full} 2
-layout 3monitor 'Google Chrome' ${full} 1
-layout 3monitor 'HipChat' ${full} 2
-layout 3monitor 'Slack' ${full} 2
-layout 3monitor 'Microsoft Outlook' ${full} 1
-layout 3monitor 'Sublime Text':REPEAT ${full} 0
 layout 3monitor 'Atom':REPEAT ${full} 0
+layout 3monitor 'Google Chrome' ${full} 1
+layout 3monitor 'Microsoft Outlook' ${full} 1
+layout 2monitor 'Tweetbot' ${lefthalf} 1
+layout 3monitor 'iTerm2':REPEAT,SORT_TITLE ${full} 2
+layout 3monitor 'Slack' ${full} 2
 
 # layout bindings
 bind j:${hyper} layout 3monitor
