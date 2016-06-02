@@ -21,10 +21,6 @@ bind e:cmd hint ASDFGQWERT
 # Use hyper shortcut
 alias hyper ctrl;alt;cmd
 
-# Monitor Aliases
-alias mon-laptop 1440x900
-alias mon-dell 1920x1080
-
 # Abstract positions
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
 alias lefthalf move screenOriginX;screenOriginY screenSizeX*.5;screenSizeY
@@ -34,50 +30,47 @@ alias bottomhalf move screenOriginX;screenOriginY+screenSizeY*.45 screenSizeX;sc
 alias center move screenOriginX+screenSizeX*.15;screenOriginY+screenSizeY*.15 screenSizeX*.7;screenSizeY*.7
 
 # Layouts
-layout 1monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf}
-layout 1monitor 'iTerm':REPEAT,SORT_TITLE ${righthalf}
-layout 1monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf}
-layout 1monitor 'Google Chrome' ${full}
-layout 1monitor 'HipChat' ${full}
-layout 1monitor 'Slack' ${full}
-layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} | ${center}
-layout 1monitor 'Microsoft Outlook'  ${full}
-layout 1monitor 'Sublime Text 2':REPEAT ${lefthalf}
-layout 1monitor 'Atom':REPEAT ${lefthalf}
-layout 1monitors 'Tweetbot' ${lefthalf}
+layout 1monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf} 0
+layout 1monitor 'iTerm':REPEAT,SORT_TITLE ${righthalf} 0
+layout 1monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 0
+layout 1monitor 'Google Chrome' ${full} 0
+layout 1monitor 'HipChat' ${full} 0
+layout 1monitor 'Slack' ${full} 0
+layout 1monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} 0 | ${center} 0
+layout 1monitor 'Microsoft Outlook'  ${full} 0
+layout 1monitor 'Sublime Text 2':REPEAT ${lefthalf} 0
+layout 1monitor 'Atom':REPEAT ${lefthalf} 0
+layout 1monitor 'Tweetbot' ${lefthalf} 0
 
+layout 2monitor 'Terminal':REPEAT,SORT_TITLE ${righthalf} 1
+layout 2monitor 'iTerm':REPEAT,SORT_TITLE ${righthalf} 1
+layout 2monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 1
+layout 2monitor 'Google Chrome' ${lefthalf} 1
+layout 2monitor 'HipChat' ${full} 0
+layout 2monitor 'Slack' ${full} 0
+layout 2monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} 0 | ${center} 0
+layout 2monitor 'Microsoft Outlook' ${full} 1
+layout 2monitor 'Sublime Text 2':REPEAT ${full} 0
+layout 2monitor 'Atom':REPEAT ${full} 0
+layout 2monitor 'Tweetbot' ${lefthalf} 1
 
-layout 2monitors 'Terminal':REPEAT,SORT_TITLE ${righthalf} ${mon-dell}
-layout 2monitors 'iTerm':REPEAT,SORT_TITLE ${righthalf} ${mon-dell}
-layout 2monitors 'iTerm2':REPEAT,SORT_TITLE ${righthalf} ${mon-dell}
-layout 2monitors 'Google Chrome' ${lefthalf}
-layout 2monitors 'HipChat' ${full} ${mon-laptop}
-layout 2monitors 'Slack' ${full} ${mon-laptop}
-layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} {mon-laptop} | ${center} ${mon-laptop}
-layout 2monitors 'Microsoft Outlook' ${full} ${mon-dell}
-layout 2monitors 'Sublime Text 2':REPEAT ${lefthalf} ${mon-dell}
-layout 2monitors 'Atom':REPEAT ${lefthalf} ${mon-dell}
-layout 2monitors 'Tweetbot' ${lefthalf} ${mon-dell}
+layout 3monitor 'iTerm':REPEAT,SORT_TITLE ${full} 2
+layout 3monitor 'iTerm2':REPEAT,SORT_TITLE ${full} 2
+layout 3monitor 'Google Chrome' ${full} 1
+layout 3monitor 'HipChat' ${full} 2
+layout 3monitor 'Slack' ${full} 2
+layout 3monitor 'Microsoft Outlook' ${full} 1
+layout 3monitor 'Sublime Text':REPEAT ${full} 0
+layout 3monitor 'Atom':REPEAT ${full} 0
 
+# layout bindings
+bind j:${hyper} layout 3monitor
+bind k:${hyper} layout 2monitor
+bind l:${hyper} layout 1monitor
 
-layout 3monitors-base 'iTerm':REPEAT,SORT_TITLE ${full} 2
-layout 3monitors-base 'iTerm2':REPEAT,SORT_TITLE ${full} 2
-layout 3monitors-base 'Google Chrome' ${full} 1
-layout 3monitors-base 'HipChat' ${full} 0
-layout 3monitors-base 'Slack' ${full} 0
-layout 3monitors-base 'Microsoft Outlook' ${full} 1
-layout 3monitors-base 'Sublime Text':REPEAT ${full} 2
-layout 3monitors-base 'Atom':REPEAT ${full} 2
-
-layout 3monitors-workspace 'iTerm':REPEAT,SORT_TITLE ${full} 2
-layout 3monitors-workspace 'iTerm2':REPEAT,SORT_TITLE ${full} 2
-layout 3monitors-workspace 'Google Chrome' ${full} 1
-layout 3monitors-workspace 'Sublime Text':REPEAT ${full} 0
-layout 3monitors-workspace 'Atom':REPEAT ${full} 0
-
-
-default 1monitor resolutions:${mon-laptop}
-default 2monitors resolutions:${mon-laptop};${mon-dell}
+default 1monitor count:1
+default 2monitor count:2
+default 3monitor count:3
 
 
 # Move bindings
@@ -87,9 +80,3 @@ bind up:${hyper} ${full}
 bind down:${hyper} ${center}
 bind ,:${hyper} throw left resize
 bind .:${hyper} throw right resize
-
-# layout binding
-bind h:${hyper} layout 3monitors-base
-bind j:${hyper} layout 3monitors-workspace
-bind l:${hyper}  layout 2monitors
-bind l:shift;${hyper}  layout 1monitor
