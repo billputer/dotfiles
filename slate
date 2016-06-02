@@ -38,7 +38,7 @@ layout 1monitor 'Microsoft Outlook'  ${full} 0
 layout 1monitor 'Atom':REPEAT ${lefthalf} 0
 layout 1monitor 'Tweetbot' ${lefthalf} 0
 
-layout 2monitor 'Atom':REPEAT ${full} 0
+layout 2monitor 'Atom':REPEAT_LAST,TITLE_ORDER_REGEX=Projects ${full} 0 | ${full} 1
 layout 2monitor 'Slack' ${full} 0
 layout 2monitor 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${lefthalf} 0 | ${center} 0
 layout 2monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 1
@@ -46,7 +46,7 @@ layout 2monitor 'Google Chrome' ${lefthalf} 1
 layout 2monitor 'Microsoft Outlook' ${full} 1
 layout 2monitor 'Tweetbot' ${lefthalf} 1
 
-layout 3monitor 'Atom':REPEAT ${full} 0
+layout 3monitor 'Atom':REPEAT_LAST,TITLE_ORDER_REGEX=Projects ${full} 0 | ${full} 1
 layout 3monitor 'Google Chrome' ${full} 1
 layout 3monitor 'Microsoft Outlook' ${full} 1
 layout 2monitor 'Tweetbot' ${lefthalf} 1
