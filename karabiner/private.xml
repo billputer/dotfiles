@@ -53,8 +53,19 @@
   </item>
 
   <item>
+    <name>Remap Hyper + K to Hyper + K</name>
+    <appendix>This avoids shadowing Hyper + K with the bill.display_sleep trigger</appendix>
+    <identifier>bill.shadow_display_sleep</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+      KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+  <item>
     <name>Remap F16 to Hyper</name>
-    <appendix>This maps F16 to Control + Option + Command for a 'hyper' key for macros.</appendix>
+    <appendix>This maps F16 to Control + Option + Command for a 'hyper' key for macros. This is useful for applications that don't handle triple modifiers well.</appendix>
 
     <identifier>bill.f16_to_hyper</identifier>
 
