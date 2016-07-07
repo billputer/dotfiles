@@ -19,7 +19,10 @@ else
   brew install reattach-to-user-namespace
 
   # various utilities
-  brew install ack ag aws-cli jq mercurial pyenv tree rename watchman wget
+  brew install ack ag awscli htop-osx iperf3 jq mercurial tree rename watchman wget
+
+  # language tools
+  brew install pyenv ruby-install
 
   # install GNU coreutils, etc, instead of using BSD versions
   brew install coreutils
