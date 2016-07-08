@@ -13,7 +13,9 @@ else
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
   # the important things
-  brew install zsh tmux vim git
+  brew install zsh tmux git
+  # vim, but without homebrew ruby
+  brew install vim --without-ruby
 
   # make tmux and pbcopy friends
   brew install reattach-to-user-namespace
