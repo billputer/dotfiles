@@ -21,11 +21,9 @@ umask 022
 if [[ $(uname) = 'Darwin' ]]; then
   export EDITOR='atom'
   export VISUAL='atom'
-  alias e='atom'
 else
   export EDITOR='vim'
   export VISUAL='vim'
-  alias e='vim'
 fi
 
 # Mac specific PATH

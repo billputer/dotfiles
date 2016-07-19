@@ -5,6 +5,19 @@ alias ls='ls --color'
 alias ll='ls -l'
 alias la='ls -a'
 
+# text editor aliases (mostly for Mac)
+if [[ $(uname) = 'Darwin' ]]; then
+  alias e='atom'
+  alias e.='atom -n .'
+  alias elp='atom -n ~/Projects'
+  alias ebp='atom -n ~/Dropbox/Projects'
+  alias ewd='atom -n ~/workspace/lp-devops'
+  alias ewa='atom -n ~/workspace/lp-app'
+else
+  alias e='vim'
+  alias e.='vim .'
+fi
+
 alias dm="python manage.py"
 
 alias digg="dig +multiline +nocomments +nocmd +noquestion +nostats +search"
