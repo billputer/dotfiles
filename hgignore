@@ -5,6 +5,10 @@
 # use glob syntax.
 syntax: glob
 
+# Custom configuration #
+########################
+.ackrc
+
 
 # Swapfiles #
 ###################
