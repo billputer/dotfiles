@@ -9,7 +9,7 @@
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
 	<key>CopySelection</key>
-	<false/>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Solarized Dark</key>
@@ -435,6 +435,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>B3687B48-9847-4FB9-8EE3-844F66E2640F</string>
+	<key>DisableWindowSizeSnap</key>
+	<true/>
 	<key>HideActivityIndicator</key>
 	<false/>
 	<key>HideTab</key>
@@ -492,11 +494,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>0 37 1920 1006 0 0 1920 1177 </string>
+	<string>720 337 720 706 0 0 1920 1177 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 356 606 456 0 0 1920 1177 </string>
+	<string>269 385 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 8 1920 1192 1920 0 1920 1200 </string>
+	<string>0 403 1920 774 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1920 18 1918 1182 1920 0 1920 1200 </string>
 	<key>New Bookmarks</key>
@@ -739,7 +741,7 @@
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Flashing Bell</key>
-			<false/>
+			<true/>
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1125,9 +1127,9 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>0.87740963855421683</real>
 			<key>Visual Bell</key>
-			<true/>
+			<false/>
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
@@ -1777,7 +1779,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>DC2FB715-9329-4B38-9284-F209B7CC0CCD</string>
 	<key>NoSyncLastTipTime</key>
-	<real>490552721.30636901</real>
+	<real>491158524.06604803</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1793,6 +1795,11 @@
 		<string>0001</string>
 		<string>0002</string>
 		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
 	</array>
 	<key>OptimumTabWidth</key>
 	<integer>250</integer>
@@ -1840,13 +1847,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-18T22:32:04Z</date>
+	<date>2016-07-24T06:49:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>SmartPlacement</key>
 	<true/>
+	<key>UseBorder</key>
+	<false/>
 	<key>WindowNumber</key>
 	<true/>
 	<key>iTerm Version</key>
