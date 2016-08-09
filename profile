@@ -41,7 +41,9 @@ if [[ -d "/usr/local/opt/coreutils/libexec/gnubin" ]]; then
 fi
 
 # set LS_COLORS (generated from dircolors)
-eval $(dircolors ~/.dir_colors)
+if command -v dircolors >/dev/null 2>&1; then
+  eval $(dircolors ~/.dir_colors)
+fi
 
 ###
 # language/tool-specific
