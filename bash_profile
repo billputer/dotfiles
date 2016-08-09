@@ -31,5 +31,3 @@ complete -cf sudo
 #prevent overwriting files with cat
 set -o noclobber
 
-#Treat undefined variables as errors
-set -o nounset
