@@ -79,6 +79,10 @@ if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
 fi
 
 # use fzf, if it exists
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -n "$ZSH_VERSION" ] && [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+elif [ -n "$BASH_VERSION" ] && [ -f ~/.fzf.bash ]; then
+  source ~/.fzf.bash
+fi
 
 source $HOME/.profile.local
