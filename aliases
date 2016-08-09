@@ -42,8 +42,13 @@ alias tom='top -o vsize'
 alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 
 # LP-specific aliases
-alias -g wa='~/workspace/lp-app'
-alias -g wd='~/workspace/lp-devops'
+if [ -n "$ZSH_VERSION" ]; then
+  alias -g wa='~/workspace/lp-app'
+  alias -g wd='~/workspace/lp-devops'
+else
+  alias wa='~/workspace/lp-app'
+  alias wd='~/workspace/lp-devops'
+fi
 alias lpa='lp-assume-role admin'
 alias lpo='lp-assume-role ops'
 alias lpd='lp-assume-role dev'
@@ -71,8 +76,10 @@ alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; d
 # yolo
 alias git-yolo='git commit -am "`curl -s http://whatthecommit.com/index.txt`"'
 
-# be quiet
-alias -g quietly='> /dev/null 2>&1'
+if [ -n "$ZSH_VERSION" ]; then
+  # be quiet
+  alias -g quietly='> /dev/null 2>&1'
+fi
 
 # serveit
 alias serveit='python -m SimpleHTTPServer'
