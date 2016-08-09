@@ -60,12 +60,8 @@ vimdiff.args = -d $base $local $output $other +close +close
 # Nudge: just push the current branch.
 nudge = push --branch .
 
-# revert, but don't leave .orig files
-undo = revert --no-backup
-
-# Easily add ignore patterns to .hgignore and commit.
-ignore = ![ -n "$@" ] && echo '$@' >> `$HG root`/.hgignore && \
-          $HG commit `$HG root`/.hgignore -Am 'Add "$@" to .hgignore.'
+# abandon a failed merge
+abandon = update -C -r .
 
 # log aliases
 show = log --patch --verbose --rev
