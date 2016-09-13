@@ -33,12 +33,14 @@ alias center move screenOriginX+screenSizeX*.2;screenOriginY screenSizeX*.6;scre
 layout 1monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 0
 layout 1monitor 'Google Chrome' ${full} 0
 layout 1monitor 'Slack' ${full} 0
+layout 1monitor 'Hillpeople' ${full} 0
 layout 1monitor 'Microsoft Outlook'  ${full} 0
 layout 1monitor 'Atom':REPEAT ${lefthalf} 0
 layout 1monitor 'Tweetbot' ${lefthalf} 0
 
 layout 2monitor 'Atom':REPEAT_LAST,TITLE_ORDER_REGEX=Projects ${full} 0 | ${lefthalf} 1
 layout 2monitor 'Slack' ${righthalf} 1
+layout 2monitor 'Hillpeople' ${righthalf} 1
 layout 2monitor 'iTerm2':REPEAT,SORT_TITLE ${righthalf} 1
 layout 2monitor 'Google Chrome' ${lefthalf} 1
 layout 2monitor 'Microsoft Outlook' ${lefthalf} 1
@@ -50,6 +52,7 @@ layout 3monitor 'Microsoft Outlook' ${full} 1
 layout 2monitor 'Tweetbot' ${lefthalf} 1
 layout 3monitor 'iTerm2':REPEAT,SORT_TITLE ${full} 2
 layout 3monitor 'Slack' ${full} 2
+layout 3monitor 'Hillpeople' ${full} 2
 
 # layout bindings
 bind j:${hyper} layout 3monitor
