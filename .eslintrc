@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "quotes": [
+      2,
+      "double"
+    ],
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "comma-dangle": [
+      2,
+      "always-multiline"
+    ]
+  },
+  "env": {
+    "es6": false,
+    "node": true
+  },
+  "globals": {
+    "slate": true
+  },
+  "extends": "eslint:recommended"
+}

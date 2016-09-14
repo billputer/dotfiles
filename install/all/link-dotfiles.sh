@@ -19,7 +19,7 @@ FILES="
   hgrc
   oh-my-zsh
   profile
-  slate
+  slate.js
   tmux.conf
   vim
   vimrc
