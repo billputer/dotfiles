@@ -100,78 +100,91 @@ function outlookLayout(defaultOperation) {
   };
 }
 
+// wrapper function to include ignore-fail and repeat
+function layoutWindow(operations) {
+  // accepts either array or single operation
+  if (!Array.isArray(operations)) {
+    operations = [operations];
+  }
+  return {
+    "operations": operations,
+    "ignore-fail": true,
+    "repeat": true,
+  };
+}
+
 // layouts
 
 var oneMonitor = slate.layout("oneMonitor", {
-  "Atom": {
-    "operations": [throwTo(0, "leftHalf")], "ignore-fail": true, "repeat": true,
-  },
-  "Tweetbot": {
-    "operations": [throwTo(0, "leftHalf")], "ignore-fail": true, "repeat": true,
-  },
-  "Google Chrome": {
-    "operations": [throwTo(0, "full")], "ignore-fail": true, "repeat": true,
-  },
-  "Microsoft Outlook": {
-    "operations": [outlookLayout(throwTo(0, "full"))], "ignore-fail": true, "repeat": true,
-  },
-  "Slack": {
-    "operations": [throwTo(0, "full")], "ignore-fail": true, "repeat": true,
-  },
-  "Hillpeople": {
-    "operations": [throwTo(0, "full")], "ignore-fail": true, "repeat": true,
-  },
-  "iTerm2": {
-    "operations": [throwTo(0, "rightHalf")], "ignore-fail": true, "repeat": true,
-  },
+  "Atom": layoutWindow(
+    throwTo(0, "leftHalf")
+  ),
+  "Tweetbot": layoutWindow(
+    throwTo(0, "leftHalf")
+  ),
+  "Google Chrome": layoutWindow(
+    throwTo(0, "full")
+  ),
+  "Microsoft Outlook": layoutWindow(
+    outlookLayout(throwTo(0, "full"))
+  ),
+  "Slack": layoutWindow(
+    throwTo(0, "full")
+  ),
+  "Hillpeople": layoutWindow(
+    throwTo(0, "full")
+  ),
+  "iTerm2": layoutWindow(
+    throwTo(0, "rightHalf")
+  ),
 });
 
 var twoMonitor = slate.layout("twoMonitor", {
-  "Atom": {
-    "operations": [atomLayout(throwTo(1, "leftHalf"))], "ignore-fail": true, "repeat": true,
-  },
-  "Tweetbot": {
-    "operations": [throwTo(1, "leftHalf")], "ignore-fail": true, "repeat": true,
-  },
-  "Google Chrome": {
-    "operations": [throwTo(1, "leftHalf")], "ignore-fail": true, "repeat": true,
-  },
-  "Microsoft Outlook": {
-    "operations": [outlookLayout(throwTo(1, "leftHalf"))], "ignore-fail": true, "repeat": true,
-  },
-  "Slack": {
-    "operations": [throwTo(1, "rightHalf")], "ignore-fail": true, "repeat": true,
-  },
-  "Hillpeople": {
-    "operations": [throwTo(1, "rightHalf")], "ignore-fail": true, "repeat": true,
-  },
-  "iTerm2": {
-    "operations": [throwTo(1, "rightHalf")], "ignore-fail": true, "repeat": true,
-  },
+  "Atom": layoutWindow(
+    atomLayout(throwTo(1, "leftHalf"))
+  ),
+  "Tweetbot": layoutWindow(
+    throwTo(1, "leftHalf")
+  ),
+  "Google Chrome": layoutWindow(
+    throwTo(1, "leftHalf")
+  ),
+  "Microsoft Outlook": layoutWindow(
+    outlookLayout(throwTo(1, "leftHalf"))
+  ),
+  "Slack": layoutWindow(
+    throwTo(1, "rightHalf")
+  ),
+  "Hillpeople": layoutWindow(
+    throwTo(1, "rightHalf")
+  ),
+  "iTerm2": layoutWindow(
+    throwTo(1, "rightHalf")
+  ),
 });
 
 var threeMonitor = slate.layout("threeMonitor", {
-  "Atom": {
-    "operations": [atomLayout(throwTo(1, "full"))], "ignore-fail": true, "repeat": true,
-  },
-  "Tweetbot": {
-    "operations": [throwTo(1, "leftHalf")], "ignore-fail": true, "repeat": true,
-  },
-  "Google Chrome": {
-    "operations": [throwTo(1, "full")], "ignore-fail": true, "repeat": true,
-  },
-  "Microsoft Outlook": {
-    "operations": [outlookLayout(throwTo(1, "full"))], "ignore-fail": true, "repeat": true,
-  },
-  "Slack": {
-    "operations": [throwTo(2, "full")], "ignore-fail": true, "repeat": true,
-  },
-  "Hillpeople": {
-    "operations": [throwTo(2, "full")], "ignore-fail": true, "repeat": true,
-  },
-  "iTerm2": {
-    "operations": [throwTo(2, "full")], "ignore-fail": true, "repeat": true,
-  },
+  "Atom": layoutWindow(
+    atomLayout(throwTo(1, "full"))
+  ),
+  "Tweetbot": layoutWindow(
+    throwTo(1, "leftHalf")
+  ),
+  "Google Chrome": layoutWindow(
+    throwTo(1, "full")
+  ),
+  "Microsoft Outlook": layoutWindow(
+    outlookLayout(throwTo(1, "full"))
+  ),
+  "Slack": layoutWindow(
+    throwTo(2, "full")
+  ),
+  "Hillpeople": layoutWindow(
+    throwTo(2, "full")
+  ),
+  "iTerm2": layoutWindow(
+    throwTo(2, "full")
+  ),
 });
 
 slate.default(1, oneMonitor);
