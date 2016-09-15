@@ -213,4 +213,7 @@ slate.bnda({
   // window hints
   "e:cmd": slate.op("hint",  {"characters" : "ASDFGQWERT"}),
 
+  // reload slate
+  "r:ctrl;alt;cmd": slate.operation("relaunch"),
+
 });
