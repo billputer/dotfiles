@@ -89,6 +89,17 @@ function atomLayout(defaultOperation) {
   };
 }
 
+function outlookLayout(defaultOperation) {
+  return function(windowObject) {
+    var title = windowObject.title();
+    if (title !== undefined && title.match(/Reminder/)) {
+      // don't move reminders around
+    } else {
+      windowObject.doOperation(defaultOperation);
+    }
+  };
+}
+
 // layouts
 
 var oneMonitor = slate.layout("oneMonitor", {
@@ -102,7 +113,7 @@ var oneMonitor = slate.layout("oneMonitor", {
     "operations": [throwTo(0, "full")], "ignore-fail": true, "repeat": true,
   },
   "Microsoft Outlook": {
-    "operations": [throwTo(0, "full")], "ignore-fail": true, "repeat": true,
+    "operations": [outlookLayout(throwTo(0, "full"))], "ignore-fail": true, "repeat": true,
   },
   "Slack": {
     "operations": [throwTo(0, "full")], "ignore-fail": true, "repeat": true,
@@ -126,7 +137,7 @@ var twoMonitor = slate.layout("twoMonitor", {
     "operations": [throwTo(1, "leftHalf")], "ignore-fail": true, "repeat": true,
   },
   "Microsoft Outlook": {
-    "operations": [throwTo(1, "leftHalf")], "ignore-fail": true, "repeat": true,
+    "operations": [outlookLayout(throwTo(1, "leftHalf"))], "ignore-fail": true, "repeat": true,
   },
   "Slack": {
     "operations": [throwTo(1, "rightHalf")], "ignore-fail": true, "repeat": true,
@@ -150,7 +161,7 @@ var threeMonitor = slate.layout("threeMonitor", {
     "operations": [throwTo(1, "full")], "ignore-fail": true, "repeat": true,
   },
   "Microsoft Outlook": {
-    "operations": [throwTo(1, "full")], "ignore-fail": true, "repeat": true,
+    "operations": [outlookLayout(throwTo(1, "full"))], "ignore-fail": true, "repeat": true,
   },
   "Slack": {
     "operations": [throwTo(2, "full")], "ignore-fail": true, "repeat": true,
