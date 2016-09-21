@@ -116,6 +116,9 @@ function layoutWindow(operations) {
 // layouts
 
 var oneMonitor = slate.layout("oneMonitor", {
+  "Spotify": layoutWindow(
+    throwTo(0, "full")
+  ),
   "Atom": layoutWindow(
     throwTo(0, "leftHalf")
   ),
@@ -140,6 +143,9 @@ var oneMonitor = slate.layout("oneMonitor", {
 });
 
 var twoMonitor = slate.layout("twoMonitor", {
+  "Spotify": layoutWindow(
+    throwTo(0, "full")
+  ),
   "Atom": layoutWindow(
     atomLayout(throwTo(1, "leftHalf"))
   ),
@@ -164,6 +170,9 @@ var twoMonitor = slate.layout("twoMonitor", {
 });
 
 var threeMonitor = slate.layout("threeMonitor", {
+  "Spotify": layoutWindow(
+    throwTo(0, "full")
+  ),
   "Atom": layoutWindow(
     atomLayout(throwTo(1, "full"))
   ),
