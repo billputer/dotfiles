@@ -13,7 +13,7 @@ slate.configAll({
   "menuBarIconHidden": false,
 
   // Window hinting
-  "windowHintsShowIcons": true,
+  "windowHintsShowIcons": false,
   "windowHintsIgnoreHiddenWindows": false,
   "windowHintsDuration": 5,
   "windowHintsSpread": true,
