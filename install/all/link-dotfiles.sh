@@ -15,6 +15,7 @@ FILES="
   gemrc
   gitconfig
   gitignore
+  hammerspoon
   hgignore
   hgrc
   oh-my-zsh
