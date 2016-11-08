@@ -1,6 +1,7 @@
 
 require('hyper')
 require('shortcuts')
+require('tap-escape')
 
 -- Reload config when any lua file in config directory changes
 function reloadConfig(files)
