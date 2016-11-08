@@ -149,7 +149,7 @@ layout3Monitor= {
   {"iTerm2",            nil,          screen("right"),  hs.layout.maximized},
 }
 
-
+-- layout bindings
 hyper:bind({}, 'j', function()
   hs.layout.apply(layout1Monitor, match_title)
 end)
@@ -159,3 +159,20 @@ end)
 hyper:bind({}, 'l', function()
   hs.layout.apply(layout3Monitor, match_title)
 end)
+
+
+-- if we run into issues with this triggering accidentally, see this link
+-- https://github.com/cmsj/hammerspoon-config/blob/master/init.lua#L355
+--
+
+-- trigger layouts when number of screens changes
+hs.screen.watcher.new(function()
+  numScreens = #hs.screen.allScreens()
+  if numScreens == 1 then
+    hs.layout.apply(layout1Monitor, match_title)
+  elseif numScreens == 2 then
+    hs.layout.apply(layout2Monitor, match_title)
+  elseif numScreens == 3 then
+    hs.layout.apply(layout3Monitor, match_title)
+  end
+end):start()
