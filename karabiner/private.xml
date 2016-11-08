@@ -1,18 +1,30 @@
 <?xml version="1.0"?>
 <root>
   <item>
-    <name>Remap Control + S to Command + Control + F3</name>
+    <name>Remap Right Command to F16</name>
+    <appendix>This maps Right Command to F16 for Hammerspoon</appendix>
+    <identifier>bill.rcommand_to_f16</identifier>
+    <autogen>
+        --KeyToKey--
+        KeyCode::COMMAND_R,
+
+        KeyCode::F16
+    </autogen>
+  </item>
+
+  <item>
+    <name>Remap Control + S to Control + Up</name>
     <appendix>This triggers Mission Control</appendix>
     <identifier>bill.mission_control_hotkey</identifier>
     <autogen>
       __KeyToKey__
       KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::NONE,,
-      KeyCode::F3, ModifierFlag::COMMAND_L, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,
     </autogen>
     <autogen>
       __KeyToKey__
       KeyCode::S, ModifierFlag::CONTROL_R | ModifierFlag::NONE,,
-      KeyCode::F3, ModifierFlag::COMMAND_L, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,
     </autogen>
     <!-- Remap Control Shift + S to Control + S so we can continue to use it in apps -->
     <autogen>
@@ -28,57 +40,13 @@
   </item>
 
   <item>
-    <name>Remap Middle click to Command + Control + F3</name>
+    <name>Remap Middle click to Control + Up</name>
     <appendix>This triggers Mission Control</appendix>
     <identifier>bill.middle_click_to_mission_control</identifier>
     <autogen>
       __KeyToKey__
       PointingButton::MIDDLE,
-      KeyCode::F3, ModifierFlag::COMMAND_L, ModifierFlag::CONTROL_L,
-    </autogen>
-  </item>
-
-  <item>
-    <name>Remap Control + Command + K to Control + Shift + Power (Display sleep)</name>
-    <appendix>This triggers Display Sleep</appendix>
-    <identifier>bill.display_sleep</identifier>
-    <autogen>
-      <!-- Don't shadow Hyper + K -->
-      __KeyToKey__
-      KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
-      KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
-      ConsumerKeyCode::EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
-    </autogen>
-  </item>
-
-
-  <item>
-    <name>Remap F16 to Hyper</name>
-    <appendix>This maps F16 to Control + Option + Command for a 'hyper' key for macros</appendix>
-    <identifier>bill.f16_to_hyper</identifier>
-    <autogen>
-        --KeyToKey--
-        KeyCode::F16,
-
-        KeyCode::COMMAND_L,
-        ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-    </autogen>
-  </item>
-
-  <item>
-    <name>Remap Right Command to Hyper</name>
-    <appendix>This maps Right Command to Control + Option + Command for a 'hyper' key for macros</appendix>
-    <identifier>bill.rcommand_to_hyper</identifier>
-    <autogen>
-        --KeyToKey--
-        KeyCode::COMMAND_R,
-
-        KeyCode::COMMAND_L,
-        ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+      KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L,
     </autogen>
   </item>
 
@@ -104,25 +72,29 @@
     <identifier>bill.mouse_4_5_to_back_forward</identifier>
     <autogen>
       --KeyToKey--
-      PointingButton::BUTTON4,
+      PointingButton::BUTTON4, ModifierFlag::NONE,
       KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L,
     </autogen>
     <autogen>
       --KeyToKey--
-      PointingButton::BUTTON5,
+      PointingButton::BUTTON5, ModifierFlag::NONE,
       KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
 
   <item>
-    <name>Map Control + Command + 2 to Mouse Button 8</name>
-    <appendix>This maps Control + Command + 2 to Mouse Button 8 for use in Synergy</appendix>
-    <identifier>bill.synergy_switch</identifier>
+    <name>Use Control + Button4 and Button5 for Tab navigation</name>
+    <appendix>This maps Button4 and Button5 to Command + Shift + L</appendix>
+    <identifier>bill.mouse_4_5_to_tab_nav</identifier>
     <autogen>
       --KeyToKey--
-      KeyCode::2, ModifierFlag::CONTROL_L | ModifierFlag::COMMAND_L,
-
-      PointingButton::BUTTON8, Option::NOREPEAT,
+      PointingButton::BUTTON4, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      PointingButton::BUTTON5, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
     </autogen>
   </item>
 </root>
