@@ -18,7 +18,6 @@ control_handler = function(evt)
     control_key_timer:start()
   else
     if send_escape then
-      print("escape")
       hs.eventtap.keyStroke({}, "ESCAPE")
     end
     last_mods = new_mods

@@ -27,16 +27,135 @@ tapWithMods = function(key)
   end
 end
 
--- hyper+left becomes cmd+alt+ctrl+left
--- this triggers slate
--- next step is to do these within hammerspoon
-hyper:bind({}, 'left', tapWithMods("left"))
-hyper:bind({}, 'right', tapWithMods("right"))
-hyper:bind({}, 'up', tapWithMods("up"))
-hyper:bind({}, 'down', tapWithMods("down"))
-hyper:bind({}, ',', tapWithMods(","))
-hyper:bind({}, '.', tapWithMods("."))
-hyper:bind({}, 'j', tapWithMods("j"))
-hyper:bind({}, 'k', tapWithMods("k"))
-hyper:bind({}, 'l', tapWithMods("l"))
-hyper:bind({}, 'r', tapWithMods("r"))
+-- window management bindings
+hs.window.animationDuration = 0
+
+hyper:bind({}, 'left', function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local max = win:screen():frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+hyper:bind({}, 'right',  function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local max = win:screen():frame()
+
+  f.x = max.x + max.w / 2
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+hyper:bind({}, 'up', function()
+  local win = hs.window.focusedWindow()
+  win:maximize()
+end)
+
+hyper:bind({}, 'down', function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local max = win:screen():frame()
+
+  f.x = max.x + max.w * 0.2
+  f.y = max.y
+  f.w = max.w * 0.6
+  f.h = max.h
+  win:setFrame(f)
+end)
+
+hyper:bind({}, ',', function()
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenWest()
+  win:maximize()
+end)
+
+hyper:bind({}, '.', function()
+  local win = hs.window.focusedWindow()
+  win:moveOneScreenEast()
+  win:maximize()
+end)
+
+
+
+-- helper function to set correct screen
+function screen(name)
+  if name == "main" then
+    return hs.screen.primaryScreen()
+  elseif name == "laptop" then
+    return hs.screen.find("Color LCD")
+  elseif name == "right" then
+    return hs.screen.primaryScreen():toEast()
+  else
+    return nil
+  end
+end
+
+-- return true if title matches pattern
+function match_title(title, pattern)
+  -- if pattern starts with ! then reverse match
+  if string.sub(pattern, 1, 1) == "!" then
+    actual_pattern = string.sub(pattern, 2, string.len(pattern))
+    return not string.match(title, actual_pattern)
+  else
+    return string.match(title, pattern)
+  end
+end
+
+-- layouts for various number of monitors
+
+layout1Monitor= {
+  {"Spotify",           nil,          nil, hs.layout.maximized},
+  {"Atom",              nil,          nil, hs.layout.maximized},
+  {"Tweetbot",          nil,          nil, hs.layout.left50},
+  {"Google Chrome",     nil,          nil, hs.layout.maximized},
+  {"Microsoft Outlook", "!Reminder",  nil, hs.layout.maximized},
+  {"Microsoft Outlook", "Reminder",   nil, nil,               },
+  {"Slack",             nil,          nil, hs.layout.maximized},
+  {"Hillpeople",        nil,          nil, hs.layout.maximized},
+  {"iTerm2",            nil,          nil, hs.layout.right50},
+}
+
+layout2Monitor= {
+  {"Spotify",           nil,          screen("laptop"), hs.layout.maximized},
+  {"Atom",              "Projects",   screen("laptop"), hs.layout.maximized},
+  {"Atom",              "!Projects",  screen("main"),   hs.layout.left50},
+  {"Tweetbot",          nil,          screen("main"),   hs.layout.left50},
+  {"Google Chrome",     nil,          screen("main"),   hs.layout.left50},
+  {"Microsoft Outlook", nil,          screen("main"),   hs.layout.left50},
+  {"Microsoft Outlook", "Reminder",   nil,              nil},
+  {"Slack",             nil,          screen("main"),   hs.layout.right50},
+  {"Hillpeople",        nil,          screen("main"),   hs.layout.right50},
+  {"iTerm2",            nil,          screen("main"),   hs.layout.right50},
+}
+
+layout3Monitor= {
+  {"Spotify",           nil,          screen("laptop"), hs.layout.maximized},
+  {"Atom",              "Projects",   screen("laptop"), hs.layout.maximized},
+  {"Atom",              "!Projects",  screen("main"),   hs.layout.maximized},
+  {"Tweetbot",          nil,          screen("main"),   hs.layout.left50},
+  {"Google Chrome",     nil,          screen("main"),   hs.layout.maximized},
+  {"Microsoft Outlook", "!Reminder",  screen("main"),   hs.layout.maximized},
+  {"Microsoft Outlook", "Reminder",   nil,              nil},
+  {"Slack",             nil,          screen("right"),  hs.layout.maximized},
+  {"Hillpeople",        nil,          screen("right"),  hs.layout.maximized},
+  {"iTerm2",            nil,          screen("right"),  hs.layout.maximized},
+}
+
+
+hyper:bind({}, 'j', function()
+  hs.layout.apply(layout1Monitor, match_title)
+end)
+hyper:bind({}, 'k', function()
+  hs.layout.apply(layout2Monitor, match_title)
+end)
+hyper:bind({}, 'l', function()
+  hs.layout.apply(layout3Monitor, match_title)
+end)
