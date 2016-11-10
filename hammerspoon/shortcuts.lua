@@ -63,3 +63,17 @@ hs.hotkey.bind({"ctrl", "cmd"}, 's',
     e:post()
   end
 )
+
+-- only quit if cmd + q is held
+quit_timer = hs.timer.delayed.new(0.4, function()
+  hs.application.frontmostApplication():kill()
+end)
+
+hs.hotkey.bind({"cmd"}, 'q',
+  function()
+    quit_timer:start()
+  end,
+  function()
+    quit_timer:stop()
+  end
+)
