@@ -100,12 +100,13 @@ end
 
 -- return true if title matches pattern
 function match_title(title, pattern)
+  print("match_title: title("..title..") pattern("..pattern..")")
   -- if pattern starts with ! then reverse match
   if string.sub(pattern, 1, 1) == "!" then
     actual_pattern = string.sub(pattern, 2, string.len(pattern))
     return not string.match(title, actual_pattern)
   else
-    return string.match(title, pattern)
+    return string.match(title, pattern) == pattern
   end
 end
 
