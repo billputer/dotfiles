@@ -27,6 +27,11 @@ tapWithMods = function(key)
   end
 end
 
+-- reload Hammerspoon on hyper + r
+hyper:bind({}, 'r', function()
+  hs.reload()
+end)
+
 -- window management bindings
 hs.window.animationDuration = 0
 
