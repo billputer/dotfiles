@@ -28,10 +28,31 @@ hs.hotkey.bind({"ctrl", "shift"}, 's',
   end
 )
 
--- trigger mission control with middle click
+-- trigger events for extra mouse buttons
 hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
   function(evt)
-    hs.eventtap.keyStroke({"ctrl"}, "up")
+    button_prop = hs.eventtap.event.properties["mouseEventButtonNumber"]
+    button_pressed = evt:getProperty(button_prop)
+
+    -- trigger mission control with middle click
+    if button_pressed == 2 then
+      hs.eventtap.keyStroke({"ctrl"}, "up")
+    end
+    -- if cmd held, then use tab navigation with thumb buttons
+    if evt:getFlags()["cmd"] then
+      if button_pressed == 3 then
+        hs.eventtap.keyStroke({"cmd", "shift"}, "[")
+      elseif button_pressed == 4 then
+        hs.eventtap.keyStroke({"cmd", "shift"}, "]")
+      end
+    -- trigger back and forward with thumb buttons
+    else
+      if button_pressed == 3 then
+        hs.eventtap.keyStroke({"cmd"}, "[")
+      elseif button_pressed == 4 then
+        hs.eventtap.keyStroke({"cmd"}, "]")
+      end
+    end
   end
 ):start()
 
@@ -44,6 +65,7 @@ hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
 
 hs.eventtap.new({hs.eventtap.event.types.otherMouseDown},
   function(evt)
+    print("otherMouseDown")
     print(hs.inspect(evt:getRawEventData()))
   end
 ):start()
