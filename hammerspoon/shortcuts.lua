@@ -1,30 +1,29 @@
-
 -- navigate between tabs with left hand
 hs.hotkey.bind({"ctrl", "cmd"}, 'e',
   function()
-    hs.eventtap.keyStroke({"cmd", "shift"}, "[")
+    immediateKeyStroke({"cmd", "shift"}, "[")
   end
 )
 hs.hotkey.bind({"ctrl", "cmd"}, 'r',
   function()
-    hs.eventtap.keyStroke({"cmd", "shift"}, "]")
+    immediateKeyStroke({"cmd", "shift"}, "]")
   end
 )
 
 
 -- trigger mission control with left-hand
-mission_control = hs.hotkey.bind({"ctrl"}, 's',
+mission_control_hotkey = hs.hotkey.bind({"ctrl"}, 's', nil,
   function()
-    hs.eventtap.keyStroke({"ctrl"}, "up")
+    immediateKeyStroke({"ctrl"}, "up")
   end
 )
 
 -- TODO: figure out how to trigger an actual ctrl+s so that we don't always trigger mission control
 hs.hotkey.bind({"ctrl", "shift"}, 's',
   function()
-    mission_control:disable()
-    hs.eventtap.keyStroke({"ctrl"}, "s")
-    mission_control:enable()
+    mission_control_hotkey:disable()
+    immediateKeyStroke({"ctrl"}, "s")
+    mission_control_hotkey:enable()
   end
 )
 
@@ -34,34 +33,35 @@ hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
     button_prop = hs.eventtap.event.properties["mouseEventButtonNumber"]
     button_pressed = evt:getProperty(button_prop)
 
+    print(hs.inspect(button_pressed))
     -- trigger mission control with middle click
     if button_pressed == 2 then
-      hs.eventtap.keyStroke({"ctrl"}, "up")
+      immediateKeyStroke({"ctrl"}, "up")
     end
     -- if cmd held, then use tab navigation with thumb buttons
     if evt:getFlags()["cmd"] then
       if button_pressed == 3 then
-        hs.eventtap.keyStroke({"cmd", "shift"}, "[")
+        immediateKeyStroke({"cmd", "shift"}, "[")
       elseif button_pressed == 4 then
-        hs.eventtap.keyStroke({"cmd", "shift"}, "]")
+        immediateKeyStroke({"cmd", "shift"}, "]")
       end
     -- trigger back and forward with thumb buttons
     else
       if button_pressed == 3 then
-        hs.eventtap.keyStroke({"cmd"}, "[")
+        immediateKeyStroke({"cmd"}, "[")
       elseif button_pressed == 4 then
-        hs.eventtap.keyStroke({"cmd"}, "]")
+        immediateKeyStroke({"cmd"}, "]")
       end
     end
   end
 ):start()
 
 
-hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
-  function(evt)
-    --print(hs.inspect(e:getRawEventData()))
-  end
-):start()
+-- hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
+--   function(evt)
+--     print(hs.inspect(e:getRawEventData()))
+--   end
+-- ):start()
 
 hs.eventtap.new({hs.eventtap.event.types.otherMouseDown},
   function(evt)

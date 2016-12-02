@@ -23,7 +23,7 @@ hs.hotkey.bind({}, 'F16',
 -- returns a function that taps the key with mods
 tapWithMods = function(key)
   return function()
-    hs.eventtap.keyStroke({"cmd", "alt", "ctrl"}, key)
+    immediateKeyStroke({"cmd", "alt", "ctrl"}, key)
   end
 end
 
