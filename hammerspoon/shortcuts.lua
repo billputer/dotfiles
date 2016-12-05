@@ -28,7 +28,7 @@ hs.hotkey.bind({"ctrl", "shift"}, 's',
 )
 
 -- trigger events for extra mouse buttons
-hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
+middleMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
   function(evt)
     button_prop = hs.eventtap.event.properties["mouseEventButtonNumber"]
     button_pressed = evt:getProperty(button_prop)
@@ -57,13 +57,13 @@ hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
 ):start()
 
 
--- hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
+-- leftMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
 --   function(evt)
 --     print(hs.inspect(e:getRawEventData()))
 --   end
 -- ):start()
 
-hs.eventtap.new({hs.eventtap.event.types.otherMouseDown},
+otherMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.otherMouseDown},
   function(evt)
     print("otherMouseDown")
     print(hs.inspect(evt:getRawEventData()))
