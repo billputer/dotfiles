@@ -1,6 +1,7 @@
 [user]
   name = Bill Wiens
   email = billwiens@gmail.com
+  signingkey = 00B84D806A823C5D
 
 [color]
   diff = auto
@@ -53,7 +54,7 @@
 
   # list aliases
   la = "!git config -l | grep alias | cut -c 7-"
-  
+
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -67,3 +68,6 @@
   default = current
 [help]
 	autocorrect = 1
+
+[commit]
+  gpgsign = true
