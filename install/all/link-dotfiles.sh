@@ -9,8 +9,8 @@ set -o nounset
 DOTFILE_DIR="$( cd "$( dirname "$0" )/../.." && pwd )"
 FILES="
   ackrc
-  bin
   bash_profile
+  bin
   dir_colors
   gemrc
   gitconfig
@@ -18,6 +18,7 @@ FILES="
   hammerspoon
   hgignore
   hgrc
+  hyper.js
   oh-my-zsh
   profile
   slate.js
