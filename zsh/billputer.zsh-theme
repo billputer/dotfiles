@@ -145,7 +145,7 @@ prompt_billputer() {
   prompt_return_code
   prompt_git_info
   prompt_hg_info
-  print -n "\n $ %{[0m%}"
+  print -n "\n $ %f"
 }
 
 rprompt_billputer() {
