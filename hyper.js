@@ -16,7 +16,7 @@ module.exports = {
     foregroundColor: '#839496',
 
     // terminal background color
-    backgroundColor: '#002b36',
+    backgroundColor: '#002833',
 
     // border color (window, tabs)
     borderColor: '#586e75',
@@ -25,7 +25,8 @@ module.exports = {
     css: '',
 
     // custom css to embed in the terminal window
-    termCSS: '',
+    termCSS: `
+    `,
 
     // set to `true` if you're using a Linux set up
     // that doesn't shows native menus
@@ -59,7 +60,7 @@ module.exports = {
       lightBlue: '#839496',
       lightMagenta: '#6c6ec6',
       lightCyan: '#93a1a1',
-      lightWhite: '#fdf6e3'
+      lightWhite: '#fdf6e3',
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -77,7 +78,7 @@ module.exports = {
     bell: false,
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: true
+    copyOnSelect: true,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -91,10 +92,10 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: ['hyperterm-mactabs'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: []
+  localPlugins: [],
 };

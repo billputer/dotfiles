@@ -2,7 +2,8 @@
   "rules": {
     "quotes": [
       2,
-      "double"
+      "single",
+      "avoidEscape": true,
     ],
     "linebreak-style": [
       2,
@@ -18,7 +19,7 @@
     ]
   },
   "env": {
-    "es6": false,
+    "es6": true,
     "node": true
   },
   "globals": {
