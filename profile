@@ -84,5 +84,6 @@ if [ -n "$ZSH_VERSION" ] && [ -f ~/.fzf.zsh ]; then
 elif [ -n "$BASH_VERSION" ] && [ -f ~/.fzf.bash ]; then
   source ~/.fzf.bash
 fi
+export FZF_TMUX=1
 
 source $HOME/.profile.local
