@@ -22,7 +22,7 @@ transplant =
 fsmonitor =
 
 [fsmonitor]
-mode = paranoid
+mode = off
 
 [pager]
 pager = LESS='FRX' less
