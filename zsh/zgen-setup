@@ -33,6 +33,10 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/osx
   fi
 
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-autosuggestions
+  zgen load chrissicool/zsh-256color
+
   zgen load $HOME/.zsh/hg.zsh
   zgen load $HOME/.zsh/billputer.zsh-theme
 
