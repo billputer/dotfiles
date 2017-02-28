@@ -28,6 +28,8 @@ defaults write com.apple.dock showhidden -bool true
 # Enable iTunes track notifications in the Dock
 defaults write com.apple.dock itunes-notifications -bool true
 
+# Turn off accent pop-up when holding a key
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Only show scrollbars when scrolling
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
