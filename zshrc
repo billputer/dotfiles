@@ -2,16 +2,13 @@
 # ZSH specific configuration
 #################################################
 
-# Path to oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-# look for custom zsh plugins/themes in .zsh
-ZSH_CUSTOM=$HOME/.files/zsh
-# set zsh theme to load
-ZSH_THEME="billputer"
-# disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+if [ -f $HOME/.zsh/zgen-setup ]; then
+  source $HOME/.zsh/zgen-setup
+fi
+
 # disable AUTO_TITLE
 DISABLE_AUTO_TITLE="true"
+
 # set our own title
 precmd () {
     # print hostname (%m) if SSH_CLIENT variable is set
@@ -21,22 +18,6 @@ precmd () {
         print -Pn "\e]0;%~\a"
     fi
 }
-
-plugins=(
-  aws
-  brew
-  bundler
-  fabric
-  gem
-  golang
-  history-substring-search
-  redis-cli
-  pip
-  python
-  vagrant
-)
-
-source $ZSH/oh-my-zsh.sh
 
 # disable spelling correction
 unsetopt correct

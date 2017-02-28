@@ -3,22 +3,22 @@
 #
 
 # Solarized colors
-local BASE03="234"
-local BASE02="235"
-local BASE01="240"
-local BASE00="241"
-local BASE0="244"
-local BASE1="245"
-local BASE2="254"
-local BASE3="230"
-local YELLOW="136"
-local ORANGE="166"
-local RED="160"
-local MAGENTA="125"
-local VIOLET="61"
-local BLUE="33"
-local CYAN="37"
-local GREEN="64"
+BASE03="234"
+BASE02="235"
+BASE01="240"
+BASE00="241"
+BASE0="244"
+BASE1="245"
+BASE2="254"
+BASE3="230"
+YELLOW="136"
+ORANGE="166"
+RED="160"
+MAGENTA="125"
+VIOLET="61"
+BLUE="33"
+CYAN="37"
+GREEN="64"
 
 # Git prompt variables
 ZSH_THEME_GIT_PROMPT_PREFIX="\ue0a0 "
@@ -48,8 +48,8 @@ ZSH_THEME_HG_PROMPT_DELETED=" %F{${RED}}✖"
 ZSH_THEME_HG_PROMPT_MISSING=" %F{${BASE0}}!"
 ZSH_THEME_HG_PROMPT_UNTRACKED=" %F{${VIOLET}}✭"
 
-local UNAME=$(uname)
-local HOSTNAME=$(hostname)
+UNAME=$(uname)
+HOSTNAME=$(hostname)
 
 
 prompt_user_host() {

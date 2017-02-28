@@ -19,7 +19,6 @@ FILES="
   hgignore
   hgrc
   hyper.js
-  oh-my-zsh
   profile
   slate.js
   tmux.conf
