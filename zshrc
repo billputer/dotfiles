@@ -37,7 +37,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.profile
 
 # disable spelling correction
 unsetopt correct
@@ -75,3 +74,5 @@ bindkey '' forward-word
 function exists {
   whence -w $1 >/dev/null
 }
+
+source $HOME/.profile
