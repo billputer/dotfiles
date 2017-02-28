@@ -105,6 +105,12 @@ prompt_lp_current_role() {
   fi
 }
 
+prompt_vi_mode(){
+  VI_INSERT_MODE="%F{${YELLOW}}[% INSERT]% %{$reset_color%} "
+  VI_NORMAL_MODE="%F{${BASE0}}[% NORMAL]% %{$reset_color%} "
+  print -n "${${KEYMAP/vicmd/$VI_NORMAL_MODE}/(main|viins)/$VI_INSERT_MODE}"
+}
+
 # Disable the default virtual env prompt so we can set our own
 export VIRTUAL_ENV_DISABLE_PROMPT='1'
 prompt_python_info() {
@@ -152,6 +158,7 @@ rprompt_billputer() {
   prompt_python_info
   prompt_ruby_info
   prompt_lp_current_role
+  prompt_vi_mode
   prompt_datetime
 }
 
@@ -160,9 +167,23 @@ prompt_billputer_precmd() {
   RPROMPT="$(rprompt_billputer)"
 }
 
+zle-line-init() {
+  RPS1="$(rprompt_billputer)"
+  zle reset-prompt
+}
+
+zle-keymap-select() {
+  RPS1="$(rprompt_billputer)"
+  zle reset-prompt
+}
+
 prompt_billputer_setup() {
   autoload -Uz add-zsh-hook
   add-zsh-hook precmd prompt_billputer_precmd
+
+  # updates vi-mode in RPS1
+  zle -N zle-line-init
+  zle -N zle-keymap-select
 }
 
 prompt_billputer_setup "$@"

@@ -59,6 +59,11 @@ __git_files () {
   _wanted files expl 'local files' _files
 }
 
+# enable vi-mode
+bindkey -v
+# set a short KEYTIMEOUT for quickly switching between modes
+export KEYTIMEOUT=1
+
 # bind Home and End
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
