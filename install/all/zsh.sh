@@ -12,3 +12,9 @@ if [ ! $SHELL = "/bin/zsh" ]; then
 else
   echo "zsh is already the default shell"
 fi
+
+# setup zgen
+source ~/.files/zsh/zgen-setup
+
+# remove old oh-my-zsh
+rm -rf ~/.files/oh-my-zsh
