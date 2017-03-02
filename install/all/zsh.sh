@@ -14,7 +14,7 @@ else
 fi
 
 # setup zgen
-source ~/.files/zsh/zgen-setup
+zsh ~/.files/zsh/zgen-setup
 
 # remove old oh-my-zsh
 rm -rf ~/.files/oh-my-zsh
