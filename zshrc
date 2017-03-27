@@ -50,6 +50,9 @@ bindkey '\e[4~' end-of-line
 # bind ctrl-y and ctrl-o to forward and back word
 bindkey '' backward-word
 bindkey '' forward-word
+# bind up and down to use history substring searching
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # utility function for determining whether a name exists
 function exists {
