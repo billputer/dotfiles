@@ -27,11 +27,20 @@ setopt noclobber
 unsetopt cdablevars
 
 # history settings
-HISTCONTROL=erasedups
 HISTFILE=~/.zsh_history
-HISTSIZE=9999
-SAVEHIST=9999
+HISTSIZE=100000
+SAVEHIST=100000
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+# see https://linux.die.net/man/1/zshoptions
+setopt append_history
 setopt extendedhistory
+setopt hist_expire_dups_first
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt share_history
 
 # Fix issue where git autocompletion takes forever and eats cpu.
 # See http://superuser.com/questions/458906/zsh-tab-completion-of-git-commands-is-very-slow-how-can-i-turn-it-off
