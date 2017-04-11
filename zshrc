@@ -1,6 +1,11 @@
+#!/usr/bin/env zsh
+
 #################################################
 # ZSH specific configuration
 #################################################
+
+# don't automatically update oh-my-zsh
+DISABLE_AUTO_UPDATE=true
 
 if [ -f $HOME/.zsh/zgen-setup ]; then
   source $HOME/.zsh/zgen-setup
