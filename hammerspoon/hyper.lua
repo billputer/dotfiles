@@ -130,8 +130,8 @@ layout1Monitor= {
 
 layout2Monitor= {
   {"Spotify",           nil,          screen("laptop"), hs.layout.maximized},
-  {"Atom",              "Projects",   screen("laptop"), hs.layout.maximized},
-  {"Atom",              "!Projects",  screen("main"),   hs.layout.left50},
+  {"Atom",              "Dropbox",   screen("laptop"), hs.layout.maximized},
+  {"Atom",              "!Dropbox",  screen("main"),   hs.layout.left50},
   {"Tweetbot",          nil,          screen("main"),   hs.layout.left50},
   {"Google Chrome",     nil,          screen("main"),   hs.layout.left50},
   {"Microsoft Outlook", "!Reminder",  screen("main"),   hs.layout.left50},
@@ -142,8 +142,8 @@ layout2Monitor= {
 
 layout3Monitor= {
   {"Spotify",           nil,          screen("laptop"), hs.layout.maximized},
-  {"Atom",              "Projects",   screen("laptop"), hs.layout.maximized},
-  {"Atom",              "!Projects",  screen("main"),   hs.layout.maximized},
+  {"Atom",              "Dropbox",   screen("laptop"), hs.layout.maximized},
+  {"Atom",              "!Dropbox",  screen("main"),   hs.layout.maximized},
   {"Tweetbot",          nil,          screen("main"),   hs.layout.left50},
   {"Google Chrome",     nil,          screen("main"),   hs.layout.maximized},
   {"Microsoft Outlook", "!Reminder",  screen("main"),   hs.layout.maximized},
