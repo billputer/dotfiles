@@ -99,3 +99,71 @@ hs.hotkey.bind({"cmd"}, 'q',
     quit_timer:stop()
   end
 )
+
+
+-- Unsupported Spaces extension. Uses private APIs!
+-- (http://github.com/asmagill/hammerspoon_asm.undocumented)
+spaces = require("hs._asm.undocumented.spaces")
+
+-- Returns a list of space ids for all "user" spaces (not fullscreen, expose, etc)
+function generateUserSpaceIds()
+  local space_ids = spaces.layout()[spaces.mainScreenUUID()]
+  local user_space_ids = {}
+  for k, space_id in pairs(space_ids) do
+    if spaces.spaceType(space_id) == 0 then
+      table.insert(user_space_ids, space_id)
+    end
+  end
+  return user_space_ids
+end
+
+function debugSpaces()
+  print("debugging spaces")
+
+  print("activeSpace:", spaces.activeSpace())
+  print("mainScreenUUID:", spaces.mainScreenUUID())
+  -- print(spaces.types)
+  -- print(spaces.debug.report())
+
+  print("spaces.layout")
+  for k, v in pairs(spaces.layout()[spaces.mainScreenUUID()]) do
+    print(k, "space_id:", v, "type:", spaces.spaceType(v))
+  end
+
+  -- print("queried spaces:")
+  -- queried_spaces = spaces.query(spaces.masks["otherSpaces"])
+  -- for k, v in pairs(queried_spaces) do
+  --   print(k, "space_id:", v)
+  -- end
+
+  print("generateUserSpaceIds:")
+  for k, v in pairs(generateUserSpaceIds()) do
+    print(k, "space_id:", v)
+  end
+end
+
+
+function moveWindowToSpaceByIndex(window, space_index)
+  local target_space_id = generateUserSpaceIds()[space_index]
+  spaces.moveWindowToSpace(window:id(), target_space_id)
+  debugSpaces()
+end
+
+hs.hotkey.bind({"ctrl", "cmd"}, '1',
+  function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 1) end
+)
+hs.hotkey.bind({"ctrl", "cmd"}, '2',
+  function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 2) end
+)
+hs.hotkey.bind({"ctrl", "cmd"}, '3',
+  function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 3) end
+)
+hs.hotkey.bind({"ctrl", "cmd"}, '4',
+  function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 4) end
+)
+hs.hotkey.bind({"ctrl", "cmd"}, '5',
+  function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 5) end
+)
+hs.hotkey.bind({"ctrl", "cmd"}, '6',
+  function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 6) end
+)
