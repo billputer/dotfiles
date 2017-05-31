@@ -2,3 +2,6 @@
 vim/.netrwhist
 # vim bundles
 vim/bundle/**
+
+# hammerspoon modules
+hammerspoon/hs
