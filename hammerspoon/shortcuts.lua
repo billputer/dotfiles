@@ -149,6 +149,32 @@ function moveWindowToSpaceByIndex(window, space_index)
   debugSpaces()
 end
 
+function changeSpaceRelative(offset)
+  local space_ids = spaces.layout()[spaces.mainScreenUUID()]
+  local num_spaces = #space_ids
+  local activeSpace = spaces.activeSpace()
+
+  local space_id_to_index = {}
+  for index, space_id in pairs(space_ids) do
+    space_id_to_index[space_id] = index
+  end
+  local current_space_index = space_id_to_index[activeSpace]
+  local target_space_index = (current_space_index + offset) % num_spaces
+
+  if target_space_index == 0 then
+    target_space_index = num_spaces
+  end
+
+  spaces.changeToSpace(space_ids[target_space_index])
+end
+
+hs.hotkey.bind({"ctrl", "cmd"}, 'w',
+  function() changeSpaceRelative(-1) end
+)
+hs.hotkey.bind({"ctrl", "cmd"}, 't',
+  function() changeSpaceRelative(1) end
+)
+
 hs.hotkey.bind({"ctrl", "cmd"}, '1',
   function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 1) end
 )
