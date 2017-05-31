@@ -32,6 +32,11 @@ hyper:bind({}, 'r', function()
   hs.reload()
 end)
 
+-- open Hammerspoon console on hyper + c
+hyper:bind({}, 'c', function()
+  hs.openConsole()
+end)
+
 -- window management bindings
 hs.window.animationDuration = 0
 
