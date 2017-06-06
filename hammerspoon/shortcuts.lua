@@ -146,7 +146,8 @@ end
 function moveWindowToSpaceByIndex(window, space_index)
   local target_space_id = generateUserSpaceIds()[space_index]
   spaces.moveWindowToSpace(window:id(), target_space_id)
-  debugSpaces()
+  spaces.changeToSpace(target_space_id)
+  -- debugSpaces()
 end
 
 function changeSpaceRelative(offset)
