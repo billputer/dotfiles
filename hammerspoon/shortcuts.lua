@@ -142,11 +142,17 @@ function debugSpaces()
   end
 end
 
+function displayCurrentSpace(space_index)
+  hs.fnutils.each(hs.screen.allScreens(), function(screen)
+    hs.alert.show("Space: " .. space_index, screen)
+  end)
+end
 
 function moveWindowToSpaceByIndex(window, space_index)
   local target_space_id = generateUserSpaceIds()[space_index]
   spaces.moveWindowToSpace(window:id(), target_space_id)
   spaces.changeToSpace(target_space_id)
+  displayCurrentSpace(space_index)
   -- debugSpaces()
 end
 
@@ -167,6 +173,7 @@ function changeSpaceRelative(offset)
   end
 
   spaces.changeToSpace(space_ids[target_space_index])
+  displayCurrentSpace(target_space_index)
 end
 
 hs.hotkey.bind({"ctrl", "cmd"}, 'w',
