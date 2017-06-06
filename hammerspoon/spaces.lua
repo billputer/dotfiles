@@ -56,12 +56,9 @@ function moveWindowToSpaceByIndex(window, space_index)
 end
 
 function changeSpaceIndex(space_index)
-  -- debugging
-  keys = hs.hotkey.getHotkeys()
-  print_table(keys)
-
+  local space_ids = spaces.layout()[spaces.mainScreenUUID()]
+  spaces.changeToSpace(space_ids[space_index])
   displayCurrentSpace(space_index)
-  -- TODO: actually change space
 end
 
 function changeSpaceRelative(offset)
@@ -90,9 +87,20 @@ hs.hotkey.bind({"ctrl", "cmd"}, 't', function() changeSpaceRelative(1) end)
 hs.hotkey.bind({"ctrl"}, 'left', function() changeSpaceRelative(-1) end)
 hs.hotkey.bind({"ctrl"}, 'right', function() changeSpaceRelative(1) end)
 
-hs.hotkey.showHotkeys({"ctrl", "cmd"}, '/')
+
+-- keys to directly switch to spaces
+-- note: these don't work unless you change the default mission control shortcuts
+-- this is true even if the shortcuts are disabled
+-- TODO: change those shortcuts as part of the ns-defaults script
 hs.hotkey.bind({"ctrl"}, "1", function() changeSpaceIndex(1) end)
-hs.hotkey.bind({"cmd"}, '1', function() changeSpaceIndex(1) end)
+hs.hotkey.bind({"ctrl"}, "2", function() changeSpaceIndex(2) end)
+hs.hotkey.bind({"ctrl"}, "3", function() changeSpaceIndex(3) end)
+hs.hotkey.bind({"ctrl"}, "4", function() changeSpaceIndex(4) end)
+hs.hotkey.bind({"ctrl"}, "5", function() changeSpaceIndex(5) end)
+hs.hotkey.bind({"ctrl"}, "6", function() changeSpaceIndex(6) end)
+hs.hotkey.bind({"ctrl"}, "7", function() changeSpaceIndex(7) end)
+hs.hotkey.bind({"ctrl"}, "8", function() changeSpaceIndex(8) end)
+hs.hotkey.bind({"ctrl"}, "9", function() changeSpaceIndex(9) end)
 
 hs.hotkey.bind({"ctrl", "cmd"}, '1', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 1) end)
 hs.hotkey.bind({"ctrl", "cmd"}, '2', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 2) end)
