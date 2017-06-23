@@ -47,17 +47,24 @@ function displayCurrentSpace(space_index)
   end)
 end
 
+function changeToSpace(space_id)
+  if space_id == spaces.activeSpace() then
+    error("Can't change to current space", 2)
+  end
+  spaces.changeToSpace(space_id)
+end
+
 function moveWindowToSpaceByIndex(window, space_index)
   local target_space_id = generateUserSpaceIds()[space_index]
   spaces.moveWindowToSpace(window:id(), target_space_id)
-  spaces.changeToSpace(target_space_id)
+  changeToSpace(target_space_id)
   displayCurrentSpace(space_index)
   -- debugSpaces()
 end
 
 function changeSpaceIndex(space_index)
   local space_ids = spaces.layout()[spaces.mainScreenUUID()]
-  spaces.changeToSpace(space_ids[space_index])
+  changeToSpace(space_ids[space_index])
   displayCurrentSpace(space_index)
 end
 
@@ -77,7 +84,7 @@ function changeSpaceRelative(offset)
     target_space_index = num_spaces
   end
 
-  spaces.changeToSpace(space_ids[target_space_index])
+  changeToSpace(space_ids[target_space_index])
   displayCurrentSpace(target_space_index)
 end
 
