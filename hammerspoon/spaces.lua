@@ -42,8 +42,9 @@ function debugSpaces()
 end
 
 function displayCurrentSpace(space_index)
+  alert_style = { textSize=18, radius=5 }
   hs.fnutils.each(hs.screen.allScreens(), function(screen)
-    hs.alert.show("Space: " .. space_index, hs.alert.defaultStyle, screen, 0.4)
+    hs.alert.show("Space: " .. space_index, alert_style, screen, 0.4)
   end)
 end
 
