@@ -9,6 +9,7 @@ call vundle#begin()
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bogado/file-line'
+Plugin 'chr4/nginx.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'pearofducks/ansible-vim'
