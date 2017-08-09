@@ -30,45 +30,49 @@ hs.hotkey.bind({"ctrl", "shift"}, 's',
 -- trigger events for extra mouse buttons
 middleMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
   function(evt)
-    button_prop = hs.eventtap.event.properties["mouseEventButtonNumber"]
-    button_pressed = evt:getProperty(button_prop)
-
-    print(hs.inspect(button_pressed))
-    -- trigger mission control with middle click
-    if button_pressed == 2 then
-      immediateKeyStroke({"ctrl"}, "up")
-    end
-    -- if cmd held, then use tab navigation with thumb buttons
-    if evt:getFlags()["cmd"] then
-      if button_pressed == 3 then
-        immediateKeyStroke({"cmd", "shift"}, "[")
-      elseif button_pressed == 4 then
-        immediateKeyStroke({"cmd", "shift"}, "]")
-      end
-    -- trigger back and forward with thumb buttons
-    else
-      if button_pressed == 3 then
-        immediateKeyStroke({"cmd"}, "[")
-      elseif button_pressed == 4 then
-        immediateKeyStroke({"cmd"}, "]")
-      end
-    end
+    handleButtonPressed(evt)
   end
 ):start()
 
 
--- leftMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
---   function(evt)
---     print(hs.inspect(e:getRawEventData()))
---   end
--- ):start()
+  -- leftMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
+  --   function(evt)
+  --     print(hs.inspect(e:getRawEventData()))
+  --   end
+  -- ):start()
 
 otherMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.otherMouseDown},
   function(evt)
-    print("otherMouseDown")
-    print(hs.inspect(evt:getRawEventData()))
+    handleButtonPressed(evt)
   end
 ):start()
+
+function handleButtonPressed(evt)
+  button_prop = hs.eventtap.event.properties["mouseEventButtonNumber"]
+  button_pressed = evt:getProperty(button_prop)
+
+  print(hs.inspect(button_pressed))
+
+  -- trigger mission control with middle click
+  if button_pressed == 2 then
+    immediateKeyStroke({"ctrl"}, "up")
+  end
+  -- if cmd held, then use tab navigation with thumb buttons
+  if evt:getFlags()["cmd"] then
+    if button_pressed == 3 then
+      immediateKeyStroke({"cmd", "shift"}, "[")
+    elseif button_pressed == 4 then
+      immediateKeyStroke({"cmd", "shift"}, "]")
+    end
+  -- trigger back and forward with thumb buttons
+  else
+    if button_pressed == 3 then
+      immediateKeyStroke({"cmd"}, "[")
+    elseif button_pressed == 4 then
+      immediateKeyStroke({"cmd"}, "]")
+    end
+  end
+end
 
 
 function debugEventTypes()
