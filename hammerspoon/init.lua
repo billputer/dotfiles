@@ -1,4 +1,5 @@
 
+require('windows')
 require('hyper')
 require('shortcuts')
 require('tap-escape')
@@ -26,6 +27,7 @@ immediateKeyStroke = function(modifiers, character)
     local event = require("hs.eventtap").event
     event.newKeyEvent(modifiers, string.lower(character), true):post()
     event.newKeyEvent(modifiers, string.lower(character), false):post()
+    return true
 end
 
 hs.alert.show("Hammerspoon loaded")
