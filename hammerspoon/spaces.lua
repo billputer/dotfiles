@@ -42,17 +42,16 @@ function debugSpaces()
 end
 
 function displayCurrentSpace(space_index)
-  alert_style = { textSize=18, radius=5 }
+  alert_style = { textSize=24, radius=5 }
   hs.fnutils.each(hs.screen.allScreens(), function(screen)
-    hs.alert.show("Space: " .. space_index, alert_style, screen, 0.4)
+    hs.alert.show("Space: " .. space_index, alert_style, screen, 1.0)
   end)
 end
 
 function changeToSpace(space_id)
-  if space_id == spaces.activeSpace() then
-    error("Can't change to current space", 2)
+  if space_id ~= spaces.activeSpace() then
+    spaces.changeToSpace(space_id)
   end
-  spaces.changeToSpace(space_id)
 end
 
 function moveWindowToSpaceByIndex(window, space_index)
