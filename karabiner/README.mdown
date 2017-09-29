@@ -1,6 +1,0 @@
-# README
-
-After installing Karabiner, run this:
-
-    mv ~/Library/Application\ Support/Karabiner/private.xml ~/Library/Application\ Support/Karabiner/private.xml.bak
-    ln -s ~/.files/karabiner/private.xml ~/Library/Application\ Support/Karabiner/private.xml
