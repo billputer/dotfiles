@@ -75,7 +75,7 @@ fi
 # use chruby, if it exists
 if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
   source /usr/local/share/chruby/chruby.sh
-  chruby ruby-2.3.1
+  chruby ruby-2.4.2
 fi
 
 # use fzf, if it exists

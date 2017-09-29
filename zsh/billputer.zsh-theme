@@ -132,7 +132,7 @@ prompt_ruby_info() {
   if [[ -x `which rvm-prompt` ]]; then
     local RVM_PROMPT="[$(rvm-prompt i v g)]"
     # show if not using default ruby
-    local DEFAULT_RUBY="2.1.1"
+    local DEFAULT_RUBY="2.4.2"
     if [[ $RVM_PROMPT != "[ruby-$DEFAULT_RUBY]" ]]; then
       print -n "${RVM_PROMPT} ";
     fi;
