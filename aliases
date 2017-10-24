@@ -29,6 +29,9 @@ alias mkdir='mkdir -p'
 
 # tmux
 alias tm='tmux -u2'
+function ssht(){
+  ssh $1 -t -- 'tmux has-session && exec tmux attach || exec tmux -u2'
+}
 
 # Server control
 alias df='df -kH'
