@@ -28,11 +28,13 @@ hs.hotkey.bind({"ctrl", "shift"}, 's',
 )
 
 -- trigger events for extra mouse buttons
-middleMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
-  function(evt)
-    handleButtonPressed(evt)
-  end
-):start()
+-- Note: for the Razer mouse, this also triggers otherMouseDown, causing a double tap
+-- middleMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.middleMouseDown},
+--   function(evt)
+--
+--     handleButtonPressed(evt)
+--   end
+-- ):start()
 
 
   -- leftMouseDownEventtap = hs.eventtap.new({hs.eventtap.event.types.leftMouseDown},
