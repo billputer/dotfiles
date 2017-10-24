@@ -9,12 +9,15 @@ log=.log
 --type-set
 docs=.markdown,.md,.mdown,.rst,.textile,.info,.txt
 
-# default ignores
+# ignores
 --ignore-dir=public/media/cache
 --ignore-dir=public/static/cache
 --ignore-dir=build/html
 --ignore-dir=docs/build
 --ignore-dir=migrations
+--ignore-dir=.gem
+--ignore-dir=tmp
+--ignore-dir=log
 
 # always color, even if piping to a another program
 --color
