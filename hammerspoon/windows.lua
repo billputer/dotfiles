@@ -56,6 +56,26 @@ function center_window()
   win:setFrame(f)
 end
 
+-- focus functions
+function focus_window_left()
+  local win = hs.window.focusedWindow()
+  win:focusWindowWest(nil, true)
+end
+
+function focus_window_right()
+  local win = hs.window.focusedWindow()
+  win:focusWindowEast(nil, true)
+end
+
+function focus_window_down()
+  local win = hs.window.focusedWindow()
+  win:focusWindowSouth(nil, true)
+end
+
+function focus_window_up()
+  local win = hs.window.focusedWindow()
+  win:focusWindowNorth(nil, true)
+end
 
 -- helper function to set correct screen
 function screen(name)

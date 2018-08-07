@@ -47,6 +47,13 @@ hyper:bind({}, ',', move_window_screen_left)
 hyper:bind({}, '.', move_window_screen_right)
 
 
+-- window focus bindings
+hyper:bind({}, 'h', focus_window_left)
+hyper:bind({}, 'j', focus_window_down)
+hyper:bind({}, 'k', focus_window_up)
+hyper:bind({}, 'l', focus_window_right)
+
+
 -- layout bindings
 hyper:bind({}, 'u', function()
   hs.layout.apply(layout1Monitor, match_title)
