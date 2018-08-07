@@ -11,8 +11,10 @@ if [[ $(uname) = 'Darwin' ]]; then
   alias e.='atom -n .'
   alias elp='atom -n ~/Projects'
   alias ebp='atom -n ~/Dropbox/Projects'
-  alias ewd='atom -n ~/workspace/lp-devops'
-  alias ewa='atom -n ~/workspace/lp-app'
+  alias ewa='atom -n ~/workspace/lpx-ansible'
+  alias ewapp='atom -n ~/workspace/lp-app'
+  alias ewr='atom -n ~/workspace/relight'
+  alias ewt='atom -n ~/workspace/terraform'
 else
   alias e='vim'
   alias e.='vim .'
@@ -30,7 +32,7 @@ alias mkdir='mkdir -p'
 # tmux
 alias tm='tmux -u2'
 function ssht(){
-  ssh $1 -t -- 'tmux has-session && exec tmux attach || exec tmux -u2'
+  ssh $1 -t -- /bin/sh -c 'tmux has-session && exec tmux attach || exec tmux -u2'
 }
 
 # Server control
@@ -46,15 +48,20 @@ alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 
 # LP-specific aliases
 if [ -n "$ZSH_VERSION" ]; then
-  alias -g wa='~/workspace/lp-app'
-  alias -g wd='~/workspace/lp-devops'
+  alias -g wapp='~/workspace/lp-app'
+  alias -g wa='~/workspace/lpx-ansible'
+  alias -g wr='~/workspace/relight'
+  alias -g wt='~/workspace/terraform'
 else
-  alias wa='~/workspace/lp-app'
-  alias wd='~/workspace/lp-devops'
+  alias wapp='~/workspace/lp-app'
+  alias wa='~/workspace/lpx-ansible'
+  alias wr='~/workspace/relight'
+  alias wt='~/workspace/terraform'
 fi
 alias lpa='lp-assume-role admin'
 alias lpo='lp-assume-role ops'
 alias lpd='lp-assume-role dev'
+alias dtf='docker-compose run --rm terraform'
 
 # mercurial
 
@@ -85,13 +92,18 @@ if [ -n "$ZSH_VERSION" ]; then
 fi
 
 # serveit
-alias serveit='python -m SimpleHTTPServer'
+alias serveit='python3 -m http.server'
 
 # sl
 alias sl='~/.files/bin/sl.sh'
 
 # sudo switch user with zsh shell
 alias sudosuz='sudo -E su --shell /usr/bin/zsh'
+
+# docker
+alias d='docker'
+alias dc='docker-compose'
+alias dcp='docker-compose -f docker-compose.yml -f docker-compose.production.yml'
 
 # vagrant
 alias vup='vagrant up'
