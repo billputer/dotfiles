@@ -50,7 +50,7 @@ fi
 ###
 
 # Enable pyenv, if it exists
-if [[ -x $(which pyenv > /dev/null) ]]; then
+if which pyenv > /dev/null; then
   eval "$(pyenv init -)";
 fi
 export DEFAULT_PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
