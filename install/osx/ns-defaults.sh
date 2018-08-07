@@ -61,6 +61,9 @@ defaults write com.apple.finder QuitMenuItem -bool true
 # Enable tap to click (Trackpad)
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
+# Default to "Paste and Match Style"
+defaults write -globalDomain NSUserKeyEquivalents  -dict-add "Paste and Match Style" "@v";
+
 
 ###############################################################################
 # Screen                                                                      #
