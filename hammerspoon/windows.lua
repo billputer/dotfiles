@@ -115,10 +115,12 @@ layout1Monitor= {
   {"Hillpeople",             nil,          nil, hs.layout.maximized},
   {"iTerm2",                 nil,          nil, hs.layout.right50},
   {"Remote Desktop Manager", nil,          nil, hs.layout.maximized},
+  {"Wunderlist",             nil,          nil, hs.layout.maximized},
 }
 
 layout2Monitor= {
   {"Spotify",                nil,          screen("laptop"), hs.layout.maximized},
+  {"Wunderlist",             nil,          screen("laptop"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.left50},
   {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
@@ -133,6 +135,7 @@ layout2Monitor= {
 
 layout3Monitor= {
   {"Spotify",                nil,          screen("laptop"), hs.layout.maximized},
+  {"Wunderlist",             nil,          screen("laptop"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
   {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
