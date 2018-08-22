@@ -120,3 +120,9 @@ function print_table(node)
 
   print(output_str)
 end
+
+-- print raw eventtap data for debugging
+-- tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
+--   print(hs.inspect(event:getRawEventData()))
+-- end)
+-- tap:start()
