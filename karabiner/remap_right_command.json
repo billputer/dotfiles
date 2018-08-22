@@ -1,0 +1,30 @@
+{
+  "title": "Map Command_R Key to Hyper",
+  "rules": [
+    {
+      "description": "Map Command_R Key to Command + Option + Control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_command",
+              "modifiers": [
+                "right_option",
+                "right_control"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
