@@ -21,7 +21,25 @@ else
   brew install reattach-to-user-namespace
 
   # various utilities
-  brew install ack ag awscli htop-osx iperf3 jq mercurial tree rename watchman wget
+  brew install \
+    ack \
+    ag \
+    awscli \
+    bat \
+    fd \
+    diff-so-fancy \
+    htop-osx \
+    iperf3 \
+    jq \
+    mercurial \
+    ncdu \
+    prettyping \
+    rename \
+    tldr \
+    tree \
+    watchman \
+    wget \
+    ;
 
   # language tools
   brew install pyenv ruby-install

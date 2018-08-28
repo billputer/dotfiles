@@ -35,13 +35,11 @@ function ssht(){
   ssh $1 -t -- /bin/sh -c 'tmux has-session && exec tmux attach || exec tmux -u2'
 }
 
-# Server control
+# pour some sugar on me
 alias df='df -kH'
-
+alias ncdu="ncdu --color dark -rr"
 alias grep='grep --color=auto -I --exclude="*\.svn*"'
-
-alias tou='top -o cpu'
-alias tom='top -o vsize'
+alias help='tldr'
 
 # convert newlines to LF
 alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
@@ -114,3 +112,13 @@ alias vp='vagrant provision'
 alias vsh='vagrant ssh'
 alias vst='vagrant status'
 alias vgst='vagrant global-status'
+
+# replace cat with bat, if it exists
+if [ -x "$(command -v bat)" ]; then
+  alias cat='bat'
+fi
+
+# replace ping with prettyping, if it exists
+if [ -x "$(command -v prettyping)" ]; then
+  alias ping='prettyping --nolegend'
+fi
