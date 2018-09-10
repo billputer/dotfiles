@@ -26,11 +26,6 @@ else
   export VISUAL='vim'
 fi
 
-# Mac specific PATH
-if [[ $(uname) = 'Darwin' ]]; then
-  # HomeBrew
-  export PATH=/usr/local/sbin:$PATH
-fi
 export PATH="/usr/local/bin:$PATH"
 
 # use gnu coreutils, if they exist
