@@ -52,16 +52,6 @@ do
 
 done
 
-# copy profile.local instead of symlinking
-# so that we can keep local changes out of git
-echo "Processing profile.local, special case"
-
-FROM=$DOTFILE_DIR/profile.local
-TO=$HOME/.profile.local
-
-if [[ -e $TO ]]; then
-  echo -e "\t$TO already exists, no action."
-else
-  echo -e "\tCopying - $FROM $TO"
-  cp $FROM $TO
-fi
+# create local config files for local customizations
+touch $HOME/.profile.local
+touch $HOME/.gitconfig.local
