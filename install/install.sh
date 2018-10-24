@@ -12,6 +12,7 @@ DOTFILE_DIR="$( cd "$( dirname "$0" )/.." && pwd )"
 if [[ $(uname) = 'Darwin' ]]; then
   $DOTFILE_DIR/install/osx/brew.sh
   $DOTFILE_DIR/install/osx/atom.sh
+  $DOTFILE_DIR/install/osx/brew-cask.sh
   $DOTFILE_DIR/install/osx/ns-defaults.sh
   $DOTFILE_DIR/install/osx/hammerspoon.sh
 fi
