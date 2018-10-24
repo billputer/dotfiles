@@ -3,58 +3,88 @@
 
 hs.window.animationDuration = 0
 
+-- geometry units describing window locations
+g_top_half = hs.geometry(0, 0, 1, 0.5)
+g_bottom_half = hs.geometry(0, 0.5, 1, 1)
+g_right_half = hs.geometry(0.5, 0, 0.5, 1)
+g_left_half = hs.geometry(0, 0, 0.5, 1)
+g_centered_vertically = hs.geometry(0, 0.2, 1, 0.6)
+g_centered_horizontally = hs.geometry(0.2, 0, 0.6, 1)
+g_maximized = hs.geometry(0, 0, 1, 1)
+
+-- toggles between maximized and top half of screeen
+function toggle_up()
+  local win = hs.window.focusedWindow()
+  if is_window_positioned(win, g_maximized) then
+    win:move(g_top_half)
+  else
+    win:move(g_maximized)
+  end
+end
+
+-- toggles between centered vertically and bottom half of screen
+function toggle_down()
+  local win = hs.window.focusedWindow()
+  if is_window_positioned(win, g_centered_vertically) then
+    win:move(g_bottom_half)
+  else
+    win:move(g_centered_vertically)
+  end
+end
+
 function move_window_left()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local max = win:screen():frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w / 2
-  f.h = max.h
-  win:setFrame(f)
+  win:move(g_left_half)
 end
 
 function move_window_right()
   local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local max = win:screen():frame()
-
-  f.x = max.x + max.w / 2
-  f.y = max.y
-  f.w = max.w / 2
-  f.h = max.h
-  win:setFrame(f)
+  win:move(g_right_half)
 end
+
+function center_window_horizontally()
+  local win = hs.window.focusedWindow()
+  win:move(g_centered_horizontally)
+end
+
 
 function move_window_screen_left()
   local win = hs.window.focusedWindow()
-  win:moveOneScreenWest()
-  win:maximize()
+  local west_screen = win:screen():toWest(nil, true)
+  win:move(g_maximized, west_screen)
 end
 
 function move_window_screen_right()
   local win = hs.window.focusedWindow()
-  win:moveOneScreenEast()
-  win:maximize()
+  local east_screen = win:screen():toEast(nil, true)
+  win:move(g_maximized, east_screen)
 end
 
-function maximize_window()
+function move_window_screen_down()
   local win = hs.window.focusedWindow()
-  win:maximize()
+  local south_screen = win:screen():toSouth(nil, true)
+  win:move(g_maximized, south_screen)
 end
 
-function center_window()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local max = win:screen():frame()
 
-  f.x = max.x + max.w * 0.2
-  f.y = max.y
-  f.w = max.w * 0.6
-  f.h = max.h
-  win:setFrame(f)
+-- determines if window is positioned in specified location
+function is_window_positioned(window, unit_rect)
+  local win_frame = window:frame()
+  local correct_frame = unit_rect:fromUnitRect(window:screen():frame())
+
+  -- fromUnitRect sometimes scales to a float, but we want ints for comparison
+  correct_frame.w = math.floor(correct_frame.w)
+  correct_frame.h = math.floor(correct_frame.h)
+  correct_frame.x = math.floor(correct_frame.x)
+  correct_frame.y = math.floor(correct_frame.y)
+
+  if win_frame:equals(correct_frame) then
+    return true
+  else
+    return false
+  end
 end
+
 
 -- focus functions
 function focus_window_left()
@@ -83,8 +113,10 @@ function screen(name)
     return hs.screen.primaryScreen()
   elseif name == "laptop" then
     return hs.screen.find("Color LCD")
+  elseif name == "left" then
+    return hs.screen.primaryScreen():toWest(nil, true)
   elseif name == "right" then
-    return hs.screen.primaryScreen():toEast()
+    return hs.screen.primaryScreen():toEast(nil, true)
   else
     return nil
   end
@@ -134,9 +166,9 @@ layout2Monitor= {
 }
 
 layout3Monitor= {
-  {"Spotify",                nil,          screen("laptop"), hs.layout.maximized},
-  {"Wunderlist",             nil,          screen("laptop"), hs.layout.maximized},
-  {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
+  {"Spotify",                nil,          screen("left"), hs.layout.maximized},
+  {"Wunderlist",             nil,          screen("left"), hs.layout.maximized},
+  {"Atom",                   "Dropbox",    screen("left"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
   {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
   {"Google Chrome",          nil,          screen("main"),   hs.layout.maximized},
@@ -148,18 +180,18 @@ layout3Monitor= {
   {"Remote Desktop Manager", nil,          screen("right"),  hs.layout.maximized},
 }
 
--- if we run into issues with this triggering accidentally, see this link
--- https://github.com/cmsj/hammerspoon-config/blob/master/init.lua#L355
---
-
--- trigger layouts when number of screens changes
-hs.screen.watcher.new(function()
-  numScreens = #hs.screen.allScreens()
-  if numScreens == 1 then
-    hs.layout.apply(layout1Monitor, match_title)
-  elseif numScreens == 2 then
-    hs.layout.apply(layout2Monitor, match_title)
-  elseif numScreens == 3 then
-    hs.layout.apply(layout3Monitor, match_title)
-  end
-end):start()
+layout4Monitor= {
+  {"Wunderlist",             nil,          screen("left"), g_centered_vertically},
+  {"Spotify",                nil,          screen("left"), hs.layout.maximized},
+  {"Wunderlist",             nil,          screen("left"), g_centered_vertically},
+  {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
+  {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
+  {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
+  {"Google Chrome",          nil,          screen("main"),   hs.layout.maximized},
+  {"Reeder",                 nil,          screen("main"),   hs.layout.maximized},
+  {"Microsoft Outlook",      "!Reminder",  screen("main"),   hs.layout.maximized},
+  {"Remote Desktop Manager", nil,          screen("main"),  hs.layout.maximized},
+  {"Slack",                  nil,          screen("right"),  g_centered_vertically},
+  {"Hillpeople",             nil,          screen("right"),  g_centered_vertically},
+  {"iTerm2",                 nil,          screen("right"),  hs.layout.maximized},
+}
