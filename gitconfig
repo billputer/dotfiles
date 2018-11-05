@@ -72,4 +72,4 @@
   la = "!git config -l | grep alias | cut -c 7-"
 
 [include]
-    path = gitconfig.local
+    path = .gitconfig.local
