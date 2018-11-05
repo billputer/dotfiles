@@ -91,8 +91,11 @@ end
 -- keys to change spaces left and right
 hs.hotkey.bind({"ctrl", "cmd"}, 'w', function() changeSpaceRelative(-1) end)
 hs.hotkey.bind({"ctrl", "cmd"}, 't', function() changeSpaceRelative(1) end)
-hs.hotkey.bind({"ctrl"}, 'left', function() changeSpaceRelative(-1) end)
-hs.hotkey.bind({"ctrl"}, 'right', function() changeSpaceRelative(1) end)
+
+-- the default mission control shortcuts are less buggy
+-- hs.hotkey.bind({"ctrl"}, 'left', function() changeSpaceRelative(-1) end)
+-- hs.hotkey.bind({"ctrl"}, 'right', function() changeSpaceRelative(1) end)
+
 
 
 -- keys to directly switch to spaces
