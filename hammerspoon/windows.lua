@@ -183,9 +183,8 @@ layout3Monitor= {
 layout4Monitor= {
   {"Wunderlist",             nil,          screen("left"), g_centered_vertically},
   {"Spotify",                nil,          screen("left"), hs.layout.maximized},
-  {"Wunderlist",             nil,          screen("left"), g_centered_vertically},
-  {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
+  {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
   {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
   {"Google Chrome",          nil,          screen("main"),   hs.layout.maximized},
   {"Reeder",                 nil,          screen("main"),   hs.layout.maximized},
