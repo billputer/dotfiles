@@ -102,6 +102,7 @@ alias sudosuz='sudo -E su --shell /usr/bin/zsh'
 alias d='docker'
 alias dc='docker-compose'
 alias dcp='docker-compose -f docker-compose.yml -f docker-compose.production.yml'
+alias dcompost='docker system prune --all --volumes'
 
 # vagrant
 alias vup='vagrant up'
