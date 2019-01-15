@@ -73,3 +73,5 @@
 
 [include]
     path = .gitconfig.local
+[http]
+	postBuffer = 1048576000
