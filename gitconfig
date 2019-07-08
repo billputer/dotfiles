@@ -71,6 +71,13 @@
   assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
 [include]
-    path = .gitconfig.local
+  path = .gitconfig.local
+
 [http]
-	postBuffer = 1048576000
+  postBuffer = 1048576000
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
