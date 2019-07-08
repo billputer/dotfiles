@@ -46,12 +46,12 @@ alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 
 # LP-specific aliases
 if [ -n "$ZSH_VERSION" ]; then
-  alias -g wapp='~/workspace/lp-app'
+  alias -g wapp='~/workspace/lpx-app'
   alias -g wa='~/workspace/lpx-ansible'
   alias -g wr='~/workspace/relight'
   alias -g wt='~/workspace/terraform'
 else
-  alias wapp='~/workspace/lp-app'
+  alias wapp='~/workspace/lpx-app'
   alias wa='~/workspace/lpx-ansible'
   alias wr='~/workspace/relight'
   alias wt='~/workspace/terraform'
