@@ -26,3 +26,6 @@ brew cask install slack
 brew cask install the-unarchiver
 brew cask install transmission
 brew cask install 1password
+
+brew tap homebrew/cask-fonts
+brew cask install font-inconsolata-g-for-powerline
