@@ -15,6 +15,7 @@ if [[ $(uname) = 'Darwin' ]]; then
   $DOTFILE_DIR/install/osx/brew-cask.sh
   $DOTFILE_DIR/install/osx/ns-defaults.sh
   $DOTFILE_DIR/install/osx/hammerspoon.sh
+  $DOTFILE_DIR/install/osx/karabiner.sh
 fi
 
 # ubuntu-specific
