@@ -14,8 +14,8 @@ else
 
   # the important things
   brew install zsh tmux git
-  # vim, but without homebrew ruby
-  brew install vim --without-ruby
+  # vim
+  brew install vim
 
   # make tmux and pbcopy friends
   brew install reattach-to-user-namespace
@@ -46,11 +46,9 @@ else
 
   # install GNU coreutils, etc, instead of using BSD versions
   brew install coreutils
-  brew install findutils --with-default-names
-  brew install gnu-getopt --with-default-names
-  brew install gnu-indent --with-default-names
-  brew install gnu-sed --with-default-names
-  brew install gnu-tar --with-default-names
+  brew install findutils
+  brew install gnu-sed
+  brew install gnu-tar
 
   # install shellcheck linter
   brew install shellcheck
