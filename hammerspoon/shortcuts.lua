@@ -11,21 +11,22 @@ hs.hotkey.bind({"ctrl", "cmd"}, 'r',
 )
 
 
+-- TODO: figure out how to do this without manually binding in System Preferences
 -- trigger mission control with left-hand
-mission_control_hotkey = hs.hotkey.bind({"ctrl"}, 's', nil,
-  function()
-    immediateKeyStroke({"ctrl"}, "up")
-  end
-)
+-- mission_control_hotkey = hs.hotkey.bind({"ctrl"}, 's', nil,
+--   function()
+--     immediateKeyStroke({"ctrl"}, "up")
+--   end
+-- )
 
 -- TODO: figure out how to trigger an actual ctrl+s so that we don't always trigger mission control
-hs.hotkey.bind({"ctrl", "shift"}, 's',
-  function()
-    mission_control_hotkey:disable()
-    immediateKeyStroke({"ctrl"}, "s")
-    mission_control_hotkey:enable()
-  end
-)
+-- hs.hotkey.bind({"ctrl", "shift"}, 's',
+--   function()
+--     mission_control_hotkey:disable()
+--     immediateKeyStroke({"ctrl"}, "s")
+--     mission_control_hotkey:enable()
+--   end
+-- )
 
 -- trigger events for extra mouse buttons
 -- Note: for the Razer mouse, this also triggers otherMouseDown, causing a double tap
