@@ -94,4 +94,9 @@ elif [ -n "$BASH_VERSION" ] && [ -f ~/.fzf.bash ]; then
 fi
 export FZF_TMUX=1
 
+# use kubectl autocompletion, if it exists
+if [ -n "$ZSH_VERSION" ] && [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh);
+fi
+
 source $HOME/.profile.local
