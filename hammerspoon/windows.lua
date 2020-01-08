@@ -140,6 +140,7 @@ layout1Monitor= {
   {"Spotify",                nil,          nil, hs.layout.maximized},
   {"Atom",                   nil,          nil, hs.layout.maximized},
   {"Tweetbot",               nil,          nil, hs.layout.left50},
+  {"Microsoft To Do",        nil,          nil, hs.layout.left50},
   {"Firefox",                nil,          nil, hs.layout.maximized},
   {"Google Chrome",          nil,          nil, hs.layout.maximized},
   {"Reeder",                 nil,          nil, hs.layout.maximized},
@@ -154,6 +155,7 @@ layout1Monitor= {
 layout2Monitor= {
   {"Spotify",                nil,          screen("laptop"), hs.layout.maximized},
   {"Wunderlist",             nil,          screen("laptop"), hs.layout.maximized},
+  {"Microsoft To Do",        nil,          screen("laptop"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.left50},
   {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
@@ -170,6 +172,7 @@ layout2Monitor= {
 layout3Monitor= {
   {"Spotify",                nil,          screen("left"), hs.layout.maximized},
   {"Wunderlist",             nil,          screen("left"), hs.layout.maximized},
+  {"Microsoft To Do",        nil,          screen("left"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("left"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
   {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
@@ -186,6 +189,7 @@ layout3Monitor= {
 layout4Monitor= {
   {"Wunderlist",             nil,          screen("left"), g_centered_vertically},
   {"Spotify",                nil,          screen("left"), hs.layout.maximized},
+  {"Microsoft To Do",        nil,          screen("left"), g_centered_vertically},
   {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
   {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
