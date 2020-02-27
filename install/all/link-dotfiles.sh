@@ -20,7 +20,7 @@ FILES="
   hgrc
   hyper.js
   profile
-  slate.js
+  tabset
   tmux.conf
   vim
   vimrc

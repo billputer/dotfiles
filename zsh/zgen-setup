@@ -44,6 +44,7 @@ if ! zgen saved; then
   zgen load chrissicool/zsh-256color
 
   zgen load $HOME/.zsh/hg.zsh
+  zgen load $HOME/.zsh/set-window-title.zsh
   zgen load $HOME/.zsh/billputer.zsh-theme
 
   # generate the init script from plugins above

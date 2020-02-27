@@ -1,0 +1,14 @@
+{
+  "colors": {
+    "default_grey": "rgb(51,52,54)",
+    "solarized_cyan": "2aa198",
+    "solarized_blue": "268bd2",
+    "solarized_violet": "6c71c4",
+    "solarized_orange": "cb4b16",
+    "solarized_yellow": "b58900",
+    "solarized_red": "dc322f",
+    "solarized_magenta": "d33682",
+    "solarized_blue": "268bd2",
+    "solarized_green": "#859900"
+  }
+}

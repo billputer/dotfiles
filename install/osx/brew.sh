@@ -52,5 +52,9 @@ else
 
   # install shellcheck linter
   brew install shellcheck
+
+  # install iterm2-tab-set
+  brew install npm
+  npm install -g iterm2-tab-set
 fi
 exit 0
