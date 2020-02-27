@@ -8,6 +8,8 @@ set -o nounset
 
 echo "installing brew casks"
 
+# TODO: https://gist.github.com/t-io/8255711
+
 brew cask install alfred
 brew cask install appcleaner
 brew cask install atom
