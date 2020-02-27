@@ -39,7 +39,6 @@ function ssht(){
 # pour some sugar on me
 alias df='df -kH'
 alias ncdu="ncdu --color dark -rr"
-alias grep='grep --color=auto -I --exclude="*\.svn*"'
 alias help='tldr'
 
 # convert newlines to LF
