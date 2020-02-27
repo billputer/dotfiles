@@ -29,7 +29,7 @@
 
 [commit]
   verbose = true
-  gpgsign = true
+  #gpgsign = true
 
 [alias]
   aliases = config --get-regexp alias
