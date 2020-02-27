@@ -46,6 +46,10 @@ fi
 if [[ -d "/usr/local/opt/gnu-tar/libexec/gnubin" ]]; then
   PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 fi
+# use gnu-grep, if it exists
+if [[ -d "/usr/local/opt/grep/libexec/gnubin" ]]; then
+  PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+fi
 
 # set LS_COLORS (generated from dircolors)
 if command -v dircolors >/dev/null 2>&1; then
