@@ -106,6 +106,11 @@ alias dc='docker-compose'
 alias dcp='docker-compose -f docker-compose.yml -f docker-compose.production.yml'
 alias dcompost='docker system prune --all --volumes'
 
+# kubernetes
+alias k='kubectl'
+alias kc='kubectx'
+alias kn='kubens'
+
 # vagrant
 alias vup='vagrant up'
 alias vupno='vagrant up --no-provision'
