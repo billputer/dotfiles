@@ -13,6 +13,7 @@ if [[ $(uname) = 'Darwin' ]]; then
   alias ebp='atom -n ~/Dropbox/Projects'
   alias ewa='atom -n ~/workspace/lpx-ansible'
   alias ewapp='atom -n ~/workspace/lpx-app'
+  alias ewdu='atom -n ~/workspace/docker-utility'
   alias ewr='atom -n ~/workspace/relight'
   alias ewt='atom -n ~/workspace/terraform'
 else
@@ -48,11 +49,13 @@ alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 if [ -n "$ZSH_VERSION" ]; then
   alias -g wapp='~/workspace/lpx-app'
   alias -g wa='~/workspace/lpx-ansible'
+  alias -g wdu='~/workspace/docker-utility'
   alias -g wr='~/workspace/relight'
   alias -g wt='~/workspace/terraform'
 else
   alias wapp='~/workspace/lpx-app'
   alias wa='~/workspace/lpx-ansible'
+  alias wdu='~/workspace/docker-utility'
   alias wr='~/workspace/relight'
   alias wt='~/workspace/terraform'
 fi
