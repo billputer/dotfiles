@@ -68,12 +68,13 @@ function handleButtonPressed(evt)
       immediateKeyStroke({"cmd", "shift"}, "]")
     end
   -- trigger back and forward with thumb buttons
-  else
-    if button_pressed == 3 then
-      immediateKeyStroke({"cmd"}, "[")
-    elseif button_pressed == 4 then
-      immediateKeyStroke({"cmd"}, "]")
-    end
+  -- don't send this, will double-tap
+  -- else
+  --   if button_pressed == 3 then
+  --     immediateKeyStroke({"cmd"}, "[")
+  --   elseif button_pressed == 4 then
+  --     immediateKeyStroke({"cmd"}, "]")
+  --   end
   end
 end
 
