@@ -58,7 +58,7 @@ function handleButtonPressed(evt)
 
   -- trigger mission control with middle click
   if button_pressed == 2 then
-    immediateKeyStroke({"ctrl"}, "up")
+    immediateKeyStroke({"ctrl"}, "s")
   end
   -- if cmd held, then use tab navigation with thumb buttons
   if evt:getFlags()["cmd"] then
