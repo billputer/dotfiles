@@ -110,6 +110,8 @@ alias dcompost='docker system prune --all --volumes'
 alias k='kubectl'
 alias kc='kubectx'
 alias kn='kubens'
+alias kap='kubectl get pods --all-namespaces -o wide | awk {'"'"'print $1" "$2" "$3" "$4" "$5" "$6" "$8'"'"'} | column -t'
+alias kaps='kubectl get pods --all-namespaces -o wide --sort-by=.spec.nodeName| awk {'"'"'print $1" "$2" "$3" "$4" "$5" "$6" "$8'"'"'} | column -t'
 
 # vagrant
 alias vup='vagrant up'
@@ -121,6 +123,8 @@ alias vsh='vagrant ssh'
 alias vst='vagrant status'
 alias vgst='vagrant global-status'
 
+# TODO: customize bat with solarized theme
+# https://github.com/sharkdp/bat#adding-new-themes
 # replace cat with bat, if it exists
 if [ -x "$(command -v bat)" ]; then
   alias cat='bat'
