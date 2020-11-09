@@ -37,6 +37,7 @@
   ci = commit
   co = checkout
   br = branch
+  sg = diff --cached
   staged = diff --cached
   unstaged = diff
   both = diff HEAD
