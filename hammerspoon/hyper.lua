@@ -21,15 +21,16 @@ end)
 
 
 -- window management bindings
-hyper_bind('left', move_window_left)
-hyper_bind('right', move_window_right)
+hyper_bind('left', hyper_left)
+hyper_bind('right', hyper_right)
 hyper_bind('up', toggle_up)
 hyper_bind('down', toggle_down)
 hyper_bind(';', center_window_horizontally)
 
-hyper_bind(',', move_window_screen_left)
-hyper_bind('.', move_window_screen_right)
+-- hyper_bind(',', move_window_screen_left)
+-- hyper_bind('.', move_window_screen_right)
 hyper_bind('m', move_window_screen_down)
+hyper_bind('n', move_window_screen_up)
 
 
 
@@ -48,8 +49,8 @@ hyper_bind('i', function()
   hs.layout.apply(layout2Monitor, match_title)
 end)
 hyper_bind('o', function()
-  hs.layout.apply(layout3Monitor, match_title)
+  hs.layout.apply(layout4MonitorHome, match_title)
 end)
 hyper_bind('p', function()
-  hs.layout.apply(layout4Monitor, match_title)
+  hs.layout.apply(layout4MonitorWork, match_title)
 end)

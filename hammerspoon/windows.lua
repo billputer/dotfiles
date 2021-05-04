@@ -1,7 +1,7 @@
 
 -- window management functions
 
-hs.window.animationDuration = 0
+hs.window.animationDuration = 0.5
 
 -- geometry units describing window locations
 g_top_half = hs.geometry(0, 0, 1, 0.5)
@@ -11,6 +11,44 @@ g_left_half = hs.geometry(0, 0, 0.5, 1)
 g_centered_vertically = hs.geometry(0, 0.2, 1, 0.6)
 g_centered_horizontally = hs.geometry(0.2, 0, 0.6, 1)
 g_maximized = hs.geometry(0, 0, 1, 1)
+
+-- context-dependent move window left
+function hyper_left()
+  local win = hs.window.focusedWindow()
+  local current_screen = win:screen()
+
+  -- if on right screen, move to right half of primary
+  if is_screen_right_of_primary(current_screen) then
+    local west_screen = current_screen:toWest(nil, true)
+    win:move(g_right_half, west_screen)
+  -- if in left half, move to left screen
+  elseif is_window_positioned(win, g_left_half) then
+    local west_screen = current_screen:toWest(nil, true)
+    win:move(g_maximized, west_screen)
+  -- else, move to left half of current screen
+  else
+    win:move(g_left_half, current_screen, true)
+  end
+end
+
+-- context-dependent move window right
+function hyper_right()
+  local win = hs.window.focusedWindow()
+  local current_screen = win:screen()
+
+  -- if on left screen, move to left half of primary
+  if is_screen_left_of_primary(current_screen) then
+    local east_screen = current_screen:toEast(nil, true)
+    win:move(g_left_half, east_screen)
+  -- if in right half, move to right screen
+  elseif is_window_positioned(win, g_right_half) then
+    local east_screen = current_screen:toEast(nil, true)
+    win:move(g_maximized, east_screen)
+  -- else, move to right half of current screen
+  else
+    win:move(g_right_half, current_screen, true)
+  end
+end
 
 -- toggles between maximized and top half of screeen
 function toggle_up()
@@ -34,12 +72,12 @@ end
 
 function move_window_left()
   local win = hs.window.focusedWindow()
-  win:move(g_left_half)
+  win:move(g_left_half, win:screen(), true)
 end
 
 function move_window_right()
   local win = hs.window.focusedWindow()
-  win:move(g_right_half)
+  win:move(g_right_half, win:screen(), true)
 end
 
 function center_window_horizontally()
@@ -66,6 +104,12 @@ function move_window_screen_down()
   win:move(g_maximized, south_screen)
 end
 
+function move_window_screen_up()
+  local win = hs.window.focusedWindow()
+  local north_screen = win:screen():toNorth(nil, true)
+  win:move(g_left_half, north_screen)
+end
+
 
 -- determines if window is positioned in specified location
 function is_window_positioned(window, unit_rect)
@@ -85,6 +129,21 @@ function is_window_positioned(window, unit_rect)
   end
 end
 
+function is_primary_screen(screen)
+  return screen == hs.screen.primaryScreen()
+end
+
+function is_laptop_screen(screen)
+  return screen == hs.screen.find("Built%-in Retina Display")
+end
+
+function is_screen_left_of_primary(screen)
+  return screen == hs.screen.primaryScreen():toWest(nil, true)
+end
+
+function is_screen_right_of_primary(screen)
+  return screen == hs.screen.primaryScreen():toEast(nil, true)
+end
 
 -- focus functions
 function focus_window_left()
@@ -109,10 +168,10 @@ end
 
 -- helper function to set correct screen
 function screen(name)
-  if name == "main" then
+  if name == "primary" then
     return hs.screen.primaryScreen()
   elseif name == "laptop" then
-    return hs.screen.find("Color LCD")
+    return hs.screen.find("Built%-in Retina Display")
   elseif name == "left" then
     return hs.screen.primaryScreen():toWest(nil, true)
   elseif name == "right" then
@@ -140,7 +199,6 @@ layout1Monitor= {
   {"Spotify",                nil,          nil, hs.layout.maximized},
   {"Atom",                   nil,          nil, hs.layout.maximized},
   {"Tweetbot",               nil,          nil, hs.layout.left50},
-  {"Microsoft To Do",        nil,          nil, hs.layout.left50},
   {"Firefox",                nil,          nil, hs.layout.maximized},
   {"Google Chrome",          nil,          nil, hs.layout.maximized},
   {"Reeder",                 nil,          nil, hs.layout.maximized},
@@ -149,56 +207,68 @@ layout1Monitor= {
   {"Hillpeople",             nil,          nil, hs.layout.maximized},
   {"iTerm2",                 nil,          nil, hs.layout.right50},
   {"Remote Desktop Manager", nil,          nil, hs.layout.maximized},
-  {"Wunderlist",             nil,          nil, hs.layout.maximized},
 }
 
 layout2Monitor= {
   {"Spotify",                nil,          screen("laptop"), hs.layout.maximized},
-  {"Wunderlist",             nil,          screen("laptop"), hs.layout.maximized},
-  {"Microsoft To Do",        nil,          screen("laptop"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
-  {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.left50},
-  {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
-  {"Firefox",                nil,          screen("main"),   hs.layout.left50},
-  {"Google Chrome",          nil,          screen("main"),   hs.layout.left50},
-  {"Reeder",                 nil,          screen("main"),   hs.layout.left50},
-  {"Microsoft Outlook",      "!Reminder",  screen("main"),   hs.layout.left50},
-  {"Slack",                  nil,          screen("main"),   hs.layout.right50},
-  {"Hillpeople",             nil,          screen("main"),   hs.layout.right50},
-  {"iTerm2",                 nil,          screen("main"),   hs.layout.right50},
-  {"Remote Desktop Manager", nil,          screen("main"),   hs.layout.maximized},
+  {"Atom",                   "!Dropbox",   screen("primary"),   hs.layout.left50},
+  {"Tweetbot",               nil,          screen("primary"),   hs.layout.left50},
+  {"Firefox",                nil,          screen("primary"),   hs.layout.left50},
+  {"Google Chrome",          nil,          screen("primary"),   hs.layout.left50},
+  {"Reeder",                 nil,          screen("primary"),   hs.layout.left50},
+  {"Microsoft Outlook",      "!Reminder",  screen("primary"),   hs.layout.left50},
+  {"Slack",                  nil,          screen("primary"),   hs.layout.right50},
+  {"Hillpeople",             nil,          screen("primary"),   hs.layout.right50},
+  {"iTerm2",                 nil,          screen("primary"),   hs.layout.right50},
+  {"Remote Desktop Manager", nil,          screen("primary"),   hs.layout.maximized},
 }
 
 layout3Monitor= {
   {"Spotify",                nil,          screen("left"), hs.layout.maximized},
-  {"Wunderlist",             nil,          screen("left"), hs.layout.maximized},
   {"Microsoft To Do",        nil,          screen("left"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("left"), hs.layout.maximized},
-  {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
-  {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
-  {"Firefox",                nil,          screen("main"),   hs.layout.maximized},
-  {"Google Chrome",          nil,          screen("main"),   hs.layout.maximized},
-  {"Reeder",                 nil,          screen("main"),   hs.layout.maximized},
-  {"Microsoft Outlook",      "!Reminder",  screen("main"),   hs.layout.maximized},
+  {"Atom",                   "!Dropbox",   screen("primary"),   hs.layout.maximized},
+  {"Tweetbot",               nil,          screen("primary"),   hs.layout.left50},
+  {"Firefox",                nil,          screen("primary"),   hs.layout.maximized},
+  {"Google Chrome",          nil,          screen("primary"),   hs.layout.maximized},
+  {"Reeder",                 nil,          screen("primary"),   hs.layout.maximized},
+  {"Microsoft Outlook",      "!Reminder",  screen("primary"),   hs.layout.maximized},
   {"Slack",                  nil,          screen("right"),  hs.layout.maximized},
   {"Hillpeople",             nil,          screen("right"),  hs.layout.maximized},
   {"iTerm2",                 nil,          screen("right"),  hs.layout.maximized},
   {"Remote Desktop Manager", nil,          screen("right"),  hs.layout.maximized},
 }
 
-layout4Monitor= {
-  {"Wunderlist",             nil,          screen("left"), g_centered_vertically},
-  {"Spotify",                nil,          screen("left"), hs.layout.maximized},
-  {"Microsoft To Do",        nil,          screen("left"), g_centered_vertically},
-  {"Atom",                   "!Dropbox",   screen("main"),   hs.layout.maximized},
-  {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
-  {"Tweetbot",               nil,          screen("main"),   hs.layout.left50},
-  {"Firefox",                nil,          screen("main"),   hs.layout.maximized},
-  {"Google Chrome",          nil,          screen("main"),   hs.layout.maximized},
-  {"Reeder",                 nil,          screen("main"),   hs.layout.maximized},
-  {"Microsoft Outlook",      "!Reminder",  screen("main"),   hs.layout.maximized},
-  {"Remote Desktop Manager", nil,          screen("main"),  hs.layout.maximized},
-  {"Slack",                  nil,          screen("right"),  g_centered_vertically},
-  {"Hillpeople",             nil,          screen("right"),  g_centered_vertically},
-  {"iTerm2",                 nil,          screen("right"),  hs.layout.maximized},
+layout4MonitorHome= {
+  {"Spotify",                nil,          screen("left"),      hs.layout.maximized},
+  {"Firefox",                nil,          screen("left"),      hs.layout.maximized},
+  {"Atom",                   "!Dropbox",   screen("primary"),   hs.layout.left50},
+  {"Atom",                   "Dropbox",    screen("laptop"),    hs.layout.maximized},
+  {"Tweetbot",               nil,          screen("primary"),   hs.layout.left50},
+  {"Google Chrome",          nil,          screen("primary"),   hs.layout.left50},
+  {"Reeder",                 nil,          screen("primary"),   hs.layout.left50},
+  {"Microsoft Outlook",      "!Reminder",  screen("primary"),   hs.layout.left50},
+  {"Remote Desktop Manager", nil,          screen("primary"),   hs.layout.right50},
+  {"Slack",                  nil,          screen("primary"),   hs.layout.right50},
+  {"Hillpeople",             nil,          screen("primary"),   hs.layout.right50},
+  {"Discord",                nil,          screen("primary"),   hs.layout.right50},
+  {"iTerm2",                 nil,          screen("primary"),   hs.layout.right50},
+}
+
+
+layout4MonitorWork= {
+  {"Spotify",                nil,          screen("left"),    hs.layout.maximized},
+  {"Atom",                   "!Dropbox",   screen("primary"), hs.layout.maximized},
+  {"Atom",                   "Dropbox",    screen("laptop"),  hs.layout.maximized},
+  {"Tweetbot",               nil,          screen("primary"), hs.layout.left50},
+  {"Firefox",                nil,          screen("primary"), hs.layout.maximized},
+  {"Google Chrome",          nil,          screen("primary"), hs.layout.maximized},
+  {"Reeder",                 nil,          screen("primary"), hs.layout.maximized},
+  {"Microsoft Outlook",      "!Reminder",  screen("primary"), hs.layout.maximized},
+  {"Remote Desktop Manager", nil,          screen("primary"), hs.layout.maximized},
+  {"Slack",                  nil,          screen("right"),   g_centered_vertically},
+  {"Hillpeople",             nil,          screen("right"),   g_centered_vertically},
+  {"Discord",                nil,          screen("right"),   g_centered_vertically},
+  {"iTerm2",                 nil,          screen("right"),   hs.layout.maximized},
 }
