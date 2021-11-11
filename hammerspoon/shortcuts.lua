@@ -107,3 +107,13 @@ hs.hotkey.bind({"cmd"}, 'q',
     quit_timer:stop()
   end
 )
+
+-- map control + command + b to center cursor on primary monitor
+hs.hotkey.bind({"ctrl", "cmd"}, 'b',
+  function()
+    local screen = hs.screen.primaryScreen()
+    local rect = screen:fullFrame()
+    local center = hs.geometry.rectMidPoint(rect)
+    hs.mouse.setAbsolutePosition(center)
+  end
+)
