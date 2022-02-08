@@ -117,3 +117,10 @@ hs.hotkey.bind({"ctrl", "cmd"}, 'b',
     hs.mouse.setAbsolutePosition(center)
   end
 )
+
+-- map control + command + d to type current date
+hs.hotkey.bind({"ctrl", "cmd"}, 'd',
+  function()
+    hs.eventtap.keyStrokes(os.date("%Y-%m-%d"))
+  end
+)
