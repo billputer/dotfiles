@@ -3,6 +3,8 @@
 
 hs.window.animationDuration = 0.5
 
+-- hs.window.setFrameCorrectness = true
+
 -- geometry units describing window locations
 g_top_half = hs.geometry(0, 0, 1, 0.5)
 g_bottom_half = hs.geometry(0, 0.5, 1, 1)
@@ -164,6 +166,13 @@ end
 function focus_window_up()
   local win = hs.window.focusedWindow()
   win:focusWindowNorth(nil, true)
+end
+
+function debugging()
+  -- print_table(hs.screen.screenPositions())
+  -- print(hs.screen.find("Built%-in Retina Display"))
+  print(is_screen_left_of_primary(hs.window.focusedWindow():screen()))
+  print(is_screen_right_of_primary(hs.window.focusedWindow():screen()))
 end
 
 -- helper function to set correct screen
