@@ -34,11 +34,11 @@ hyper_bind('n', move_window_screen_up)
 
 
 
--- window focus bindings
-hyper_bind('h', focus_window_left)
-hyper_bind('j', focus_window_down)
-hyper_bind('k', focus_window_up)
-hyper_bind('l', focus_window_right)
+-- -- window focus bindings
+-- hyper_bind('h', focus_window_left)
+-- hyper_bind('j', focus_window_down)
+-- hyper_bind('k', focus_window_up)
+-- hyper_bind('l', focus_window_right)
 
 
 -- layout bindings
