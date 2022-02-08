@@ -32,6 +32,7 @@ set cursorline
 set ttyfast
 set showmatch
 set hlsearch
+set noai
 
 " wrapping options
 set wrap
