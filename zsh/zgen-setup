@@ -29,8 +29,8 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/vagrant
 
   if [ $(uname -a | grep -ci Darwin) = 1 ]; then
-    # Load OSX-specific plugins
-    zgen oh-my-zsh plugins/osx
+    # Load macos-specific plugins
+    zgen oh-my-zsh plugins/macos
   fi
 
   if [ -f /usr/local/bin/aws_zsh_completer.sh ]; then
