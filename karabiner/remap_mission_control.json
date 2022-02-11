@@ -1,0 +1,24 @@
+{
+  "title": "Map Control S Key to Mission Control",
+  "rules": [
+    {
+      "description": "Map Control + S to Mission Control",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "mission_control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

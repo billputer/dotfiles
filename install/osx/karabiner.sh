@@ -21,4 +21,5 @@ else
   mkdir -p "$HOME/.config/karabiner/assets/complex_modifications/"
   ln -s "$HOME/.files/karabiner/remap_right_command.json" "$HOME/.config/karabiner/assets/complex_modifications/remap_right_command.json"
   ln -s "$HOME/.files/karabiner/tap_control_to_escape.json" "$HOME/.config/karabiner/assets/complex_modifications/tap_control_to_escape.json"
+  ln -s "$HOME/.files/karabiner/remap_mission_control.json" "$HOME/.config/karabiner/assets/complex_modifications/remap_mission_control.json"
 fi
