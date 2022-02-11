@@ -10,15 +10,13 @@ if type brew; then
   echo "brew already installed"
 else
   echo "installing brew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile.local
 
   # the important things
   brew install zsh tmux git
   # vim
   brew install vim
-
-  # make tmux and pbcopy friends
-  brew install reattach-to-user-namespace
 
   # various utilities
   brew install \
@@ -31,13 +29,11 @@ else
     htop-osx \
     iperf3 \
     jq \
-    mercurial \
     ncdu \
     prettyping \
     rename \
     tldr \
     tree \
-    watchman \
     wget \
     ;
 
