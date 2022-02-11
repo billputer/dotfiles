@@ -58,7 +58,9 @@ function handleButtonPressed(evt)
 
   -- trigger mission control with middle click
   if button_pressed == 2 then
-    immediateKeyStroke({"ctrl"}, "s")
+    -- disabled in favor of a Karabiner binding
+    -- hs.execute('"/Applications/Mission Control.app/Contents/MacOS/Mission Control"')
+    -- immediateKeyStroke({"ctrl"}, "up")
   end
   -- if cmd held, then use tab navigation with thumb buttons
   if evt:getFlags()["cmd"] then
