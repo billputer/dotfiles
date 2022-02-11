@@ -10,24 +10,28 @@ echo "installing brew casks"
 
 # TODO: https://gist.github.com/t-io/8255711
 
-brew cask install alfred
-brew cask install appcleaner
-brew cask install atom
-brew cask install bartender
-brew cask install caffeine
-brew cask install docker
-brew cask install google-chrome
-brew cask install gpgtools
-brew cask install hammerspoon
-brew cask install istat-menus
-brew cask install iterm2
-brew cask install karabiner-elements
-brew cask install omnidisksweeper
-brew cask install scroll-reverser
-brew cask install slack
-brew cask install the-unarchiver
-brew cask install transmission
-brew cask install 1password
+brew install --cask 1password
+brew install --cask alfred
+brew install --cask appcleaner
+brew install --cask atom
+brew install --cask bartender
+brew install --cask caffeine
+brew install --cask docker
+brew install --cask google-chrome
+brew install --cask hammerspoon
+brew install --cask istat-menus
+brew install --cask iterm2
+brew install --cask karabiner-elements
+brew install --cask omnidisksweeper
+brew install --cask scroll-reverser
+brew install --cask slack
+brew install --cask the-unarchiver
+brew install --cask transmission
 
+brew tap homebrew/cask-drivers
+brew install --cask yubico-authenticator
+
+# required to install font-inconsolata-g-for-powerline
+brew install svn
 brew tap homebrew/cask-fonts
-brew cask install font-inconsolata-g-for-powerline
+brew install font-inconsolata-g-for-powerline
