@@ -29,26 +29,26 @@ fi
 export PATH="/usr/local/bin:$PATH"
 
 # use gnu coreutils, if they exist
-if [[ -d "/usr/local/opt/coreutils/libexec/gnubin" ]]; then
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+if [[ -d "/opt/homebrew/opt/coreutils/libexec/gnubin" ]]; then
+  PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
   # use man for coreutils first, then system man
-  export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:/usr/share/man:/usr/local/share/man
+  export MANPATH=/opt/homebrew/opt/coreutils/libexec/gnuman:/usr/share/man:/usr/local/share/man
 fi
 # use gnu findutils, if they exist
-if [[ -d "/usr/local/opt/findutils/libexec/gnubin" ]]; then
-  PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+if [[ -d "/opt/homebrew/opt/findutils/libexec/gnubin" ]]; then
+  PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 fi
 # use gnu-sed, if it exists
-if [[ -d "/usr/local/opt/gnu-sed/libexec/gnubin" ]]; then
-  PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+if [[ -d "/opt/homebrew/opt/gnu-sed/libexec/gnubin" ]]; then
+  PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
 # use gnu-tar, if it exists
-if [[ -d "/usr/local/opt/gnu-tar/libexec/gnubin" ]]; then
-  PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+if [[ -d "/opt/homebrew/opt/gnu-tar/libexec/gnubin" ]]; then
+  PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 fi
 # use gnu-grep, if it exists
-if [[ -d "/usr/local/opt/grep/libexec/gnubin" ]]; then
-  PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+if [[ -d "/opt/homebrew/opt/grep/libexec/gnubin" ]]; then
+  PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 fi
 
 # set LS_COLORS (generated from dircolors)
