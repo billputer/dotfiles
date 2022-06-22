@@ -190,6 +190,7 @@ function screen(name)
   end
 end
 
+-- TODO: rewrite this to use Regexes
 -- return true if title matches pattern
 function match_title(title, pattern)
   print("match_title: title("..title..") pattern("..pattern..")")

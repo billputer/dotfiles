@@ -84,10 +84,16 @@ if [[ -x "$HOME/.rvm/scripts/rvm" ]]; then
 fi
 
 # use chruby, if it exists
-if [[ -e "/usr/local/share/chruby/chruby.sh" ]]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-  chruby ruby-2.5.3
+if [[ -e "/opt/homebrew/opt/chruby/share/chruby/chruby.sh" ]]; then
+  source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+  source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+  chruby ruby-3.1.2
+fi
+
+# use sdkman, if it exists
+if [[ -e"$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
+  export SDKMAN_DIR="$HOME/.sdkman"
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
 # use fzf, if it exists
