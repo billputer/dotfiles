@@ -205,8 +205,10 @@ end
 -- layouts for various number of monitors
 
 layout1Monitor= {
+  {"Plexamp",                nil,          nil, hs.layout.maximized},
   {"Spotify",                nil,          nil, hs.layout.maximized},
   {"Atom",                   nil,          nil, hs.layout.maximized},
+  {"Visual Studio Code",     nil,          nil, hs.layout.maximized},
   {"Tweetbot",               nil,          nil, hs.layout.left50},
   {"Firefox",                nil,          nil, hs.layout.maximized},
   {"Google Chrome",          nil,          nil, hs.layout.maximized},
@@ -219,9 +221,12 @@ layout1Monitor= {
 }
 
 layout2Monitor= {
+  {"Plexamp",                nil,          screen("laptop"), hs.layout.maximized},
   {"Spotify",                nil,          screen("laptop"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("laptop"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("primary"),   hs.layout.left50},
+  {"Visual Studio Code",     "Projects",   screen("laptop"),    hs.layout.maximized},
+  {"Visual Studio Code",     "!Projects",  screen("primary"),   hs.layout.left50},
   {"Tweetbot",               nil,          screen("primary"),   hs.layout.left50},
   {"Firefox",                nil,          screen("primary"),   hs.layout.left50},
   {"Google Chrome",          nil,          screen("primary"),   hs.layout.left50},
@@ -234,10 +239,13 @@ layout2Monitor= {
 }
 
 layout3Monitor= {
+  {"Plexamp",                nil,          screen("left"), hs.layout.maximized},
   {"Spotify",                nil,          screen("left"), hs.layout.maximized},
   {"Microsoft To Do",        nil,          screen("left"), hs.layout.maximized},
   {"Atom",                   "Dropbox",    screen("left"), hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("primary"),   hs.layout.maximized},
+  {"Visual Studio Code",     "Projects",   screen("left"), hs.layout.maximized},
+  {"Visual Studio Code",     "!Projects",  screen("primary"),   hs.layout.left50},
   {"Tweetbot",               nil,          screen("primary"),   hs.layout.left50},
   {"Firefox",                nil,          screen("primary"),   hs.layout.maximized},
   {"Google Chrome",          nil,          screen("primary"),   hs.layout.maximized},
@@ -250,10 +258,13 @@ layout3Monitor= {
 }
 
 layout4MonitorHome= {
+  {"Plexamp",                nil,          screen("left"),      hs.layout.maximized},
   {"Spotify",                nil,          screen("left"),      hs.layout.maximized},
   {"Firefox",                nil,          screen("left"),      hs.layout.maximized},
   {"Atom",                   "!Dropbox",   screen("primary"),   hs.layout.left50},
   {"Atom",                   "Dropbox",    screen("laptop"),    hs.layout.maximized},
+  {"Visual Studio Code",     "!Projects",  screen("primary"),   hs.layout.left50},
+  {"Visual Studio Code",     "Projects",   screen("laptop"),    hs.layout.maximized},
   {"Tweetbot",               nil,          screen("primary"),   hs.layout.left50},
   {"Google Chrome",          nil,          screen("primary"),   hs.layout.left50},
   {"Reeder",                 nil,          screen("primary"),   hs.layout.left50},
@@ -263,21 +274,4 @@ layout4MonitorHome= {
   {"Hillpeople",             nil,          screen("primary"),   hs.layout.right50},
   {"Discord",                nil,          screen("primary"),   hs.layout.right50},
   {"iTerm2",                 nil,          screen("primary"),   hs.layout.right50},
-}
-
-
-layout4MonitorWork= {
-  {"Spotify",                nil,          screen("left"),    hs.layout.maximized},
-  {"Atom",                   "!Dropbox",   screen("primary"), hs.layout.maximized},
-  {"Atom",                   "Dropbox",    screen("laptop"),  hs.layout.maximized},
-  {"Tweetbot",               nil,          screen("primary"), hs.layout.left50},
-  {"Firefox",                nil,          screen("primary"), hs.layout.maximized},
-  {"Google Chrome",          nil,          screen("primary"), hs.layout.maximized},
-  {"Reeder",                 nil,          screen("primary"), hs.layout.maximized},
-  {"Microsoft Outlook",      "!Reminder",  screen("primary"), hs.layout.maximized},
-  {"Remote Desktop Manager", nil,          screen("primary"), hs.layout.maximized},
-  {"Slack",                  nil,          screen("right"),   g_centered_vertically},
-  {"Hillpeople",             nil,          screen("right"),   g_centered_vertically},
-  {"Discord",                nil,          screen("right"),   g_centered_vertically},
-  {"iTerm2",                 nil,          screen("right"),   hs.layout.maximized},
 }

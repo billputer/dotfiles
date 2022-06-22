@@ -1,0 +1,20 @@
+{
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Solarized Dark+",
+    "workbench.preferredDarkColorTheme": "Solarized Dark",
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Inconsolata-g, Menlo, Monaco, 'Courier New', monospace",
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "editor.wordWrap": "bounded",
+    "editor.tokenColorCustomizations": {
+        "sideBar.background": "#347890"
+    },
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#fdf6e3",
+        "terminalCursor.foreground": "#fdf6e3"
+    },
+    "css.completion.completePropertyWithSemicolon": false,
+    "workbench.editor.untitled.hint": "hidden"
+}

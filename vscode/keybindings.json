@@ -1,0 +1,24 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+shift+d",
+    "command": "deleteRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-deleteRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "markdown.todo.toggleDone",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+d",
+    "command": "-markdown.todo.toggleDone",
+    "when": "editorTextFocus && editorLangId == 'markdown'"
+  }
+
+]

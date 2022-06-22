@@ -1,0 +1,21 @@
+{
+    "name": "solarized-custom",
+    "displayName": "Solarized Custom",
+    "description": "Customized Solarized Theme",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Solarized Custom",
+                "uiTheme": "vs-dark",
+                "path": "./themes/dark-color-theme.json"
+            }
+        ]
+    }
+}
