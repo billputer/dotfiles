@@ -91,7 +91,7 @@ if [[ -e "/opt/homebrew/opt/chruby/share/chruby/chruby.sh" ]]; then
 fi
 
 # use sdkman, if it exists
-if [[ -e"$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
+if [[ -e "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
   export SDKMAN_DIR="$HOME/.sdkman"
   source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
