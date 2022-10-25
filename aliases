@@ -107,6 +107,7 @@ alias dcp='docker-compose -f docker-compose.yml -f docker-compose.production.yml
 alias dcompost='docker system prune --all --volumes'
 
 # kubernetes
+export KUBE_EDITOR=vim
 alias k='kubectl'
 alias kc='kubectx'
 alias kn='kubens'
