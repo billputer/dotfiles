@@ -18,7 +18,7 @@ if [ -d "$HOME/.files/hammerspoon/hs/_asm/undocumented/spaces" ]; then
 else
   echo "installing hammerspoon hs._asm.undocumented.spaces module"
   mkdir -p "$HOME/src"
-  git clone git@github.com:asmagill/hs._asm.undocumented.spaces.git
+  git clone https://github.com/asmagill/hs._asm.undocumented.spaces.git
 
   pushd "$HOME/src/hs._asm.undocumented.spaces"
   HS_APPLICATION=/Applications PREFIX=~/.hammerspoon make install-arm64
