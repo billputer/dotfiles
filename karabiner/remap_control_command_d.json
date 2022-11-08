@@ -1,0 +1,29 @@
+{
+  "title": "Map Control Command D to Hyper D",
+  "rules": [
+    {
+      "description": "Map Control Command D to Hyper D",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": ["control", "command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "d",
+              "modifiers": [
+                "right_option",
+                "right_control",
+                "right_command"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

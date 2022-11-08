@@ -19,6 +19,10 @@ hyper_bind('c', function()
   hs.openConsole()
 end)
 
+hyper_bind('d', function()
+  hs.eventtap.keyStrokes(os.date("%Y-%m-%d"))
+end)
+
 
 -- window management bindings
 hyper_bind('left', hyper_left)
