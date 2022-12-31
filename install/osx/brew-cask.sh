@@ -25,8 +25,10 @@ brew install --cask karabiner-elements
 brew install --cask omnidisksweeper
 brew install --cask scroll-reverser
 brew install --cask slack
+brew install --cask spotify
 brew install --cask the-unarchiver
 brew install --cask transmission
+brew install --cask visual-studio-code
 
 brew tap homebrew/cask-drivers
 brew install --cask yubico-authenticator

@@ -12,6 +12,7 @@ else
   echo "installing brew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.profile.local
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 
   # the important things
   brew install zsh tmux git
