@@ -45,6 +45,9 @@
   pushup = push --set-upstream origin
   um = ! git fetch origin master:master && git checkout master
 
+  # remove double git
+  git = !git
+
   # pretty logs
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
