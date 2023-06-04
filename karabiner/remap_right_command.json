@@ -2,7 +2,7 @@
   "title": "Map Command_R Key to Hyper",
   "rules": [
     {
-      "description": "Map Command_R Key to Command + Option + Control",
+      "description": "Map Command_R Key to Shift + Command + Option + Control",
       "manipulators": [
         {
           "type": "basic",
@@ -19,7 +19,8 @@
               "key_code": "right_command",
               "modifiers": [
                 "right_option",
-                "right_control"
+                "right_control",
+                "right_shift"
               ]
             }
           ]

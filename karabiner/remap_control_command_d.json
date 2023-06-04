@@ -18,7 +18,8 @@
               "modifiers": [
                 "right_option",
                 "right_control",
-                "right_command"
+                "right_command",
+                "right_shift"
               ]
             }
           ]

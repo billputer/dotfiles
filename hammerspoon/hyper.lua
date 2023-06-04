@@ -6,7 +6,7 @@
 --
 
 hyper_bind = function(key, fun)
-  hs.hotkey.bind({"ctrl", "cmd", "option"}, key, fun)
+  hs.hotkey.bind({"ctrl", "shift", "cmd", "option"}, key, fun)
 end
 
 -- reload Hammerspoon on hyper + r
