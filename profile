@@ -28,6 +28,12 @@ fi
 
 export PATH="/usr/local/bin:$PATH"
 
+# enable Homebrew, if it existss
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  export HOMEBREW_INSTALL_FROM_API=true
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # use gnu coreutils, if they exist
 if [[ -d "/opt/homebrew/opt/coreutils/libexec/gnubin" ]]; then
   PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
