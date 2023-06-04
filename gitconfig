@@ -1,7 +1,7 @@
 [user]
   name = Bill Wiens
   email = billwiens@gmail.com
-  signingkey = 00B84D806A823C5D
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINovGAp85YjmUFjLZ+Iwxd3W+Aj7eu8caIHw9Y8GE6Cx
 
 [github]
   user = billputer
@@ -29,7 +29,7 @@
 
 [commit]
   verbose = true
-  #gpgsign = true
+  gpgsign = true
 
 [alias]
   aliases = config --get-regexp alias
@@ -91,3 +91,9 @@
 
 [pull]
   ff = only
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
