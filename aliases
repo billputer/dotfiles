@@ -61,7 +61,7 @@ fi
 alias lpa='lp-assume-role admin'
 alias lpo='lp-assume-role ops'
 alias lpd='lp-assume-role dev'
-alias dtf='docker-compose run --rm terraform'
+alias dtf='docker compose run --rm terraform'
 
 # mercurial
 
