@@ -43,7 +43,7 @@
   both = diff HEAD
   out = log origin..HEAD
   pushup = push --set-upstream origin
-  um = ! git fetch origin master:master && git checkout master
+  um = ! git fetch origin main:main && git checkout main
 
   # remove double git
   git = !git
