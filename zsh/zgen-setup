@@ -43,7 +43,6 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-history-substring-search
   zgen load chrissicool/zsh-256color
 
-  zgen load $HOME/.zsh/hg.zsh
   zgen load $HOME/.zsh/set-window-title.zsh
   zgen load $HOME/.zsh/billputer.zsh-theme
 

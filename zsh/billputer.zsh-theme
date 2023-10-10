@@ -91,12 +91,6 @@ prompt_git_info() {
   print -n "$(git_prompt_info)$(git_prompt_status)%{$reset_color%}"
 }
 
-prompt_hg_info() {
-  hg_prompt_info
-  hg_prompt_status
-  print -n "%{$reset_color%}"
-}
-
 prompt_lp_current_role() {
   if whence -w lp-assume-role >/dev/null; then
     print -n "%F{${VIOLET}}("
@@ -150,7 +144,6 @@ prompt_billputer() {
   prompt_current_dir
   prompt_return_code
   prompt_git_info
-  prompt_hg_info
   print -n "\n $ %f"
 }
 
