@@ -114,6 +114,9 @@ alias kn='kubens'
 alias kap='kubectl get pods --all-namespaces -o wide | awk {'"'"'print $1" "$2" "$3" "$4" "$5" "$6" "$8'"'"'} | column -t'
 alias kaps='kubectl get pods --all-namespaces -o wide --sort-by=.spec.nodeName| awk {'"'"'print $1" "$2" "$3" "$4" "$5" "$6" "$8'"'"'} | column -t'
 
+# colima
+alias c='colima'
+
 # vagrant
 alias vup='vagrant up'
 alias vupno='vagrant up --no-provision'
