@@ -66,16 +66,18 @@ fi
 # language/tool-specific
 ###
 
+# use nvm, if it exists
+if  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  source "/opt/homebrew/opt/nvm/nvm.sh"
+  source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+fi
+
 # Enable pyenv, if it exists
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)";
 fi
 export DEFAULT_PYTHON_VERSION=$(python --version 2>&1 | cut -d ' ' -f 2)
-
-# add npm binaries to path
-if [[ -d "/usr/local/share/npm/bin" ]]; then
-  export PATH="/usr/local/share/npm/bin:$PATH";
-fi
 
 # add Heroku Toolbelt to path
 if [[ -d "/usr/local/heroku/bin" ]]; then

@@ -30,7 +30,8 @@ function set-window-title {
 
   # set tab color if tabset is installed
   if type tabset > /dev/null; then
-    set-tab-color ${current_dir}
+    # set to silently fail when node isn't found
+    set-tab-color ${current_dir} 2>/dev/null
   fi
 }
 
