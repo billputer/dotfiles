@@ -19,6 +19,22 @@
     "key": "alt+d",
     "command": "-markdown.todo.toggleDone",
     "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.showAllSymbols"
+  },
+  {
+    "key": "cmd+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
   }
 
 ]
