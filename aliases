@@ -15,7 +15,7 @@ if [[ $(uname) = 'Darwin' ]]; then
   alias ewapp='code -n ~/workspace/lpx-app'
   alias ewdu='code -n ~/workspace/docker-utility'
   alias ewr='code -n ~/workspace/relight'
-  alias ewt='code -n ~/workspace/terraform'
+  alias ewt='code -n ~/workspace/lp_terraform'
 else
   alias e='vim'
   alias e.='vim .'
@@ -50,13 +50,13 @@ if [ -n "$ZSH_VERSION" ]; then
   alias -g wa='~/workspace/lpx-ansible'
   alias -g wdu='~/workspace/docker-utility'
   alias -g wr='~/workspace/relight'
-  alias -g wt='~/workspace/terraform'
+  alias -g wt='~/workspace/lp_terraform'
 else
   alias wapp='~/workspace/lpx-app'
   alias wa='~/workspace/lpx-ansible'
   alias wdu='~/workspace/docker-utility'
   alias wr='~/workspace/relight'
-  alias wt='~/workspace/terraform'
+  alias wt='~/workspace/lp_terraform'
 fi
 alias lpa='lp-assume-role admin'
 alias lpo='lp-assume-role ops'

@@ -3,7 +3,7 @@
 function set-tab-color {
   current_dir=$1
   case ${current_dir} in
-    "~/workspace/terraform")
+    "~/workspace/lp_terraform")
       tabset --color solarized_cyan;
       ;;
     "~/workspace/relight")
