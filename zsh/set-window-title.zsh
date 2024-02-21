@@ -15,6 +15,9 @@ function set-tab-color {
     "~/workspace/lpx-app")
       tabset --color solarized_yellow;
       ;;
+    "~/workspace/roadmunk")
+      tabset --color solarized_orange;
+      ;;
     *)
       tabset --color default_grey;
   esac
@@ -28,6 +31,7 @@ function set-window-title {
   # set tab color if tabset is installed
   if type tabset > /dev/null; then
     # set to silently fail when node isn't found
+    # TODO: make this more targeted
     set-tab-color ${current_dir} 2>/dev/null
   fi
 }
