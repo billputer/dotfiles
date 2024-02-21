@@ -69,6 +69,11 @@ fi
 # language/tool-specific
 ###
 
+# use rancher, if it exists
+if [[ -x "$HOME/.rd/bin" ]]; then
+  PATH=$PATH:$HOME/.rd/bin
+fi
+
 # use nvm, if it exists
 if  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
