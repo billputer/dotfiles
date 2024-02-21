@@ -9,9 +9,6 @@ function set-tab-color {
     "~/workspace/relight")
       tabset --color solarized_blue;
       ;;
-    "~/workspace/docker-utility")
-      tabset --color solarized_violet;
-      ;;
     "~/workspace/lpx-ansible")
       tabset --color solarized_orange;
       ;;
