@@ -14,6 +14,9 @@ source $HOME/.files/aliases
 # fix less
 export PAGER='less'
 
+# don't use pager in AWS CLI
+export AWS_PAGER=''
+
 # Create files as u=rwx, g=rx, o=rx
 umask 022
 
