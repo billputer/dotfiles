@@ -14,12 +14,12 @@
         "terminalCursor.foreground": "#fdf6e3"
     },
     "css.completion.completePropertyWithSemicolon": false,
-    "workbench.editor.untitled.hint": "hidden",
     "security.workspace.trust.untrustedFiles": "newWindow",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
     "[python]": {
         "editor.formatOnType": true
     },
+    "workbench.editor.empty.hint": "hidden",
     "window.zoomLevel": 1
 }
