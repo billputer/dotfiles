@@ -21,5 +21,6 @@
         "editor.formatOnType": true
     },
     "workbench.editor.empty.hint": "hidden",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "editor.accessibilitySupport": "off"
 }
