@@ -5,3 +5,7 @@ vim/bundle/**
 
 # hammerspoon modules
 hammerspoon/hs
+
+# k9s
+k9s/clusters
+k9s/k9s.log
