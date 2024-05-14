@@ -10,7 +10,7 @@ K9S_DIR="$HOME/Library/Application Support/k9s"
 
 brew install k9s
 
-if [ -L "${VSCODE_DIR}/config.yaml" ]; then
+if [ -L "${K9S_DIR}/config.yaml" ]; then
   echo "k9s settings already installed"
 else
   echo "installing k9s settings"

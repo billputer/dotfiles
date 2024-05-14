@@ -16,6 +16,7 @@ if [[ $(uname) = 'Darwin' ]]; then
   $DOTFILE_DIR/install/osx/hammerspoon.sh
   $DOTFILE_DIR/install/osx/karabiner.sh
   $DOTFILE_DIR/install/osx/vscode.sh
+  $DOTFILE_DIR/install/osx/k9s.sh
 fi
 
 # ubuntu-specific
