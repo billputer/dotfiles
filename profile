@@ -125,4 +125,9 @@ if [ -n "$ZSH_VERSION" ] && [ $commands[kubectl] ]; then
   source <(kubectl completion zsh);
 fi
 
+# use fluxcd autocompletion, if it exists
+if [ -n "$ZSH_VERSION" ] && [ $commands[flux] ]; then
+  source <(flux completion zsh);
+fi
+
 source $HOME/.profile.local
