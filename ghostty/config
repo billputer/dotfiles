@@ -12,3 +12,11 @@ macos-icon-screen-color = 268bd2
 # configure visor (aka hotkey window)
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
 quick-terminal-position = top
+
+# better colors
+window-colorspace = display-p3
+
+# center window by balancing padding
+window-padding-balance = true
+# extend tmux panes to bottom
+window-padding-color = extend
