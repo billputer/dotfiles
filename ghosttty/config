@@ -1,6 +1,4 @@
 
-theme = Solarized Dark - Patched
+theme = iTerm2 Solarized Dark
 font-size = 16
-
-# non-standard solarized background
-background = 092733
+font-family = "Inconsolata-g for Powerline"
