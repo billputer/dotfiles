@@ -22,5 +22,7 @@
     },
     "workbench.editor.empty.hint": "hidden",
     "window.zoomLevel": 1,
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false
 }
