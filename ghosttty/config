@@ -1,0 +1,6 @@
+
+theme = Solarized Dark - Patched
+font-size = 16
+
+# non-standard solarized background
+background = 092733
