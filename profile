@@ -131,4 +131,10 @@ if [ -n "$ZSH_VERSION" ] && [ $commands[flux] ]; then
   source <(flux completion zsh);
 fi
 
+# use asdf autocompletion, if it exists
+if [[ -e "/opt/homebrew/bin/asdf" ]]; then
+  source $(brew --prefix asdf)/libexec/asdf.sh
+  source $(brew --prefix asdf)/etc/bash_completion.d/asdf
+fi
+
 source $HOME/.profile.local
