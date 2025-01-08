@@ -91,11 +91,19 @@ prompt_git_info() {
   print -n "$(git_prompt_info)$(git_prompt_status)%{$reset_color%}"
 }
 
+prompt_aws_profile() {
+  if [ -n "${AWS_PROFILE}" ]; then
+    print -n "%F{${VIOLET}}(${AWS_PROFILE})%{$reset_color%} "
+  fi
+}
+
 prompt_lp_current_role() {
   if whence -w lp-assume-role >/dev/null; then
-    print -n "%F{${VIOLET}}("
-    lp-current-role
-    print -n ")%{$reset_color%} "
+    if [ $(lp-current-role) != "none" ]; then
+      print -n "%F{${VIOLET}}("
+      lp-current-role
+      print -n ")%{$reset_color%} "
+    fi
   fi
 }
 
@@ -150,6 +158,7 @@ prompt_billputer() {
 rprompt_billputer() {
   prompt_python_info
   prompt_ruby_info
+  prompt_aws_profile
   prompt_lp_current_role
   prompt_vi_mode
   prompt_datetime
