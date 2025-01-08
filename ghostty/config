@@ -1,4 +1,10 @@
 
-theme = iTerm2 Solarized Dark
+theme = Builtin Solarized Dark
 font-size = 16
 font-family = "Inconsolata-g for Powerline"
+
+# customize icon
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = 2aa198
+macos-icon-screen-color = 268bd2
