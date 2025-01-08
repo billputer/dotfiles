@@ -8,3 +8,7 @@ macos-icon = custom-style
 macos-icon-frame = plastic
 macos-icon-ghost-color = 2aa198
 macos-icon-screen-color = 268bd2
+
+# configure visor (aka hotkey window)
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+quick-terminal-position = top
