@@ -8,15 +8,11 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bogado/file-line'
 Plugin 'chr4/nginx.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ludovicchabant/vim-lawrencium'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sensible'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -117,25 +113,6 @@ set wildmode=list:longest,list:full
 set ignorecase
 set smartcase
 
-if has("autocmd")
-  " PHP hacks
-  " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
-  autocmd FileType php let php_sql_query=1
-  " does exactly that. highlights html inside of php strings
-  autocmd FileType php let php_htmlInStrings=1
-  " discourages use oh short tags. c'mon its deprecated remember
-  autocmd FileType php let php_noShortTags=1
-  " automagically folds functions & methods. this is getting IDE-like isn't
-  autocmd FileType php let php_folding=1
-
-  " Drupal *.module, *.inc and *.install files.
-  augroup module
-    autocmd BufRead,BufNewFile *.module set filetype=php
-    autocmd BufRead,BufNewFile *.inc set filetype=php
-    autocmd BufRead,BufNewFile *.install set filetype=php
-  augroup END
-endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Custom commands
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -176,9 +153,3 @@ nnoremap <F3> :setl noai nocin nosi formatoptions-=c formatoptions-=r formatopti
 " F4 toggles line numbers and visible whitespace
 nnoremap <F4> :setlocal number! list!<CR>
 
-" Lawrencium - Mercurial shortcuts
-map <Leader>ha :Hgannotate<CR>
-map <Leader>hc :Hgcommit<CR>
-map <Leader>hd :Hgvdiff<CR>
-map <Leader>hl :Hglogthis<CR>
-map <Leader>hs :Hgstatus<CR>
