@@ -1,6 +1,6 @@
 [user]
   name = Bill Wiens
-  email = billwiens@gmail.com
+	email = bill.wiens@tempo.io
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINovGAp85YjmUFjLZ+Iwxd3W+Aj7eu8caIHw9Y8GE6Cx
 
 [github]
@@ -44,6 +44,7 @@
   out = log origin..HEAD
   pushup = push --set-upstream origin
   um = ! git fetch origin main:main && git checkout main
+  uma = ! git fetch origin master:master && git checkout master
 
   # remove double git
   git = !git
@@ -79,6 +80,7 @@
   assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
   wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+	declutter = !node ~/.bin/git-branch-remove-picker.js
 
 [include]
   path = .gitconfig.local
