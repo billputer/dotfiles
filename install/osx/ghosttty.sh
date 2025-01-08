@@ -10,14 +10,14 @@ echo "installing ghostty"
 
 # brew install --cask ghostty
 
-GHOSTTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
+GHOSTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
 
-if [ -L "${GHOSTTTY_DIR}/config" ]; then
-  echo "GhostTTY config already installed"
+if [ -L "${GHOSTTY_DIR}/config" ]; then
+  echo "ghostty config already installed"
 else
-  echo "installing GhostTTY config"
+  echo "installing ghostty config"
 
-  mkdir -p ${GHOSTTTY_DIR}
-  mv "${GHOSTTTY_DIR}/config" "${GHOSTTTY_DIR}/config.bak" || true
-  ln -s ~/.files/ghosttty/config "${GHOSTTTY_DIR}/config"
+  mkdir -p ${GHOSTTY_DIR}
+  mv "${GHOSTTY_DIR}/config" "${GHOSTTY_DIR}/config.bak" || true
+  ln -s ~/.files/ghostty/config "${GHOSTTY_DIR}/config"
 fi
