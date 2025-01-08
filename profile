@@ -138,3 +138,8 @@ if [[ -e "/opt/homebrew/bin/asdf" ]]; then
 fi
 
 source $HOME/.profile.local
+
+# run fastfetch at startup if it exists
+if command -v fastfetch 2>&1 >/dev/null; then
+  fastfetch
+fi
