@@ -18,7 +18,6 @@ FILES="
   hammerspoon
   hgignore
   hgrc
-  hyper.js
   profile
   tabset
   tmux.conf
