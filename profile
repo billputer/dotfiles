@@ -30,6 +30,7 @@ else
 fi
 
 export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 # enable Homebrew, if it existss
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
