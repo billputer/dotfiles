@@ -14,16 +14,6 @@ fi
 # disable AUTO_TITLE
 DISABLE_AUTO_TITLE="true"
 
-# set our own title
-precmd () {
-    # print hostname (%m) if SSH_CLIENT variable is set
-    if [ $SSH_CLIENT ]; then
-        print -Pn "\e]0;%m: %~\a"
-    else
-        print -Pn "\e]0;%~\a"
-    fi
-}
-
 # disable spelling correction
 unsetopt correct
 # prevents from accidentally overwriting a file with >
