@@ -32,7 +32,7 @@ function set-window-title {
   if type tabset > /dev/null; then
     # set to silently fail when node isn't found
     # TODO: make this more targeted
-    set-tab-color ${current_dir} 2>/dev/null
+    #set-tab-color ${current_dir} 2>/dev/null
   fi
 }
 
