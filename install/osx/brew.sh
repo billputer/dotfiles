@@ -25,6 +25,7 @@ else
     ag \
     awscli \
     bat \
+    fastfetch \
     fd \
     diff-so-fancy \
     htop-osx \
