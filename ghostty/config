@@ -20,3 +20,6 @@ window-colorspace = display-p3
 window-padding-balance = true
 # extend tmux panes to bottom
 window-padding-color = extend
+
+# default to ~
+window-inherit-working-directory = false
