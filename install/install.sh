@@ -30,3 +30,6 @@ $DOTFILE_DIR/install/all/fzf.sh
 $DOTFILE_DIR/install/all/link-dotfiles.sh
 $DOTFILE_DIR/install/all/vim.sh
 $DOTFILE_DIR/install/all/zsh.sh
+
+# don't display last login
+touch ~/.hushlogin
