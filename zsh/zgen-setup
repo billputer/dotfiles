@@ -16,22 +16,11 @@ source $HOME/.zgen/zgen.zsh
 if ! zgen saved; then
 
   zgen oh-my-zsh
-  zgen oh-my-zsh plugins/bundler
-  zgen oh-my-zsh plugins/gem
   zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/github
-  zgen oh-my-zsh plugins/golang
-  zgen oh-my-zsh plugins/pip
-  zgen oh-my-zsh plugins/python
-  zgen oh-my-zsh plugins/redis-cli
 
   if [ $(uname -a | grep -ci Darwin) = 1 ]; then
     # Load macos-specific plugins
     zgen oh-my-zsh plugins/macos
-  fi
-
-  if [ -f /usr/local/bin/aws_zsh_completer.sh ]; then
-    zgen load /usr/local/bin/aws_zsh_completer.sh
   fi
 
   # If zsh-syntax-highlighting is bundled after zsh-history-substring-search,
