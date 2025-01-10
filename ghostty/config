@@ -3,6 +3,9 @@ theme = Builtin Solarized Dark
 font-size = 16
 font-family = "Inconsolata-g for Powerline"
 
+# fit more on the screen
+adjust-cell-height = -12%
+
 # customize icon
 macos-icon = custom-style
 macos-icon-frame = plastic
