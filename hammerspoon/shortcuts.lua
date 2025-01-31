@@ -119,3 +119,22 @@ hs.hotkey.bind({"ctrl", "cmd"}, 'b',
     hs.mouse.setAbsolutePosition(center)
   end
 )
+
+
+function sleep (a)
+  local sec = tonumber(os.clock() + a);
+  while (os.clock() < sec) do
+  end
+end
+
+-- map control + command + t to spam clicks
+hs.hotkey.bind({"ctrl", "cmd"}, 't',
+  function()
+    local pos = hs.mouse.absolutePosition()
+    hs.eventtap.leftClick(pos)
+    for i = 1, 50 do
+      hs.eventtap.leftClick(pos)
+      sleep(0.0001)
+    end
+  end
+)
