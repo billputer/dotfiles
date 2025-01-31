@@ -88,16 +88,6 @@ function changeSpaceRelative(offset)
   displayCurrentSpace(target_space_index)
 end
 
--- keys to change spaces left and right
-hs.hotkey.bind({"ctrl", "cmd"}, 'w', function() changeSpaceRelative(-1) end)
-hs.hotkey.bind({"ctrl", "cmd"}, 't', function() changeSpaceRelative(1) end)
-
--- the default mission control shortcuts are less buggy
--- hs.hotkey.bind({"ctrl"}, 'left', function() changeSpaceRelative(-1) end)
--- hs.hotkey.bind({"ctrl"}, 'right', function() changeSpaceRelative(1) end)
-
-
-
 -- keys to directly switch to spaces
 -- note: these don't work unless you change the default mission control shortcuts
 -- this is true even if the shortcuts are disabled
@@ -114,9 +104,9 @@ hs.hotkey.bind({"ctrl", "cmd"}, 't', function() changeSpaceRelative(1) end)
 -- hs.hotkey.bind({"ctrl"}, "8", function() changeSpaceIndex(8) end)
 -- hs.hotkey.bind({"ctrl"}, "9", function() changeSpaceIndex(9) end)
 
-hs.hotkey.bind({"ctrl", "cmd"}, '1', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 1) end)
-hs.hotkey.bind({"ctrl", "cmd"}, '2', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 2) end)
-hs.hotkey.bind({"ctrl", "cmd"}, '3', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 3) end)
-hs.hotkey.bind({"ctrl", "cmd"}, '4', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 4) end)
-hs.hotkey.bind({"ctrl", "cmd"}, '5', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 5) end)
-hs.hotkey.bind({"ctrl", "cmd"}, '6', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 6) end)
+-- hs.hotkey.bind({"ctrl", "cmd"}, '1', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 1) end)
+-- hs.hotkey.bind({"ctrl", "cmd"}, '2', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 2) end)
+-- hs.hotkey.bind({"ctrl", "cmd"}, '3', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 3) end)
+-- hs.hotkey.bind({"ctrl", "cmd"}, '4', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 4) end)
+-- hs.hotkey.bind({"ctrl", "cmd"}, '5', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 5) end)
+-- hs.hotkey.bind({"ctrl", "cmd"}, '6', function() moveWindowToSpaceByIndex(hs.window.focusedWindow(), 6) end)
