@@ -5,8 +5,16 @@
 -- This is then used for magic
 --
 
+-- Use LeftRightHotkey to bind just right command
+-- This is done because Karabiner isn't allowed on my work Mac
+-- https://www.hammerspoon.org/Spoons/LeftRightHotkey.html
+-- https://github.com/Hammerspoon/hammerspoon/issues/1199
+local LeftRightHotkey = hs.loadSpoon("LeftRightHotkey"):start()
+LeftRightHotkey:bind({ "rCmd" }, "left", hyper_left)
+
 hyper_bind = function(key, fun)
   hs.hotkey.bind({"ctrl", "shift", "cmd", "option"}, key, fun)
+  LeftRightHotkey:bind({ "rCmd" }, key, fun)
 end
 
 -- reload Hammerspoon on hyper + r
