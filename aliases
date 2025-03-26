@@ -22,6 +22,8 @@ fi
 
 alias dm="python manage.py"
 
+alias ff="fastfetch"
+
 alias digg="dig +multiline +nocomments +nocmd +noquestion +nostats +search"
 
 alias hgrep="history | grep "

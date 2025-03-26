@@ -137,4 +137,9 @@ if [[ -e "/opt/homebrew/bin/asdf" ]]; then
   source $(brew --prefix asdf)/etc/bash_completion.d/asdf
 fi
 
+# use k9s config on macos, if it exist
+if [[ -e "~/Library/Application Support/k9s" ]]; then
+  export K9S_CONFIG_DIR="~/Library/Application Support/k9s"
+fi
+
 source $HOME/.profile.local

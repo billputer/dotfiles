@@ -5,6 +5,7 @@ k9s:
   readOnly: false
   noExitOnCtrlC: false
   ui:
+    skin: solarized-dark
     enableMouse: false
     headless: false
     logoless: false
@@ -12,7 +13,6 @@ k9s:
     reactive: false
     noIcons: false
     defaultsToFullScreen: false
-    skin: solarized-dark
   skipLatestRevCheck: false
   disablePodCounting: false
   shellPod:
