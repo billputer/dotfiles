@@ -104,7 +104,7 @@ fi
 if [[ -e "/opt/homebrew/opt/chruby/share/chruby/chruby.sh" ]]; then
   source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
   source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-  chruby ruby-3.1.2
+  chruby ruby-3.3.5
 fi
 
 # use sdkman, if it exists
