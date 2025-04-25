@@ -1,6 +1,6 @@
 [user]
   name = Bill Wiens
-	email = bill.wiens@tempo.io
+  email = billwiens@gmail.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINovGAp85YjmUFjLZ+Iwxd3W+Aj7eu8caIHw9Y8GE6Cx
 
 [github]
@@ -22,14 +22,20 @@
   summary = true
 
 [push]
- default = current
+  default = current
+
+[pull]
+  ff = only
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 [commit]
   verbose = true
   gpgsign = true
+
+[init]
+  defaultBranch = main
 
 [alias]
   aliases = config --get-regexp alias
@@ -80,7 +86,7 @@
   assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
   wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
-	declutter = !node ~/.bin/git-branch-remove-picker.js
+  declutter = !node ~/.bin/git-branch-remove-picker.js
 
 [include]
   path = .gitconfig.local
@@ -93,9 +99,6 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
-
-[pull]
-  ff = only
 
 [gpg]
   format = ssh
