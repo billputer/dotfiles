@@ -132,9 +132,9 @@ hs.hotkey.bind({"ctrl", "cmd"}, 't',
   function()
     local pos = hs.mouse.absolutePosition()
     hs.eventtap.leftClick(pos)
-    for i = 1, 50 do
+    for i = 1, 100 do
       hs.eventtap.leftClick(pos)
-      sleep(0.0001)
+      -- sleep(0.0001)
     end
   end
 )
