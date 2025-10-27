@@ -9,18 +9,10 @@ alias la='ls -a'
 if [[ $(uname) = 'Darwin' ]]; then
   alias e='code'
   alias e.='code -n .'
-  alias elp='code -n ~/Projects'
-  alias ebp='code -n ~/Dropbox/Projects'
-  alias ewa='code -n ~/workspace/lpx-ansible'
-  alias ewapp='code -n ~/workspace/lpx-app'
-  alias ewr='code -n ~/workspace/relight'
-  alias ewt='code -n ~/workspace/lp_terraform'
 else
   alias e='vim'
   alias e.='vim .'
 fi
-
-alias dm="python manage.py"
 
 alias ff="fastfetch"
 
@@ -47,19 +39,13 @@ alias convert_newlines="perl -pi -e 's/\r\n/\n/g'"
 
 # LP-specific aliases
 if [ -n "$ZSH_VERSION" ]; then
-  alias -g wapp='~/workspace/lpx-app'
-  alias -g wa='~/workspace/lpx-ansible'
-  alias -g wr='~/workspace/relight'
-  alias -g wt='~/workspace/lp_terraform'
+  alias -g wr='~/workspace/pfm/relight'
+  alias -g wt='~/workspace/pfm/pfm_terraform'
 else
-  alias wapp='~/workspace/lpx-app'
-  alias wa='~/workspace/lpx-ansible'
-  alias wr='~/workspace/relight'
-  alias wt='~/workspace/lp_terraform'
+  alias wr='~/workspace/pfm/relight'
+  alias wt='~/workspace/pfm/pfm_terraform'
 fi
-alias lpa='lp-assume-role admin'
-alias lpo='lp-assume-role ops'
-alias lpd='lp-assume-role dev'
+
 alias dtf='docker compose run --rm terraform'
 
 # mercurial
@@ -68,20 +54,6 @@ alias hgsl='hg shelve --list'
 alias hgsp='hg shelve --patch'
 alias hgsd='hg shelve --delete'
 
-# SVN
-alias sco='svn co'
-alias sup='svn up'
-alias sci='svn ci -m'
-alias saa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
-alias scleann="svn status --no-ignore | grep '^\?' | sed 's/^\?      //'  | xargs rm -rf"
-alias slog="python ~/.files/bin/svnlog.py"
-alias smm='svn merge "^/www/branches/maint" -c'
-alias smf='svn merge "^/www/branches/factory" -c'
-alias sdif='svn diff'
-
-# horse ebooks
-alias horse="while true; do curl -s http://horseebooksipsum.com/api/v1/ | say; done;"
-
 # yolo
 alias git-yolo='git commit -am "`curl -s http://whatthecommit.com/index.txt`"'
 
@@ -89,9 +61,6 @@ if [ -n "$ZSH_VERSION" ]; then
   # be quiet
   alias -g quietly='> /dev/null 2>&1'
 fi
-
-# serveit
-alias serveit='python3 -m http.server'
 
 # sl
 alias sl='~/.files/bin/sl.sh'
