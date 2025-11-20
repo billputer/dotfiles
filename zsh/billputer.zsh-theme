@@ -69,10 +69,6 @@ prompt_os_emoji() {
     print -n "🍕🐐 "
   elif [[ "$HOSTNAME" == "df-"* ]]; then
     print -n "🐶 "
-  elif [[ "$HOSTNAME" == "cf-"* ]]; then
-    print -n "😺 "
-  elif [[ "$HOSTNAME" == "lp-"* ]]; then
-    print -n "⛔️ 😱 ⛔️ "
   elif [[ "$HOSTNAME" == "prod-"* ]]; then
     print -n "⛔️ 😱 ⛔️ "
   elif [[ "$UNAME" == "Darwin" ]]; then
