@@ -8,9 +8,9 @@ set -o nounset
 
 echo "installing ghostty"
 
-# brew install --cask ghostty
+brew install --cask ghostty
 
-GHOSTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
+GHOSTTY_DIR="$HOME/Library/Application\ Support/com.mitchellh.ghostty"
 
 if [ -L "${GHOSTTY_DIR}/config" ]; then
   echo "ghostty config already installed"
