@@ -16,6 +16,9 @@ macos-icon-screen-color = 268bd2
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
 quick-terminal-position = top
 
+# disable Ghostty built-in tab title shell integration
+shell-integration-features = no-title
+
 # better colors
 window-colorspace = display-p3
 

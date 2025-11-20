@@ -164,7 +164,20 @@ rprompt_billputer() {
   prompt_datetime
 }
 
+set_custom_tab_title() {
+  local TITLE=""
+  if [[ "$USER" != "bill" ]]; then
+    TITLE+="%n@"
+  fi
+  if [[ "$HOSTNAME" != "bdub-mba" && "$HOSTNAME" != "lp-mbp-40" ]]; then
+    TITLE+="%m: "
+  fi
+  TITLE+="${PWD/#$HOME/~}"  # current dir with ~ for home
+  print -Pn "\e]0;${TITLE}\a"
+}
+
 prompt_billputer_precmd() {
+  set_custom_tab_title
   PROMPT="$(prompt_billputer)"
   RPROMPT="$(rprompt_billputer)"
 }
