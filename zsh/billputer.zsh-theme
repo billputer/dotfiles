@@ -169,11 +169,14 @@ set_custom_tab_title() {
     TITLE+="%m: "
   fi
   TITLE+="${PWD/#$HOME/~}"  # current dir with ~ for home
+  # add first word of command being run
+  if [[ -n "$1" ]]; then
+    TITLE+=" (${1%% *})"
+  fi
   print -Pn "\e]0;${TITLE}\a"
 }
 
 prompt_billputer_precmd() {
-  set_custom_tab_title
   PROMPT="$(prompt_billputer)"
   RPROMPT="$(rprompt_billputer)"
 }
@@ -191,6 +194,8 @@ zle-keymap-select() {
 prompt_billputer_setup() {
   autoload -Uz add-zsh-hook
   add-zsh-hook precmd prompt_billputer_precmd
+  add-zsh-hook precmd set_custom_tab_title
+  add-zsh-hook preexec set_custom_tab_title
 
   # updates vi-mode in RPS1
   zle -N zle-line-init
