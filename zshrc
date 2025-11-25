@@ -64,3 +64,6 @@ function exists {
 }
 
 source $HOME/.profile
+
+# bun completions
+[ -s "/Users/bill.wiens/.bun/_bun" ] && source "/Users/bill.wiens/.bun/_bun"
