@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Solarized Dark+",
+    "workbench.colorTheme": "Solarized Dark",
     "workbench.preferredDarkColorTheme": "Solarized Dark",
     "workbench.preferredLightColorTheme": "Solarized Light",
     "editor.fontSize": 15,
@@ -24,5 +24,22 @@
     "window.zoomLevel": 1,
     "editor.accessibilitySupport": "off",
     "gitlens.codeLens.authors.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false
+    "gitlens.codeLens.recentChange.enabled": false,
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    },
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+    "docker.extension.dockerEngineAvailabilityPrompt": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "files.associations": {
+        "*.hcl": "terraform"
+    }
 }
