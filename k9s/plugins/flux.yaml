@@ -8,7 +8,7 @@ plugins:
     confirm: true
     scopes:
       - helmreleases
-    description: Toggle to suspend or resume a HelmRelease
+    description: Flux toggle
     command: bash
     background: false
     args:
@@ -26,7 +26,7 @@ plugins:
     confirm: true
     scopes:
       - kustomizations
-    description: Toggle to suspend or resume a Kustomization
+    description: Flux toggle
     command: bash
     background: false
     args:
@@ -156,7 +156,7 @@ plugins:
     confirm: false
     scopes:
       - resourcesets
-    description: Toggle to suspend or resume a ResourceSet
+    description: Flux toggle
     command: bash
     background: false
     args:
@@ -174,7 +174,7 @@ plugins:
     confirm: false
     scopes:
       - resourcesetinputprovider
-    description: Toggle to suspend or resume an InputProvider
+    description: Flux toggle
     command: bash
     background: false
     args:
@@ -235,36 +235,36 @@ plugins:
         --kube-context $CONTEXT
         -n $NAMESPACE $NAME
         | less -K
-  trace:
-    shortCut: Shift-Q
-    confirm: false
-    description: Flux trace
-    scopes:
-      - all
-    command: bash
-    background: false
-    args:
-      - -c
-      - >-
-        if [ -n "$RESOURCE_GROUP" ]; then api_endpoint="/apis/$RESOURCE_GROUP/$RESOURCE_VERSION"; else api_endpoint="/api/$RESOURCE_VERSION"; fi;
-        api_resource=$(kubectl get --raw "${api_endpoint}" | jq -r ".resources[] | select(.name==\"$RESOURCE_NAME\")");
-        kind=$(echo ${api_resource} | jq -r '.kind');
-        namespace_arg=$(echo ${api_resource} | jq -r "if .namespaced == true then \"--namespace $NAMESPACE\" else \"\" end");
-        [ -n "$RESOURCE_GROUP" ] && api_version=$RESOURCE_GROUP/;
-        api_version=${api_version}$RESOURCE_VERSION;
-        flux
-        trace
-        --context $CONTEXT
-        --kind ${kind}
-        --api-version ${api_version}
-        ${namespace_arg}
-        $NAME
-        |& less -K
+  # trace:
+  #   shortCut: Shift-Q
+  #   confirm: false
+  #   description: Flux trace
+  #   scopes:
+  #     - all
+  #   command: bash
+  #   background: false
+  #   args:
+  #     - -c
+  #     - >-
+  #       if [ -n "$RESOURCE_GROUP" ]; then api_endpoint="/apis/$RESOURCE_GROUP/$RESOURCE_VERSION"; else api_endpoint="/api/$RESOURCE_VERSION"; fi;
+  #       api_resource=$(kubectl get --raw "${api_endpoint}" | jq -r ".resources[] | select(.name==\"$RESOURCE_NAME\")");
+  #       kind=$(echo ${api_resource} | jq -r '.kind');
+  #       namespace_arg=$(echo ${api_resource} | jq -r "if .namespaced == true then \"--namespace $NAMESPACE\" else \"\" end");
+  #       [ -n "$RESOURCE_GROUP" ] && api_version=$RESOURCE_GROUP/;
+  #       api_version=${api_version}$RESOURCE_VERSION;
+  #       flux
+  #       trace
+  #       --context $CONTEXT
+  #       --kind ${kind}
+  #       --api-version ${api_version}
+  #       ${namespace_arg}
+  #       $NAME
+  #       |& less -K
   # credits: https://github.com/fluxcd/flux2/discussions/2494
   get-suspended-helmreleases:
     shortCut: Shift-U
     confirm: false
-    description: Suspended Helm Releases
+    description: Flux view suspended
     scopes:
       - helmreleases
     command: sh
@@ -281,7 +281,7 @@ plugins:
   get-suspended-kustomizations:
     shortCut: Shift-U
     confirm: false
-    description: Suspended Kustomizations
+    description: Flux view suspended
     scopes:
       - kustomizations
     command: sh
