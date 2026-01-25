@@ -2,15 +2,13 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-filetype off
+filetype plugin on
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chr4/nginx.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'pearofducks/ansible-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-sensible'
@@ -49,13 +47,13 @@ set listchars=tab:▸\ ,eol:¬
 " set j & k to move by screen line
 nnoremap j gj
 nnoremap k gk
-
+" use ; to enter command mode
 nnoremap ; :
 
 
 set nobackup
 set nowritebackup
-set showcmd		" display incomplete commands
+set showcmd " display incomplete commands
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -74,8 +72,6 @@ set shiftwidth=2
 set softtabstop=4
 set expandtab
 
-" Visual mode: D
-vmap D y'>p
 
 " Local config
 if filereadable(".vimrc.local")
@@ -125,10 +121,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " U converts file to unix style endings and saves
 nnoremap <leader>U :set ff=unix<cr>:wq<cr>
 
-" S sorts CSS properties alphabetically
-nnoremap <leader>S ?{<CR>jV/^\v\s*\}?$<CR>k:sort<CR>:noh<CR>
-
-" V relects text that was just pasted in
+" V selects text that was just pasted in
 nnoremap <leader>v V`]
 
 " jj exits insert mode
