@@ -262,11 +262,11 @@ plugins:
         |& less -K
   # credits: https://github.com/fluxcd/flux2/discussions/2494
   get-suspended-helmreleases:
-    shortCut: Shift-S
+    shortCut: Shift-U
     confirm: false
     description: Suspended Helm Releases
     scopes:
-      - helmrelease
+      - helmreleases
     command: sh
     background: false
     args:
@@ -279,7 +279,7 @@ plugins:
         | jq -r '.items[] | select(.spec.suspend==true) | [.metadata.namespace,.metadata.name,.spec.suspend] | @tsv'
         | less -K
   get-suspended-kustomizations:
-    shortCut: Shift-S
+    shortCut: Shift-U
     confirm: false
     description: Suspended Kustomizations
     scopes:
