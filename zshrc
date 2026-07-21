@@ -43,6 +43,9 @@ __git_files () {
   _wanted files expl 'local files' _files
 }
 
+# disable bracketed paste which was causing weird capitalization
+unset zle_bracketed_paste
+
 # enable vi-mode
 bindkey -v
 # set a short KEYTIMEOUT for quickly switching between modes

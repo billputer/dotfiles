@@ -1,0 +1,10 @@
+# $XDG_DATA_HOME/k9s/hotkeys.yaml
+hotKeys:
+  shift-b:
+    shortCut: Shift-B
+    description: Show/hide help menu
+    command: context billcluster
+  control-c:
+    shortCut: Ctrl-C
+    description: Exit K9s
+    command: disable
