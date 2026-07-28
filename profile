@@ -131,10 +131,11 @@ if [ -n "$ZSH_VERSION" ] && [ $commands[flux] ]; then
   source <(flux completion zsh);
 fi
 
-# use asdf autocompletion, if it exists
+# configure asdf if it exists
 if [[ -e "/opt/homebrew/bin/asdf" ]]; then
-  source $(brew --prefix asdf)/libexec/asdf.sh
-  source $(brew --prefix asdf)/etc/bash_completion.d/asdf
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+  autoload -Uz compinit && compinit
 fi
 
 source $HOME/.profile.local
