@@ -4,7 +4,7 @@ font-size = 15
 font-family = "Inconsolata-g for Powerline"
 
 # fit more on the screen
-adjust-cell-height = -12%
+adjust-cell-height = "-12%"
 
 # customize icon
 macos-icon = custom-style
@@ -15,9 +15,13 @@ macos-icon-screen-color = 268bd2
 # configure visor (aka hotkey window)
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
 quick-terminal-position = top
+quick-terminal-size = 60%
 
 # disable Ghostty built-in tab title shell integration
 shell-integration-features = no-title
+
+# integrate tabs into titlebar
+macos-titlebar-style = tabs
 
 # better colors
 window-colorspace = display-p3
