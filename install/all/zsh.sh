@@ -15,6 +15,3 @@ fi
 
 # setup zgen
 zsh ~/.files/zsh/zgen-setup
-
-# remove old oh-my-zsh
-rm -rf ~/.files/oh-my-zsh

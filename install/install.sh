@@ -8,12 +8,16 @@ set -o nounset
 
 DOTFILE_DIR="$( cd "$( dirname "$0" )/.." && pwd )"
 
+# create local config files for local customizations
+touch $HOME/.profile.local
+touch $HOME/.gitconfig.local
+
 # mac-specific
 if [[ $(uname) = 'Darwin' ]]; then
   $DOTFILE_DIR/install/osx/brew.sh
   $DOTFILE_DIR/install/osx/brew-cask.sh
   $DOTFILE_DIR/install/osx/ns-defaults.sh
-  $DOTFILE_DIR/install/osx/ghosttty.sh
+  $DOTFILE_DIR/install/osx/ghostty.sh
   $DOTFILE_DIR/install/osx/hammerspoon.sh
   $DOTFILE_DIR/install/osx/karabiner.sh
   $DOTFILE_DIR/install/osx/vscode.sh
@@ -32,10 +36,6 @@ $DOTFILE_DIR/install/all/zsh.sh
 
 # link dotfiles using chezmoi
 chezmoi apply $DOTFILE_DIR
-
-# create local config files for local customizations
-touch $HOME/.profile.local
-touch $HOME/.gitconfig.local
 
 # don't display last login
 touch ~/.hushlogin

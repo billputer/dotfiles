@@ -35,7 +35,6 @@ else
     ncdu \
     prettyping \
     rename \
-    tldr \
     tree \
     wget \
     ;
@@ -44,16 +43,15 @@ else
   brew install pyenv ruby-install
 
   # install GNU coreutils, etc, instead of using BSD versions
-  brew install coreutils
-  brew install findutils
-  brew install gnu-sed
-  brew install gnu-tar
+  brew install \
+    coreutils \
+    findutils \
+    gnu-sed \
+    gnu-tar \
+    ;
 
   # install shellcheck linter
   brew install shellcheck
 
-  # install iterm2-tab-set
-  brew install npm
-  npm install -g iterm2-tab-set
 fi
 exit 0
