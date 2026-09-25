@@ -34,7 +34,8 @@ $DOTFILE_DIR/install/all/vim.sh
 $DOTFILE_DIR/install/all/zsh.sh
 
 # link dotfiles using chezmoi
-chezmoi apply $DOTFILE_DIR
+chezmoi init --source-path $DOTFILE_DIR
+chezmoi apply --working-tree $DOTFILE_DIR
 
 # don't display last login
 touch ~/.hushlogin
