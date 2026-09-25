@@ -27,9 +27,15 @@ fi
 
 # common install scripts
 $DOTFILE_DIR/install/all/fzf.sh
-$DOTFILE_DIR/install/all/link-dotfiles.sh
 $DOTFILE_DIR/install/all/vim.sh
 $DOTFILE_DIR/install/all/zsh.sh
+
+# link dotfiles using chezmoi
+chezmoi apply $DOTFILE_DIR
+
+# create local config files for local customizations
+touch $HOME/.profile.local
+touch $HOME/.gitconfig.local
 
 # don't display last login
 touch ~/.hushlogin
