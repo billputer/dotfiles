@@ -41,5 +41,18 @@
     "github.copilot.nextEditSuggestions.enabled": true,
     "files.associations": {
         "*.hcl": "terraform"
+    },
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "fileHistory": false,
+        "repositories": true,
+        "searchAndCompare": false,
+        "launchpad": true
     }
 }
