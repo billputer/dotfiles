@@ -48,3 +48,6 @@
 thumbs.db
 Thumbs.db
 Icon?
+
+# Claude
+**/.claude/settings.local.json
