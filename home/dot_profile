@@ -138,4 +138,6 @@ if [[ -e "/opt/homebrew/bin/asdf" ]]; then
   autoload -Uz compinit && compinit
 fi
 
+export K9S_CONFIG_DIR=~/.config/k9s 
+
 source $HOME/.profile.local

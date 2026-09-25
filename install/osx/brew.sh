@@ -30,6 +30,7 @@ else
     fd \
     diff-so-fancy \
     htop-osx \
+    k9s \
     iperf3 \
     jq \
     ncdu \
