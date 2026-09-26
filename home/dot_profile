@@ -138,6 +138,11 @@ if [[ -e "/opt/homebrew/bin/asdf" ]]; then
   autoload -Uz compinit && compinit
 fi
 
+# use bun completions if they exist
+if [[ -s "$HOME/.bun/_bun" ]]; then
+  source "$HOME/.bun/_bun"
+fi
+
 export K9S_CONFIG_DIR=~/.config/k9s 
 
 source $HOME/.profile.local
