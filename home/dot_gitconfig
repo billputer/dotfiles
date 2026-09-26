@@ -1,7 +1,7 @@
 [user]
   name = Bill Wiens
   email = billwiens@gmail.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINovGAp85YjmUFjLZ+Iwxd3W+Aj7eu8caIHw9Y8GE6Cx
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJE/gvqAJ243lZ1inQLElOAbQFh1Bpkwz1Kszv29ClbN bill@billwiens.com
 
 [github]
   user = billputer
