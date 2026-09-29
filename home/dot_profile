@@ -143,6 +143,7 @@ if [[ -s "$HOME/.bun/_bun" ]]; then
   source "$HOME/.bun/_bun"
 fi
 
-export K9S_CONFIG_DIR=~/.config/k9s 
+export K9S_CONFIG_DIR=~/.config/k9s
+export XDG_CONFIG_HOME=~/.config
 
 source $HOME/.profile.local
