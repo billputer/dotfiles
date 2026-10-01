@@ -21,7 +21,11 @@ quick-terminal-size = 60%
 shell-integration-features = no-title
 
 # integrate tabs into titlebar
-macos-titlebar-style = tabs
+# macos-titlebar-style = tabs
+# this doesn't work in Golden Gate
+# instead, use native until it works
+macos-titlebar-style = native
+macos-titlebar-proxy-icon = hidden
 
 # better colors
 window-colorspace = display-p3
@@ -33,3 +37,4 @@ window-padding-color = extend
 
 # default to ~
 window-inherit-working-directory = false
+working-directory = home
