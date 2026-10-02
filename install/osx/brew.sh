@@ -29,6 +29,7 @@ else
     fastfetch \
     fd \
     diff-so-fancy \
+    gh \
     htop-osx \
     k9s \
     iperf3 \
