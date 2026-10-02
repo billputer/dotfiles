@@ -83,8 +83,9 @@ prompt_return_code() {
   print -n "%(?..%F{${RED}}[%?] %{$reset_color%})"
 }
 
+# https://github.com/ohmyzsh/ohmyzsh/issues/12328
 prompt_git_info() {
-  print -n "$(git_prompt_info)$(git_prompt_status)%{$reset_color%}"
+  print -n "$(_omz_git_prompt_info)$(_omz_git_prompt_status)%{$reset_color%}"
 }
 
 prompt_aws_profile() {
