@@ -42,7 +42,7 @@ else
     ;
 
   # language tools
-  brew install pyenv ruby-install
+  brew install ruby-install uv
 
   # install GNU coreutils, etc, instead of using BSD versions
   brew install \

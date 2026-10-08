@@ -29,8 +29,10 @@ else
   export VISUAL='vim'
 fi
 
-export PATH="/usr/local/bin:$PATH"
+# personal scripts
 export PATH="$HOME/.bin:$PATH"
+# uv
+export PATH="$HOME/.local/bin:$PATH"
 
 # enable Homebrew, if it existss
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
@@ -70,13 +72,18 @@ fi
 # language/tool-specific
 ###
 
+# use homebrew, if it exists
+if [ -s "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # use rancher, if it exists
 if [[ -x "$HOME/.rd/bin" ]]; then
   PATH=$PATH:$HOME/.rd/bin
 fi
 
 # use nvm, if it exists
-if  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
   source "/opt/homebrew/opt/nvm/nvm.sh"
   source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
@@ -130,6 +137,12 @@ fi
 if [ -n "$ZSH_VERSION" ] && [ $commands[flux] ]; then
   source <(flux completion zsh);
 fi
+
+# use uv autocompletion, if it exists
+if [ -n "$ZSH_VERSION" ] && [ $commands[uv] ]; then
+  eval "$(uv generate-shell-completion zsh)"
+fi
+
 
 # configure asdf if it exists
 if [[ -e "/opt/homebrew/bin/asdf" ]]; then
