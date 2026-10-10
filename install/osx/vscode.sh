@@ -15,7 +15,13 @@ else
   echo "installing VSCode symlinks"
 
   mkdir -p ${VSCODE_DIR}
+
+  rm -f "${VSCODE_DIR}/settings.json"
   ln -s ~/.files/vscode/settings.json "${VSCODE_DIR}/settings.json"
+
+  rm -f "${VSCODE_DIR}/keybindings.json"
   ln -s ~/.files/vscode/keybindings.json "${VSCODE_DIR}/keybindings.json"
+
+  rm -rf "${VSCODE_DIR}/snippets"
   ln -s ~/.files/vscode/snippets "${VSCODE_DIR}/snippets"
 fi
