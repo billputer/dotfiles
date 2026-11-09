@@ -12,6 +12,7 @@ brew install --cask alfred
 brew install --cask appcleaner
 brew install --cask bartender
 brew install --cask caffeine
+brew install --cask elgato-stream-deck
 brew install --cask font-inconsolata-g-for-powerline
 brew install --cask ghostty
 brew install --cask firefox

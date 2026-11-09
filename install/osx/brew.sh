@@ -44,6 +44,14 @@ else
   # language tools
   brew install ruby-install uv
 
+  # kubernetes tools
+  brew install \
+    k9s \
+    kubectx \
+    kubernetes-cli
+    ;
+
+
   # install GNU coreutils, etc, instead of using BSD versions
   brew install \
     coreutils \
