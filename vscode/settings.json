@@ -54,5 +54,12 @@
         "repositories": true,
         "searchAndCompare": false,
         "launchpad": true
-    }
+    },
+    "azureTerraform.survey": {
+        "surveyPromptDate": "2026-10-20T18:07:22.599Z",
+        "surveyPromptIgnoredCount": 0
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "redhat.telemetry.enabled": false,
+    "workbench.startupEditor": "none"
 }
