@@ -108,3 +108,6 @@ fi
 if [ -x "$(command -v prettyping)" ]; then
   alias ping='prettyping --nolegend'
 fi
+
+# aliases for claude
+alias claude-personal='CLAUDE_CONFIG_DIR=~/.claude-personal claude'
